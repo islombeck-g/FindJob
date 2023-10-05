@@ -23,7 +23,7 @@ struct EnterMainView: View {
                     
                     Group{
                         NavigationLink{
-                            //go to enter view
+                            LoginView()
                         }label: {
                             ZStack {
                                 RoundedRectangle(cornerRadius: 8)
@@ -40,7 +40,7 @@ struct EnterMainView: View {
                         
                         
                         NavigationLink{
-                            //go to registration view
+                        RegistrationView()
                         }label: {
                             ZStack {
                                 RoundedRectangle(cornerRadius: 8)

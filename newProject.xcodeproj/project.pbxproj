@@ -7,6 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		6331BCFB2ACF458C00C80B62 /* LoginView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6331BCFA2ACF458C00C80B62 /* LoginView.swift */; };
+		6331BCFD2ACF459D00C80B62 /* RegistrationView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6331BCFC2ACF459D00C80B62 /* RegistrationView.swift */; };
 		639E9EAD2ACF36D20069DBF3 /* newProjectApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 639E9EAC2ACF36D20069DBF3 /* newProjectApp.swift */; };
 		639E9EAF2ACF36D20069DBF3 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 639E9EAE2ACF36D20069DBF3 /* ContentView.swift */; };
 		639E9EB12ACF36D30069DBF3 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 639E9EB02ACF36D30069DBF3 /* Assets.xcassets */; };
@@ -15,6 +17,8 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		6331BCFA2ACF458C00C80B62 /* LoginView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginView.swift; sourceTree = "<group>"; };
+		6331BCFC2ACF459D00C80B62 /* RegistrationView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RegistrationView.swift; sourceTree = "<group>"; };
 		639E9EA92ACF36D20069DBF3 /* newProject.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = newProject.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		639E9EAC2ACF36D20069DBF3 /* newProjectApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = newProjectApp.swift; sourceTree = "<group>"; };
 		639E9EAE2ACF36D20069DBF3 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
@@ -76,6 +80,8 @@
 			isa = PBXGroup;
 			children = (
 				639E9EBC2ACF38B30069DBF3 /* EnterMainView.swift */,
+				6331BCFA2ACF458C00C80B62 /* LoginView.swift */,
+				6331BCFC2ACF459D00C80B62 /* RegistrationView.swift */,
 			);
 			path = EnterModule;
 			sourceTree = "<group>";
@@ -152,7 +158,9 @@
 			files = (
 				639E9EAF2ACF36D20069DBF3 /* ContentView.swift in Sources */,
 				639E9EAD2ACF36D20069DBF3 /* newProjectApp.swift in Sources */,
+				6331BCFB2ACF458C00C80B62 /* LoginView.swift in Sources */,
 				639E9EBD2ACF38B30069DBF3 /* EnterMainView.swift in Sources */,
+				6331BCFD2ACF459D00C80B62 /* RegistrationView.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
