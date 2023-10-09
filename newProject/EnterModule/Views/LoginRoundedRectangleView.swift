@@ -26,14 +26,14 @@ struct LoginRoundedRectangleView: View {
                 CustomTextFieldView(isSecureField: true, text: "Пароль", result: self.$passwodText)
                 
                 Spacer()
-                    .frame(height: 10)
+                    .frame(height: 20)
                 
                 NavigationLink {
                     LoginView()
                 } label: {
                     ZStack {
                         RoundedRectangle(cornerRadius: 8)
-                            .frame(width: UIScreen.main.bounds.width - 82, height: 46)
+                            .frame(width: 293, height: 50)
                             .foregroundColor(.black)
                         
                         Text ("Вход")

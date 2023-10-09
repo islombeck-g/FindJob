@@ -12,6 +12,9 @@
 		6310DC722AD2D56200673527 /* LoginRoundedRectangleView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6310DC712AD2D56200673527 /* LoginRoundedRectangleView.swift */; };
 		6331BCFB2ACF458C00C80B62 /* LoginView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6331BCFA2ACF458C00C80B62 /* LoginView.swift */; };
 		6331BCFD2ACF459D00C80B62 /* RegistrationView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6331BCFC2ACF459D00C80B62 /* RegistrationView.swift */; };
+		63925FD32AD4360C002AF8E9 /* RoleChose.swift in Sources */ = {isa = PBXBuildFile; fileRef = 63925FD22AD4360C002AF8E9 /* RoleChose.swift */; };
+		63925FD52AD43C48002AF8E9 /* RegistrationViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 63925FD42AD43C48002AF8E9 /* RegistrationViewModel.swift */; };
+		63925FD72AD47085002AF8E9 /* EnterModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 63925FD62AD47085002AF8E9 /* EnterModel.swift */; };
 		639E9EAD2ACF36D20069DBF3 /* newProjectApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 639E9EAC2ACF36D20069DBF3 /* newProjectApp.swift */; };
 		639E9EAF2ACF36D20069DBF3 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 639E9EAE2ACF36D20069DBF3 /* ContentView.swift */; };
 		639E9EB12ACF36D30069DBF3 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 639E9EB02ACF36D30069DBF3 /* Assets.xcassets */; };
@@ -25,6 +28,9 @@
 		6310DC712AD2D56200673527 /* LoginRoundedRectangleView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginRoundedRectangleView.swift; sourceTree = "<group>"; };
 		6331BCFA2ACF458C00C80B62 /* LoginView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginView.swift; sourceTree = "<group>"; };
 		6331BCFC2ACF459D00C80B62 /* RegistrationView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RegistrationView.swift; sourceTree = "<group>"; };
+		63925FD22AD4360C002AF8E9 /* RoleChose.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RoleChose.swift; sourceTree = "<group>"; };
+		63925FD42AD43C48002AF8E9 /* RegistrationViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RegistrationViewModel.swift; sourceTree = "<group>"; };
+		63925FD62AD47085002AF8E9 /* EnterModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EnterModel.swift; sourceTree = "<group>"; };
 		639E9EA92ACF36D20069DBF3 /* newProject.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = newProject.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		639E9EAC2ACF36D20069DBF3 /* newProjectApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = newProjectApp.swift; sourceTree = "<group>"; };
 		639E9EAE2ACF36D20069DBF3 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
@@ -50,6 +56,7 @@
 			children = (
 				6310DC6D2AD298E600673527 /* CustomTextFieldView.swift */,
 				6310DC712AD2D56200673527 /* LoginRoundedRectangleView.swift */,
+				63925FD22AD4360C002AF8E9 /* RoleChose.swift */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -98,6 +105,8 @@
 				6331BCFA2ACF458C00C80B62 /* LoginView.swift */,
 				6331BCFC2ACF459D00C80B62 /* RegistrationView.swift */,
 				6310DC6F2AD2C40A00673527 /* LogInViewModel.swift */,
+				63925FD42AD43C48002AF8E9 /* RegistrationViewModel.swift */,
+				63925FD62AD47085002AF8E9 /* EnterModel.swift */,
 				6310DC6C2AD298C700673527 /* Views */,
 			);
 			path = EnterModule;
@@ -174,10 +183,13 @@
 			buildActionMask = 2147483647;
 			files = (
 				6310DC702AD2C40A00673527 /* LogInViewModel.swift in Sources */,
+				63925FD52AD43C48002AF8E9 /* RegistrationViewModel.swift in Sources */,
+				63925FD72AD47085002AF8E9 /* EnterModel.swift in Sources */,
 				639E9EAF2ACF36D20069DBF3 /* ContentView.swift in Sources */,
 				639E9EAD2ACF36D20069DBF3 /* newProjectApp.swift in Sources */,
 				6331BCFB2ACF458C00C80B62 /* LoginView.swift in Sources */,
 				6310DC722AD2D56200673527 /* LoginRoundedRectangleView.swift in Sources */,
+				63925FD32AD4360C002AF8E9 /* RoleChose.swift in Sources */,
 				639E9EBD2ACF38B30069DBF3 /* EnterMainView.swift in Sources */,
 				6331BCFD2ACF459D00C80B62 /* RegistrationView.swift in Sources */,
 				6310DC6E2AD298E600673527 /* CustomTextFieldView.swift in Sources */,

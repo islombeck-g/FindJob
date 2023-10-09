@@ -28,7 +28,7 @@ struct EnterMainView: View {
                         } label: {
                             ZStack {
                                 RoundedRectangle(cornerRadius: 8)
-                                    .frame(width: UIScreen.main.bounds.width - 32, height: 46)
+                                    .frame(width: 343, height: 46)
                                     .foregroundColor(.white)
                                 
                                 Text ("Вход")
@@ -43,9 +43,7 @@ struct EnterMainView: View {
                             ZStack {
                                 RoundedRectangle(cornerRadius: 8)
                                     .stroke(Color.white, lineWidth: 2)
-                                    .frame(
-                                        width: UIScreen.main.bounds.width - 32,
-                                        height: 46)
+                                    .frame(width: 343, height: 46)
                                     .foregroundColor(.black)
                                 Text("Регистрация")
                                     .foregroundColor(.white)
