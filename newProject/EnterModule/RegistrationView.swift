@@ -1,7 +1,7 @@
 import SwiftUI
 
 struct RegistrationView: View {
-
+    
     @StateObject private var viewModel: RegistrationViewModel = RegistrationViewModel()
     @Environment(\.dismiss) var dismiss
     
@@ -18,10 +18,11 @@ struct RegistrationView: View {
                     Group {
                         
                         Button {
-                              self.dismiss()
+                            self.dismiss()
+                            self.doneChoseRole = false
                         } label: {
                             HStack{
-                                    
+                                
                                 Image(systemName: "chevron.left")
                                 
                                 Text("Назад")
@@ -46,14 +47,48 @@ struct RegistrationView: View {
                         Spacer()
                             .frame(height: 24)
                     }
-                    RoleChose(doneChoseRole: $doneChoseRole)
-                        .environmentObject(viewModel)
+                    
+                    GeometryReader {geometry in
+                        
+                        ScrollView (.init()){
+                            ZStack{
+//                                withAnimation(Animation.easeInOut) {
+                                    RoleChose(doneChoseRole: $doneChoseRole)
+                                        .environmentObject(viewModel)
+                                        .frame(maxWidth: .infinity, alignment: .center)
+                                        .frame(maxHeight: .infinity, alignment: .top)
+                                        .offset(
+                                            x: !doneChoseRole  ? 0 : -geometry.size.width)
+                                        .animation(.easeInOut)
+//                                }
+                                    
+                                
+                                    
+                                
+                                TabView{
+                                    ForEach(self.viewModel.StudentViews.indices, id: \.self){i in
+                                        self.viewModel.StudentViews[i]
+                                    }.frame(maxHeight: .infinity, alignment: .top)
+                                }
+                                .tabViewStyle(.page)
+                                .offset(
+                                    x: doneChoseRole  ? 0 : geometry.size.width)
+                                .animation(.easeInOut)
+                                
+                                
+                                
+                                
+                            }
+                        }
+                        
+                    }
+                    
                     
                     Spacer()
                 }
                 
             }
-           
+            
             
         }
         
