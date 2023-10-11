@@ -68,7 +68,10 @@ struct RegistrationView: View {
                                 TabView{
                                     ForEach(self.viewModel.StudentViews.indices, id: \.self){i in
                                         self.viewModel.StudentViews[i]
-                                    }.frame(maxHeight: .infinity, alignment: .top)
+                                            .environmentObject(viewModel)
+                                        
+                                    }
+                                    .frame(maxHeight: .infinity, alignment: .top)
                                 }
                                 .tabViewStyle(.page)
                                 .offset(
