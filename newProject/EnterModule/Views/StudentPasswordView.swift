@@ -23,17 +23,37 @@ struct StudentPasswordView: View {
                 
                 
                 Group {
+                    
+                    Spacer()
+                        .frame(height: 20)
+                    
                     HStack {
+                        
+                        Spacer()
+                            .frame(width: 25)
+                        
                         Image(systemName: self.viewModel.emailAgree == true ? "largecircle.fill.circle" : "circle")
                             .clipShape(Circle())
-                        Text("Я согласен(-а) на получение рассылки на e-mail")
-                            .lineLimit(2)
+                        VStack(alignment: .leading){
+
+                            Text("Я согласен(-а) на получение")
+                            Text("рассылки на e-mail")
+                        }
+                        Spacer()
                     }
+                    
                     HStack {
+                        
+                        Spacer()
+                            .frame(width: 25)
+                        
                         Image(systemName: self.viewModel.userAgreement == true ? "largecircle.fill.circle" : "circle")
                             .clipShape(Circle())
-                        Text("Я согласен(-а) с пользовательским соглашением")
-                            .lineLimit(2)
+                        VStack(alignment: .leading) {
+                            Text("Я согласен(-а) с ")
+                            Text("пользовательским соглашением")
+                        }
+                        Spacer()
                     }
                 }
                 
