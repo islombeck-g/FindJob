@@ -64,13 +64,13 @@
 		6310DC6C2AD298C700673527 /* Views */ = {
 			isa = PBXGroup;
 			children = (
+				63C432C52AD711340074F3C4 /* DropDownMenuView.swift */,
 				6310DC6D2AD298E600673527 /* CustomTextFieldView.swift */,
 				6310DC712AD2D56200673527 /* LoginRoundedRectangleView.swift */,
 				63925FD22AD4360C002AF8E9 /* RoleChose.swift */,
 				6311618B2AD471D100F41E07 /* StudentFullNameView.swift */,
 				6311618D2AD475CF00F41E07 /* StudentPositionView.swift */,
 				6311618F2AD4779E00F41E07 /* StudentPasswordView.swift */,
-				63C432C52AD711340074F3C4 /* DropDownMenuView.swift */,
 			);
 			path = Views;
 			sourceTree = "<group>";

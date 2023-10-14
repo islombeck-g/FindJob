@@ -7,7 +7,7 @@ struct StudentPasswordView: View {
     var body: some View {
         ZStack {
             RoundedRectangle(cornerRadius: 25)
-                .foregroundStyle(.blue)
+                .foregroundStyle(.white)
             
             VStack {
                 Text("Личные данные")

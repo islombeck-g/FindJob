@@ -1,13 +1,23 @@
 import SwiftUI
 
 struct StudentPositionView: View {
+    
+    @EnvironmentObject var viewModel:RegistrationViewModel
+    
     var body: some View {
         ZStack {
             RoundedRectangle(cornerRadius: 25)
                 .foregroundStyle(.orange)
             
             VStack {
-                Text("Student position view")
+                
+                Text("Личные данные")
+                    .foregroundStyle(.black)
+                    .fontWeight(.bold)
+                    .font(.system(size: 28))
+                
+                DropDownView(menuActions: self.viewModel.cities, title: self.$viewModel.chosenCity)
+
             }
         }
         .frame(
@@ -19,4 +29,5 @@ struct StudentPositionView: View {
 
 #Preview {
     StudentPositionView()
+        .environmentObject(RegistrationViewModel())
 }
