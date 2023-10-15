@@ -88,11 +88,8 @@ struct StudentFullNameView: View {
                         Text("Далее")
                             .foregroundColor(.white)
                             .fontWeight(.bold)
-                    }
-                    
+                    }   
                 }
-                
-                
             }
         }
         .frame(

@@ -2,11 +2,10 @@ import SwiftUI
 
 struct RegistrationView: View {
     
-    @StateObject private var viewModel: RegistrationViewModel = RegistrationViewModel()
+    @StateObject var viewModel:RegistrationViewModel = RegistrationViewModel()
     @Environment(\.dismiss) var dismiss
     
     @State private var doneChoseRole = false
-    
     
     var body: some View {
         NavigationStack {
@@ -52,53 +51,38 @@ struct RegistrationView: View {
                         
                         ScrollView (.init()){
                             ZStack{
-//                                withAnimation(Animation.easeInOut) {
+                                
                                     RoleChose(doneChoseRole: $doneChoseRole)
                                         .environmentObject(viewModel)
                                         .frame(maxWidth: .infinity, alignment: .center)
                                         .frame(maxHeight: .infinity, alignment: .top)
                                         .offset(
                                             x: !doneChoseRole  ? 0 : -geometry.size.width)
-                                        .animation(.easeInOut)
-//                                }
-                                    
-                                
-                                    
-                                
+                                        .animation(.easeInOut, value: 1)
+//
                                 TabView{
                                     ForEach(self.viewModel.StudentViews.indices, id: \.self){i in
                                         self.viewModel.StudentViews[i]
                                             .environmentObject(viewModel)
-                                        
                                     }
                                     .frame(maxHeight: .infinity, alignment: .top)
                                 }
                                 .tabViewStyle(.page)
                                 .offset(
                                     x: doneChoseRole  ? 0 : geometry.size.width)
-                                .animation(.easeInOut)
-                                
-                                
-                                
-                                
+                                .animation(.easeInOut, value: 1)
                             }
                         }
-                        
                     }
-                    
-                    
                     Spacer()
                 }
-                
             }
-            
-            
         }
         .navigationBarBackButtonHidden(true)
-        
     }
 }
 
 #Preview {
     RegistrationView()
+        .environmentObject(RegistrationViewModel())
 }

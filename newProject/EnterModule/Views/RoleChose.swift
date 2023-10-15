@@ -94,8 +94,7 @@ struct RoleChose: View {
                         Text("Далее")
                             .foregroundColor(.white)
                             .fontWeight(.bold)
-                    }
-                    
+                    }   
                 }
             }
         }
@@ -103,7 +102,6 @@ struct RoleChose: View {
             width: 343,
             height: 250,
             alignment: .center)
-        
     }
 }
 

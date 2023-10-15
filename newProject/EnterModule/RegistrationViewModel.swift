@@ -1,7 +1,7 @@
 import Foundation
 import SwiftUI
 
-class RegistrationViewModel: ObservableObject {
+final class RegistrationViewModel: ObservableObject {
     
     @Published var role: RolesEnum = .student
     

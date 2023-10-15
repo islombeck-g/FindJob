@@ -36,7 +36,7 @@ struct EnterMainView: View {
                                     .fontWeight(.bold)
                             }
                         }
-                        
+ 
                         NavigationLink{
                             RegistrationView()
                         } label: {
@@ -50,10 +50,7 @@ struct EnterMainView: View {
                                     .fontWeight(.bold)
                             }
                         }
-                        
                     }
-                    
-                    
                 }
             }
         }

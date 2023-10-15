@@ -47,12 +47,9 @@ struct LoginRoundedRectangleView: View {
                         .font(.system(size: 15))
                         .underline()
                         .foregroundColor(.gray)
-                }
-                
+                }       
             }
-            
         }
-        
     }
 }
 

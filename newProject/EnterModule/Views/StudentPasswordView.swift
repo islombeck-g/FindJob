@@ -63,7 +63,6 @@ struct StudentPasswordView: View {
                     .padding(.leading, 41)
                     .foregroundStyle(Color("darkGray"))
                 
-                
                 Button {
                     
                 } label: {
@@ -79,9 +78,7 @@ struct StudentPasswordView: View {
                             .foregroundColor(.white)
                             .fontWeight(.bold)
                     }
-                    
                 }
-                
             }
         }
         .frame(
