@@ -32,8 +32,14 @@ struct StudentPasswordView: View {
                         Spacer()
                             .frame(width: 25)
                         
-                        Image(systemName: self.viewModel.emailAgree == true ? "largecircle.fill.circle" : "circle")
-                            .clipShape(Circle())
+                        Button {
+                            self.viewModel.emailAgree.toggle()
+                        }label: {
+                            Image(systemName: self.viewModel.emailAgree == true ? "largecircle.fill.circle" : "circle")
+                                .clipShape(Circle())
+                                .foregroundStyle(.black)
+                        }
+                        
                         VStack(alignment: .leading){
 
                             Text("Я согласен(-а) на получение")
@@ -47,8 +53,14 @@ struct StudentPasswordView: View {
                         Spacer()
                             .frame(width: 25)
                         
-                        Image(systemName: self.viewModel.userAgreement == true ? "largecircle.fill.circle" : "circle")
-                            .clipShape(Circle())
+                        Button{
+                            self.viewModel.userAgreement.toggle()
+                        }label: {
+                            Image(systemName: self.viewModel.userAgreement == true ? "largecircle.fill.circle" : "circle")
+                                .clipShape(Circle())
+                                .foregroundStyle(.black)
+                        }
+                       
                         VStack(alignment: .leading) {
                             Text("Я согласен(-а) с ")
                             Text("пользовательским соглашением")
