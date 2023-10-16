@@ -26,6 +26,7 @@ final class RegistrationViewModel: ObservableObject {
                                           .init(title: "Казанский государственный медицинский университет"),
                                           .init(title: "Российский исламский институтка")]
     @Published var student:StudentIDData = StudentIDData(firstName: "", secondName: "", patronymicName: "", gender: .male, city: "", university: "", phoneNumber: "", image: "", email: "", password: "")
+    @Published var organization: OrganizationIDData = OrganizationIDData(name: "", adress: "", phoneNumber: "", city: "", activity: "", description: "", image: "", email: "", password: "")
     
     @Published var secondPassword:String = ""
     @Published var emailAgree: Bool = false
