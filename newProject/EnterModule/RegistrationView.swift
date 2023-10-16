@@ -6,7 +6,7 @@ struct RegistrationView: View {
     @Environment(\.dismiss) var dismiss
     
     @State private var doneChoseRole = false
-    
+
     var body: some View {
         NavigationStack {
             ZStack {
@@ -14,6 +14,7 @@ struct RegistrationView: View {
                     .ignoresSafeArea()
                 
                 VStack {
+                                    
                     Group {
                         
                         Button {
@@ -35,7 +36,7 @@ struct RegistrationView: View {
                         
                         Spacer()
                             .frame(height: 37.5)
-                        
+
                         Text("Регистрация")
                             .foregroundColor(.white)
                             .frame(maxWidth: .infinity, alignment: .leading)
@@ -52,17 +53,22 @@ struct RegistrationView: View {
                         ScrollView (.init()){
                             ZStack{
                                 
-                                    RoleChose(doneChoseRole: $doneChoseRole)
-                                        .environmentObject(viewModel)
-                                        .frame(maxWidth: .infinity, alignment: .center)
-                                        .frame(maxHeight: .infinity, alignment: .top)
-                                        .offset(
-                                            x: !doneChoseRole  ? 0 : -geometry.size.width)
-                                        .animation(.easeInOut, value: 1)
-//
-                                TabView{
-                                    ForEach(self.viewModel.StudentViews.indices, id: \.self){i in
+                                RoleChose(doneChoseRole: $doneChoseRole)
+                                    .environmentObject(viewModel)
+                                    .frame(maxWidth: .infinity, alignment: .center)
+                                    .frame(maxHeight: .infinity, alignment: .top)
+                                    .offset(
+                                        x: !doneChoseRole  ? 0 : -geometry.size.width)
+                                    .animation(.easeInOut, value: 1)
+                                //
+                                TabView(selection: $viewModel.selectedTab) {
+                                    
+                                    ForEach(self.viewModel.role == .student ? self.viewModel.StudentViews.indices : self.viewModel.CompanyViews.indices, id: \.self) { i in
+                                        
+                                        self.viewModel.role == .student ?
                                         self.viewModel.StudentViews[i]
+                                            .environmentObject(viewModel)
+                                        : self.viewModel.CompanyViews[i]
                                             .environmentObject(viewModel)
                                     }
                                     .frame(maxHeight: .infinity, alignment: .top)
@@ -75,6 +81,7 @@ struct RegistrationView: View {
                         }
                     }
                     Spacer()
+                
                 }
             }
         }

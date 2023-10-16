@@ -3,6 +3,7 @@ import SwiftUI
 struct CompanyFullNameView: View {
     
     @EnvironmentObject var viewModel:RegistrationViewModel
+    
     var body: some View {
         ZStack {
             RoundedRectangle(cornerRadius: 25)
@@ -29,7 +30,7 @@ struct CompanyFullNameView: View {
                     .foregroundStyle(Color("darkGray"))
                 
                 Button {
-                    //add next tabView
+                    self.viewModel.nextTabView()
                 } label: {
                     ZStack {
                         RoundedRectangle(cornerRadius: 10)

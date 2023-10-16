@@ -1,6 +1,6 @@
 import SwiftUI
 
-struct StudentPasswordView: View {
+struct PasswordView: View {
     
     @EnvironmentObject var viewModel:RegistrationViewModel
     
@@ -76,7 +76,7 @@ struct StudentPasswordView: View {
                     .foregroundStyle(Color("darkGray"))
                 
                 Button {
-                    
+                    self.viewModel.nextTabView()
                 } label: {
                     ZStack {
                         RoundedRectangle(cornerRadius: 10)
@@ -101,6 +101,6 @@ struct StudentPasswordView: View {
 }
 
 #Preview {
-    StudentPasswordView()
+    PasswordView()
         .environmentObject(RegistrationViewModel())
 }

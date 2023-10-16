@@ -57,7 +57,7 @@ struct CompanyPositionView: View {
                             .foregroundStyle(Color("darkGray"))
                         
                         Button {
-                            //add next tabView
+                            self.viewModel.nextTabView()
                         } label: {
                             ZStack {
                                 RoundedRectangle(cornerRadius: 10)

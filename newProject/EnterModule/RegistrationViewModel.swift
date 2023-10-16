@@ -4,14 +4,16 @@ import SwiftUI
 final class RegistrationViewModel: ObservableObject {
     
     @Published var role: RolesEnum = .student
+    @Published var selectedTab: Int = 0
     
     @Published var StudentViews: [AnyView] = [
         AnyView(StudentFullNameView()),
         AnyView(StudentPositionView()),
-        AnyView(StudentPasswordView())]
-    @Published var OrganizationViews: [AnyView] = [
+        AnyView(PasswordView())]
+    @Published var CompanyViews: [AnyView] = [
         AnyView(CompanyFullNameView()),
-        AnyView(CompanyPositionView())]
+        AnyView(CompanyPositionView()),
+        AnyView(PasswordView())]
     
     @Published var cities:[ChoseName] = [
         .init(title: "Казань"),
@@ -56,5 +58,13 @@ final class RegistrationViewModel: ObservableObject {
     @Published var chosenUniversity: String = "Учебное заведение*"
     
     @Published var chosenCompanyActivity: String = "Сфера деятельности*"
+  
+    func nextTabView(){
+        guard selectedTab != 3 else {
+            selectedTab = 1
+            return
+        }
+        self.selectedTab += 1
+    }
     
 }
