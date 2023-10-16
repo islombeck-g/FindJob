@@ -119,7 +119,7 @@ struct DropDownHeader: View {
             .padding(.all, 10)
         }
         .frame(width: 293, height: 50)
-        .foregroundStyle(Color(self.title == "Город*" || self.title == "Учебное заведение*" ? "darkGray": "black"))
+        .foregroundStyle(Color(self.title == "Город*" || self.title == "Учебное заведение*" || self.title == "Сфера деятельности*" ? "darkGray": "black"))
         .background(Color("lightGray"))
         .clipShape(RoundedRectangle(cornerRadius: 10.0))
     }
