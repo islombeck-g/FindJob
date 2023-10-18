@@ -67,4 +67,12 @@ final class RegistrationViewModel: ObservableObject {
         self.selectedTab += 1
     }
     
+    func checkData()-> Bool {
+        return true
+    }
+    
+    func sendData(){
+        
+    }
+    
 }
