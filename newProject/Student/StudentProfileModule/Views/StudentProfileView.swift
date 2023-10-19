@@ -2,11 +2,11 @@ import SwiftUI
 
 struct StudentProfileView: View {
     
-    let aboutMe:String
-    let birthDate: String
-    let institute: String
-    let direction: String
-    let university: String
+    @Binding var aboutMe:String
+    @Binding var birthDate: String
+    @Binding var institute: String
+    @Binding var direction: String
+    @Binding var university: String
     
     var body: some View {
         VStack(alignment: .leading, spacing: 10) {
@@ -69,23 +69,20 @@ struct StudentProfileView: View {
                     .fontWeight(.bold)
                 
                 Text(aboutMe)
-//                    .lineLimit(1)
                     .font(.system(size: 17))
             }
-            
-            
-            
-            
+//            .navigationBarBackButtonHidden(true)
         }
         .padding(.horizontal, 16)
+        .navigationBarBackButtonHidden(true)
     }
 }
 
 #Preview {
     StudentProfileView(
-        aboutMe: "Я очень интреесный человек, учусь, не работаю",
-        birthDate: "10.02.2000",
-        institute: "Институт вычислительной математики и информационных техноолгий",
-        direction: "Фундаментальная информатики и информационные технологии",
-        university: "Московский Государственный Университет")
+        aboutMe: .constant("Я очень интреесный человек, учусь, не работаю"),
+        birthDate: .constant("10.02.2000"),
+        institute: .constant("Институт вычислительной математики и информационных техноолгий"),
+        direction: .constant("Фундаментальная информатики и информационные технологии"),
+university: .constant("Московский Государственный Университет"))
 }

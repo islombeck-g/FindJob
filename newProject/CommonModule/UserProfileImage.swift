@@ -2,11 +2,12 @@ import SwiftUI
 
 struct UserProfileImage: View {
     
-    let name:String
-    let secondName:String
-    let patronymicName:String
-    let image:String
-    let phoneNumber:String
+    @Binding var name:String
+    @Binding var secondName:String
+    @Binding var patronymicName:String
+    @Binding var image:String
+    @Binding var phoneNumber:String
+    
     var body: some View {
         HStack{
             Group {
@@ -16,7 +17,6 @@ struct UserProfileImage: View {
                 }else {
                     Image("\(image)")
                         .resizable()
-                        
                         .cornerRadius(100)
                         
                 }
@@ -38,6 +38,6 @@ struct UserProfileImage: View {
     }
 }
 
-#Preview {
-    UserProfileImage(name: "SomeName", secondName: "someSecondName", patronymicName: "somePatronymicName", image: "userImage", phoneNumber: "+7 (888) 888-88-88")
-}
+//#Preview {
+//    UserProfileImage(name: .constant("SomeName"), secondName: .constant("someSecondName"), patronymicName: .constant"somePatronymicName"), image: .constant("userImage"), phoneNumber: .constant("+7 (888) 888-88-88"))
+//}

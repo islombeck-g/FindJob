@@ -44,6 +44,7 @@ struct LoginView: View {
                         Spacer()
                             .frame(height: 24)
                     }
+                    .padding(.leading, 8)
                     
                     LoginRoundedRectangleView(
                         loginText: self.$viewModel.loginText,

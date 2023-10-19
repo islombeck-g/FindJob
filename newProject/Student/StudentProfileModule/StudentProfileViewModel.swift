@@ -18,4 +18,36 @@ final class StudentProfileViewModel: ObservableObject {
         institute: "Институт вычислительной математики и информационных техноолгий",
         direction: "Фундаментальная информатики и информационные технологии")
     
+    @Published var newAboutMe: String = ""
+    @Published var newBirthday: String = ""
+    @Published var newInstitute: String = ""
+    @Published var newDirection: String = ""
+    @Published var newUniversity: String = ""
+
+    
+    init() {
+        
+        
+        
+        newBirthday = self.student.birthDate ?? ""
+        newAboutMe = self.student.aboutMe ?? ""
+        newInstitute = self.student.institute ?? ""
+        newDirection = self.student.direction ?? ""
+        newUniversity = self.student.university
+        
+        self.newUniversity = self.student.university
+    }
+    
+    func updateAfterChangeInEditView(){
+        
+        print(newBirthday, newAboutMe, newInstitute, newDirection, newUniversity)
+        self.student.birthDate = newBirthday
+        self.student.aboutMe = newAboutMe
+        self.student.institute = newInstitute
+        self.student.direction = newDirection
+        self.student.university = newUniversity
+        
+        print(self.student)
+    }
 }
+

@@ -30,8 +30,10 @@ struct StudentProfileMainView: View {
                         Spacer()
                         
                         Menu {
-                            Button {
-                                
+                            NavigationLink
+                            {
+                                EditStudentAccount()
+                                    .environmentObject(self.viewModel)
                             }label:{
                                 Text("Редактировать профиль")
                             }
@@ -56,7 +58,12 @@ struct StudentProfileMainView: View {
                     
                     ScrollView {
                         
-                        UserProfileImage(name: self.viewModel.student.firstName, secondName: self.viewModel.student.secondName, patronymicName: self.viewModel.student.patronymicName, image: self.viewModel.student.image, phoneNumber: self.viewModel.student.phoneNumber)
+                        UserProfileImage(
+                            name: self.$viewModel.student.firstName,
+                            secondName: self.$viewModel.student.secondName,
+                            patronymicName: self.$viewModel.student.patronymicName,
+                            image: self.$viewModel.student.image,
+                            phoneNumber: self.$viewModel.student.phoneNumber)
                             .padding(.vertical, 16)
                         
                         NavigationLink{
@@ -77,11 +84,11 @@ struct StudentProfileMainView: View {
                         Spacer()
                             .frame(height: 36)
                         
-                        StudentProfileView(aboutMe: viewModel.student.aboutMe ?? "Не заполненно",
-                                           birthDate: self.viewModel.student.birthDate ?? "Не заполненно",
-                                           institute: self.viewModel.student.institute ?? "Не заполненно",
-                                           direction: self.viewModel.student.direction ?? "Не заполненно",
-                                           university: self.viewModel.student.direction ?? "Не заполненно")
+                        StudentProfileView(aboutMe: self.$viewModel.newAboutMe ,
+                                           birthDate: self.$viewModel.newBirthday,
+                                           institute: self.$viewModel.newInstitute,
+                                           direction: self.$viewModel.newDirection ,
+                                           university: self.$viewModel.newUniversity)
                         
                         Spacer()
                             .frame(height: 30)
@@ -142,20 +149,12 @@ struct StudentProfileMainView: View {
                                 Text("Удалить")
                             }
                         } message: {
-                            Text("Восстановление аккаунта невозможно после удаления.")
-                            
+                            Text("Восстановление аккаунта невозможно после удаления.")   
                         }
-
-                        
-                        
                     }
-                    
-                    
                 }
-                
-                
-                
             }
+            .navigationBarBackButtonHidden(true)
         }
         
     }
