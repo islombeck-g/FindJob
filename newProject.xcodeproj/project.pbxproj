@@ -29,6 +29,7 @@
 		639E9EBD2ACF38B30069DBF3 /* EnterMainView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 639E9EBC2ACF38B30069DBF3 /* EnterMainView.swift */; };
 		63C432C62AD711340074F3C4 /* DropDownMenuView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 63C432C52AD711340074F3C4 /* DropDownMenuView.swift */; };
 		63E714782AE0445A00374E3C /* StudentProfileMainView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 63E714772AE0445A00374E3C /* StudentProfileMainView.swift */; };
+		63E7147A2AE044E600374E3C /* StudentProfileViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 63E714792AE044E600374E3C /* StudentProfileViewModel.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -56,6 +57,7 @@
 		639E9EBC2ACF38B30069DBF3 /* EnterMainView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EnterMainView.swift; sourceTree = "<group>"; };
 		63C432C52AD711340074F3C4 /* DropDownMenuView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DropDownMenuView.swift; sourceTree = "<group>"; };
 		63E714772AE0445A00374E3C /* StudentProfileMainView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StudentProfileMainView.swift; sourceTree = "<group>"; };
+		63E714792AE044E600374E3C /* StudentProfileViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StudentProfileViewModel.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -159,6 +161,7 @@
 			isa = PBXGroup;
 			children = (
 				63E714772AE0445A00374E3C /* StudentProfileMainView.swift */,
+				63E714792AE044E600374E3C /* StudentProfileViewModel.swift */,
 			);
 			path = StudentProfileModule;
 			sourceTree = "<group>";
@@ -234,6 +237,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				6310DC702AD2C40A00673527 /* LogInViewModel.swift in Sources */,
+				63E7147A2AE044E600374E3C /* StudentProfileViewModel.swift in Sources */,
 				6355AD5E2ADD5E910043753B /* CompanyFullNameView.swift in Sources */,
 				6355AD612ADD64C60043753B /* CompanyPositionView.swift in Sources */,
 				63925FD52AD43C48002AF8E9 /* RegistrationViewModel.swift in Sources */,
