@@ -2,6 +2,7 @@ import SwiftUI
 
 struct StudentProfileMainView: View {
     
+    @StateObject private var viewModel:StudentProfileViewModel = StudentProfileViewModel()
     @State private var isFavorite = false
     
     var body: some View {
@@ -46,7 +47,17 @@ struct StudentProfileMainView: View {
                         }
                     }
                     .font(.system(size: 18))
-                    Text("some")
+                    UserProfileImage(name: self.viewModel.student.firstName, secondName: self.viewModel.student.secondName, patronymicName: self.viewModel.student.patronymicName, image: self.viewModel.student.image, phoneNumber: self.viewModel.student.phoneNumber)
+                        .padding(.vertical, 16)
+                    
+                    NavigationLink{}label: {
+                        Text("Мое резюме")
+                            .frame(maxWidth: .infinity)
+                            .frame(height: 60)
+                            .foregroundStyle(.white)
+                            .background(.blue)
+                        
+                    }
                     Spacer()
                 }
             }

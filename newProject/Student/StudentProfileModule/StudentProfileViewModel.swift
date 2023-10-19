@@ -9,8 +9,8 @@ final class StudentProfileViewModel: ObservableObject {
         gender: .male, 
         city: "Москва",
         university: "Московский Государственный Университет", 
-        phoneNumber: "+78888888888",
-        image: "",
+        phoneNumber: "+7 (888) 888-88-88",
+        image: "userImage",
         email: "some@gmail.com",
         password: "what???")
 }

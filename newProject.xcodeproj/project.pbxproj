@@ -30,6 +30,7 @@
 		63C432C62AD711340074F3C4 /* DropDownMenuView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 63C432C52AD711340074F3C4 /* DropDownMenuView.swift */; };
 		63E714782AE0445A00374E3C /* StudentProfileMainView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 63E714772AE0445A00374E3C /* StudentProfileMainView.swift */; };
 		63E7147A2AE044E600374E3C /* StudentProfileViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 63E714792AE044E600374E3C /* StudentProfileViewModel.swift */; };
+		63E7147D2AE100CF00374E3C /* UserProfileImage.swift in Sources */ = {isa = PBXBuildFile; fileRef = 63E7147C2AE100CF00374E3C /* UserProfileImage.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -58,6 +59,7 @@
 		63C432C52AD711340074F3C4 /* DropDownMenuView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DropDownMenuView.swift; sourceTree = "<group>"; };
 		63E714772AE0445A00374E3C /* StudentProfileMainView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StudentProfileMainView.swift; sourceTree = "<group>"; };
 		63E714792AE044E600374E3C /* StudentProfileViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StudentProfileViewModel.swift; sourceTree = "<group>"; };
+		63E7147C2AE100CF00374E3C /* UserProfileImage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserProfileImage.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -92,6 +94,7 @@
 			children = (
 				638B31692ADAC1F500688D9B /* MainTabView.swift */,
 				6355AD632ADDA8760043753B /* aErrorClass.swift */,
+				63E7147C2AE100CF00374E3C /* UserProfileImage.swift */,
 			);
 			path = CommonModule;
 			sourceTree = "<group>";
@@ -162,8 +165,16 @@
 			children = (
 				63E714772AE0445A00374E3C /* StudentProfileMainView.swift */,
 				63E714792AE044E600374E3C /* StudentProfileViewModel.swift */,
+				63E7147B2AE1006B00374E3C /* Views */,
 			);
 			path = StudentProfileModule;
+			sourceTree = "<group>";
+		};
+		63E7147B2AE1006B00374E3C /* Views */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Views;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -242,6 +253,7 @@
 				6355AD612ADD64C60043753B /* CompanyPositionView.swift in Sources */,
 				63925FD52AD43C48002AF8E9 /* RegistrationViewModel.swift in Sources */,
 				63925FD72AD47085002AF8E9 /* EnterModel.swift in Sources */,
+				63E7147D2AE100CF00374E3C /* UserProfileImage.swift in Sources */,
 				638B316A2ADAC1F500688D9B /* MainTabView.swift in Sources */,
 				639E9EAF2ACF36D20069DBF3 /* ContentView.swift in Sources */,
 				63E714782AE0445A00374E3C /* StudentProfileMainView.swift in Sources */,
