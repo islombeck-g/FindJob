@@ -21,6 +21,10 @@ struct StudentIDData {
     var image:String
     var email:String
     var password:String
+    var birthDate:String?
+    var aboutMe:String?
+    var institute:String?
+    var direction:String?
 }
 
 struct OrganizationIDData {

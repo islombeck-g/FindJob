@@ -31,6 +31,7 @@
 		63E714782AE0445A00374E3C /* StudentProfileMainView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 63E714772AE0445A00374E3C /* StudentProfileMainView.swift */; };
 		63E7147A2AE044E600374E3C /* StudentProfileViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 63E714792AE044E600374E3C /* StudentProfileViewModel.swift */; };
 		63E7147D2AE100CF00374E3C /* UserProfileImage.swift in Sources */ = {isa = PBXBuildFile; fileRef = 63E7147C2AE100CF00374E3C /* UserProfileImage.swift */; };
+		63E7147F2AE115F600374E3C /* StudentProfileView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 63E7147E2AE115F500374E3C /* StudentProfileView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -60,6 +61,7 @@
 		63E714772AE0445A00374E3C /* StudentProfileMainView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StudentProfileMainView.swift; sourceTree = "<group>"; };
 		63E714792AE044E600374E3C /* StudentProfileViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StudentProfileViewModel.swift; sourceTree = "<group>"; };
 		63E7147C2AE100CF00374E3C /* UserProfileImage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserProfileImage.swift; sourceTree = "<group>"; };
+		63E7147E2AE115F500374E3C /* StudentProfileView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StudentProfileView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -173,6 +175,7 @@
 		63E7147B2AE1006B00374E3C /* Views */ = {
 			isa = PBXGroup;
 			children = (
+				63E7147E2AE115F500374E3C /* StudentProfileView.swift */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -265,6 +268,7 @@
 				6311618E2AD475CF00F41E07 /* StudentPositionView.swift in Sources */,
 				63925FD32AD4360C002AF8E9 /* RoleChose.swift in Sources */,
 				639E9EBD2ACF38B30069DBF3 /* EnterMainView.swift in Sources */,
+				63E7147F2AE115F600374E3C /* StudentProfileView.swift in Sources */,
 				6355AD642ADDA8760043753B /* aErrorClass.swift in Sources */,
 				63C432C62AD711340074F3C4 /* DropDownMenuView.swift in Sources */,
 				6331BCFD2ACF459D00C80B62 /* RegistrationView.swift in Sources */,
