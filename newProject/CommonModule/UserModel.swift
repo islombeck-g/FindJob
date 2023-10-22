@@ -29,6 +29,4 @@ struct OrganizationIDData {
     var password:String
     var dateOfCreation:String?
     var INN: String?
-    var aboutMe:String?
-    
 }
