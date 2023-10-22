@@ -26,16 +26,13 @@ final class StudentProfileViewModel: ObservableObject {
 
     
     init() {
-        
-        
-        
+
         newBirthday = self.student.birthDate ?? ""
         newAboutMe = self.student.aboutMe ?? ""
         newInstitute = self.student.institute ?? ""
         newDirection = self.student.direction ?? ""
         newUniversity = self.student.university
         
-        self.newUniversity = self.student.university
     }
     
     func updateAfterChangeInEditView(){

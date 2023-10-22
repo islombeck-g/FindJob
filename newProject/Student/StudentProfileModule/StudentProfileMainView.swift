@@ -84,11 +84,16 @@ struct StudentProfileMainView: View {
                         Spacer()
                             .frame(height: 36)
                         
-                        StudentProfileView(aboutMe: self.$viewModel.newAboutMe ,
-                                           birthDate: self.$viewModel.newBirthday,
-                                           institute: self.$viewModel.newInstitute,
-                                           direction: self.$viewModel.newDirection ,
-                                           university: self.$viewModel.newUniversity)
+                        StudentProfileView(
+                            aboutMe: self.$viewModel.newAboutMe ,
+                                           birthDate: 
+                                self.$viewModel.newBirthday,
+                                           institute:
+                                self.$viewModel.newInstitute,
+                                           direction: 
+                                self.$viewModel.newDirection ,
+                                           university: 
+                                self.$viewModel.newUniversity)
                         
                         Spacer()
                             .frame(height: 30)

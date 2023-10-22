@@ -70,10 +70,12 @@ struct CompanyProfileView: View {
                     .font(.system(size: 20))
                     .fontWeight(.bold)
                 
-                Text(aboutMe)
+                Text(description)
                     .font(.system(size: 17))
             }
         }
+        .padding(.horizontal, 16)
+        .navigationBarBackButtonHidden(true)
     }
 }
 
