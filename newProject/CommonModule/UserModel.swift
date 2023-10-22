@@ -27,4 +27,8 @@ struct OrganizationIDData {
     var image:String
     var email:String
     var password:String
+    var dateOfCreation:String?
+    var INN: String?
+    var aboutMe:String?
+    
 }

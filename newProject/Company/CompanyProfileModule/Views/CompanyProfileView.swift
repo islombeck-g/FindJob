@@ -6,6 +6,7 @@ struct CompanyProfileView: View {
     @Binding var dateOfCreation:String
     @Binding var INN:String
     @Binding var activity:String
+    @Binding var aboutMe:String
     
     var body: some View {
         VStack(alignment: .leading, spacing: 10) {
@@ -69,7 +70,7 @@ struct CompanyProfileView: View {
                     .font(.system(size: 20))
                     .fontWeight(.bold)
                 
-                Text(dateOfCreation)
+                Text(aboutMe)
                     .font(.system(size: 17))
             }
         }
@@ -77,5 +78,5 @@ struct CompanyProfileView: View {
 }
 
 #Preview {
-    CompanyProfileView(name: .constant("ООО “Газпром”"), dateOfCreation: .constant("10.02.2000"), INN: .constant("111111111111111111111111"), activity: .constant("Информационные технологии, системная интеграция, интеренет"))
+    CompanyProfileView(name: .constant("ООО “Газпром”"), dateOfCreation: .constant("10.02.2000"), INN: .constant("111111111111111111111111"), activity: .constant("Информационные технологии, системная интеграция, интеренет"), aboutMe: .constant("очень хорошая компания"))
 }
