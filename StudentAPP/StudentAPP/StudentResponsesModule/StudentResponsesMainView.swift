@@ -1,10 +1,3 @@
-//
-//  StudentResponsesMainView.swift
-//  StudentAPP
-//
-//  Created by Islombek Gofurov on 23.10.2023.
-//
-
 import SwiftUI
 
 struct StudentResponsesMainView: View {
