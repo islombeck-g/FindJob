@@ -26,6 +26,13 @@
 		6377D39E2AE6769C0090714E /* StudentMainView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6377D39D2AE6769C0090714E /* StudentMainView.swift */; };
 		6377D3A02AE676AF0090714E /* StudentResponsesMainView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6377D39F2AE676AF0090714E /* StudentResponsesMainView.swift */; };
 		6377D3A22AE676BA0090714E /* StudentProfileMainView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6377D3A12AE676BA0090714E /* StudentProfileMainView.swift */; };
+		6377D3A42AE677D30090714E /* StudentProfileViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6377D3A32AE677D30090714E /* StudentProfileViewModel.swift */; };
+		6377D3A72AE678F20090714E /* EditAccount.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6377D3A62AE678F20090714E /* EditAccount.swift */; };
+		6377D3A92AE679500090714E /* ProfileImage.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6377D3A82AE679500090714E /* ProfileImage.swift */; };
+		6377D3AB2AE679BC0090714E /* EditProfileViewItems.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6377D3AA2AE679BC0090714E /* EditProfileViewItems.swift */; };
+		6377D3AD2AE679F00090714E /* CustomTextFieldWithSize.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6377D3AC2AE679F00090714E /* CustomTextFieldWithSize.swift */; };
+		6377D3AF2AE67A740090714E /* ProfileItemsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6377D3AE2AE67A740090714E /* ProfileItemsView.swift */; };
+		6377D3B12AE67B460090714E /* ProfileEditCenterImage.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6377D3B02AE67B460090714E /* ProfileEditCenterImage.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -49,6 +56,13 @@
 		6377D39D2AE6769C0090714E /* StudentMainView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StudentMainView.swift; sourceTree = "<group>"; };
 		6377D39F2AE676AF0090714E /* StudentResponsesMainView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StudentResponsesMainView.swift; sourceTree = "<group>"; };
 		6377D3A12AE676BA0090714E /* StudentProfileMainView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StudentProfileMainView.swift; sourceTree = "<group>"; };
+		6377D3A32AE677D30090714E /* StudentProfileViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StudentProfileViewModel.swift; sourceTree = "<group>"; };
+		6377D3A62AE678F20090714E /* EditAccount.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EditAccount.swift; sourceTree = "<group>"; };
+		6377D3A82AE679500090714E /* ProfileImage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileImage.swift; sourceTree = "<group>"; };
+		6377D3AA2AE679BC0090714E /* EditProfileViewItems.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EditProfileViewItems.swift; sourceTree = "<group>"; };
+		6377D3AC2AE679F00090714E /* CustomTextFieldWithSize.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomTextFieldWithSize.swift; sourceTree = "<group>"; };
+		6377D3AE2AE67A740090714E /* ProfileItemsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileItemsView.swift; sourceTree = "<group>"; };
+		6377D3B02AE67B460090714E /* ProfileEditCenterImage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileEditCenterImage.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -83,9 +97,9 @@
 			children = (
 				6377D3572AE66D870090714E /* StudentAPPApp.swift */,
 				6377D3592AE66D870090714E /* ContentView.swift */,
-				6377D3942AE673A50090714E /* StudentProfileModule */,
-				6377D3932AE673980090714E /* StudentResponsesModule */,
 				6377D3922AE673850090714E /* StudentMainModule */,
+				6377D3932AE673980090714E /* StudentResponsesModule */,
+				6377D3942AE673A50090714E /* StudentProfileModule */,
 				6377D3802AE66E840090714E /* CommonModule */,
 				6377D37F2AE66E6E0090714E /* EnterModule */,
 				6377D35B2AE66D880090714E /* Assets.xcassets */,
@@ -117,6 +131,7 @@
 			isa = PBXGroup;
 			children = (
 				6377D39B2AE6766F0090714E /* TabViewOfAPP.swift */,
+				6377D3AC2AE679F00090714E /* CustomTextFieldWithSize.swift */,
 			);
 			path = CommonModule;
 			sourceTree = "<group>";
@@ -156,8 +171,22 @@
 			isa = PBXGroup;
 			children = (
 				6377D3A12AE676BA0090714E /* StudentProfileMainView.swift */,
+				6377D3A32AE677D30090714E /* StudentProfileViewModel.swift */,
+				6377D3A52AE678BC0090714E /* Views */,
 			);
 			path = StudentProfileModule;
+			sourceTree = "<group>";
+		};
+		6377D3A52AE678BC0090714E /* Views */ = {
+			isa = PBXGroup;
+			children = (
+				6377D3A62AE678F20090714E /* EditAccount.swift */,
+				6377D3AE2AE67A740090714E /* ProfileItemsView.swift */,
+				6377D3A82AE679500090714E /* ProfileImage.swift */,
+				6377D3AA2AE679BC0090714E /* EditProfileViewItems.swift */,
+				6377D3B02AE67B460090714E /* ProfileEditCenterImage.swift */,
+			);
+			path = Views;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -230,7 +259,9 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				6377D3AF2AE67A740090714E /* ProfileItemsView.swift in Sources */,
 				6377D38F2AE670150090714E /* EnterModel.swift in Sources */,
+				6377D3B12AE67B460090714E /* ProfileEditCenterImage.swift in Sources */,
 				6377D39E2AE6769C0090714E /* StudentMainView.swift in Sources */,
 				6377D3A02AE676AF0090714E /* StudentResponsesMainView.swift in Sources */,
 				6377D35A2AE66D870090714E /* ContentView.swift in Sources */,
@@ -240,12 +271,17 @@
 				6377D3582AE66D870090714E /* StudentAPPApp.swift in Sources */,
 				6377D38D2AE66FB20090714E /* CustomTextFieldView.swift in Sources */,
 				6377D39C2AE6766F0090714E /* TabViewOfAPP.swift in Sources */,
+				6377D3A42AE677D30090714E /* StudentProfileViewModel.swift in Sources */,
 				6377D3A22AE676BA0090714E /* StudentProfileMainView.swift in Sources */,
 				6377D3852AE66EF20090714E /* LogInView.swift in Sources */,
+				6377D3A92AE679500090714E /* ProfileImage.swift in Sources */,
+				6377D3AB2AE679BC0090714E /* EditProfileViewItems.swift in Sources */,
 				6377D3822AE66EB70090714E /* EnterMainView.swift in Sources */,
 				6377D3872AE66F040090714E /* RegistrationView.swift in Sources */,
 				6377D39A2AE673F80090714E /* EnterPasswordView.swift in Sources */,
 				6377D3962AE673CA0090714E /* EnterFullNameView.swift in Sources */,
+				6377D3AD2AE679F00090714E /* CustomTextFieldWithSize.swift in Sources */,
+				6377D3A72AE678F20090714E /* EditAccount.swift in Sources */,
 				6377D38B2AE66F970090714E /* LoginRoundedRectangleView.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

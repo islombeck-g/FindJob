@@ -29,7 +29,7 @@ struct LoginRoundedRectangleView: View {
                     .frame(height: 20)
                 
                 NavigationLink {
-                   //enter
+                    TabViewOfAPP()
                 } label: {
                     ZStack {
                         RoundedRectangle(cornerRadius: 8)
