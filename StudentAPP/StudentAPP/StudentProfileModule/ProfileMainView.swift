@@ -1,8 +1,8 @@
 import SwiftUI
 
-struct StudentProfileMainView: View {
+struct ProfileMainView: View {
     
-    @StateObject private var viewModel:StudentProfileViewModel = StudentProfileViewModel()
+    @StateObject private var viewModel:ProfileViewModel = ProfileViewModel()
     
     @State private var logOut_isAllertShow:Bool = false
     @State private var deleteAcount_isAllertShow:Bool = false
@@ -30,8 +30,7 @@ struct StudentProfileMainView: View {
                         Spacer()
                         
                         Menu {
-                            NavigationLink
-                            {
+                            NavigationLink{
                                 EditAccount()
                                     .environmentObject(self.viewModel)
                             }label:{
@@ -166,5 +165,5 @@ struct StudentProfileMainView: View {
 }
 
 #Preview {
-    StudentProfileMainView()
+    ProfileMainView()
 }

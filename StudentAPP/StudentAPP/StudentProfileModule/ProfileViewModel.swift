@@ -1,6 +1,6 @@
 import Foundation
 
-final class StudentProfileViewModel:ObservableObject {
+final class ProfileViewModel:ObservableObject {
     
     @Published var student:StudentData = StudentData(
         firstName: "SomeName",
@@ -24,7 +24,24 @@ final class StudentProfileViewModel:ObservableObject {
     @Published var newDirection: String = ""
     @Published var newUniversity: String = ""
 
-    
+    @Published var cvs:[CvData] = [CvData]()
+    @Published var cv:CvData = CvData(
+        firstName: "some name",
+        secondName: "",
+        patronymicName: "",
+        birthDate: "",
+        birthCountry: "",
+        phoneNumber: "",
+        university: "",
+        institute: "",
+        direction: "",
+        anotherEducation: "",
+        certificates: "",
+        skills: "",
+        money: "",
+        workExperience: "",
+        employmentType: "",
+        aboutMe: "")
     init() {
 
         newBirthday = self.student.birthDate ?? ""

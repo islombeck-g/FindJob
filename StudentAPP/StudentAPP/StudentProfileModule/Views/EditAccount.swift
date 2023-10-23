@@ -2,7 +2,7 @@ import SwiftUI
 
 struct EditAccount: View {
    
-    @EnvironmentObject var viewModel: StudentProfileViewModel
+    @EnvironmentObject var viewModel: ProfileViewModel
     @Environment(\.dismiss) var dismiss
     
     var body: some View {
@@ -44,5 +44,5 @@ struct EditAccount: View {
 }
 #Preview {
     EditAccount()
-        .environmentObject(StudentProfileViewModel())
+        .environmentObject(ProfileViewModel())
 }

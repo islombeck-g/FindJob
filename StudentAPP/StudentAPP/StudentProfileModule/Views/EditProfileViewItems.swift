@@ -2,7 +2,7 @@ import SwiftUI
 
 struct EditProfileViewItems: View {
    
-    @EnvironmentObject var viewModel: StudentProfileViewModel
+    @EnvironmentObject var viewModel: ProfileViewModel
     
     var body: some View {
         VStack(alignment: .leading, spacing: 10) {
@@ -67,5 +67,5 @@ struct EditProfileViewItems: View {
 
 #Preview {
     EditProfileViewItems()
-        .environmentObject(StudentProfileViewModel())
+        .environmentObject(ProfileViewModel())
 }

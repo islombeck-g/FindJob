@@ -15,7 +15,7 @@ struct TabViewOfAPP: View {
                         Label("Отклики", systemImage: "hand.thumbsup")
                     }
                 
-                StudentProfileMainView()
+                ProfileMainView()
                     .tabItem {
                         Label("Профиль", systemImage: "person")
                     }
@@ -26,6 +26,7 @@ struct TabViewOfAPP: View {
         
     }
 }
+
 #Preview {
     TabViewOfAPP()
 }
