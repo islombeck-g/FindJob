@@ -66,7 +66,8 @@ struct ProfileMainView: View {
                             .padding(.vertical, 16)
                         
                         NavigationLink{
-                            
+                            CvMainView()
+                                .environmentObject(self.viewModel)
                         }label: {
                             Group {
                                 Text("Мое резюме")
@@ -160,6 +161,8 @@ struct ProfileMainView: View {
             }
             .navigationBarBackButtonHidden(true)
         }
+        
+        
         
     }
 }

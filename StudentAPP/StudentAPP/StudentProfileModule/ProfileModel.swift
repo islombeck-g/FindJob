@@ -1,6 +1,8 @@
 import Foundation
 
-struct CvData{
+struct CvData:Hashable{
+    var age:Int
+    var position:String
     var firstName:String
     var secondName:String
     var patronymicName:String

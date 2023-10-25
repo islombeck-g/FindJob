@@ -3,6 +3,8 @@ import SwiftUI
 struct CvFullInfoView: View {
     
     @EnvironmentObject var viewModel: ProfileViewModel
+    @Environment (\.dismiss) var dismiss
+    @Binding var cv:CvData
     
     @State private var logOut_isAllertShow:Bool = false
     @State private var deleteCV_isAllertShow:Bool = false
@@ -15,23 +17,25 @@ struct CvFullInfoView: View {
                 
                 VStack {
                     HStack {
-                        Button{
-                            //don't understand why it is here
-                        }label: {
-                            Image(systemName: "bell")
-                                .padding(5)
+                        Button {
+                            self.dismiss()
+                        } label: {
+                                Image(systemName: "chevron.left")
+                            .font(.system(size: 19))
+                            .fontWeight(.regular)
                         }
-                        .padding(.leading, 7)
+                        .padding(.leading, 20)
                         
                         Spacer()
                         
-                        Text("Профиль")
+                        Text("Резюме")
+                        
                         
                         Spacer()
                         
                         Menu {
                             NavigationLink{
-                                
+                               
                             }label:{
                                 Text("Редактировать резюме")
                             }
@@ -48,7 +52,7 @@ struct CvFullInfoView: View {
                                 .rotationEffect(.degrees(90))
                                 .frame(width: 20, height: 30)
                                 .padding(4)
-                                .padding(.trailing, 6)
+                                .padding(.trailing, 13)
                         }
                     }
                     .font(.system(size: 18))
@@ -104,6 +108,24 @@ struct CvFullInfoView: View {
 
 
 #Preview {
-    CvFullInfoView()
+    CvFullInfoView(cv: .constant(CvData(
+        age: 20,
+        position: "IOS - developer",
+        firstName: "Руслан",
+        secondName: "Хамдамов",
+        patronymicName: "Арсланович",
+        birthDate: "25.12.2000",
+        birthCountry: "Чехия",
+        phoneNumber: "+998(97)231-43-21",
+        university: "Казанский (Приволжский) Федеральный университет",
+        institute: "Институт вычислительной математики и информационных технологий",
+        direction: "Фундаментальная математика и информационные технологии",
+        anotherEducation: "-",
+        certificates: "IELTS 10",
+        skills: "Swift, SwiftUI, algorithms, LaTex, cooking",
+        money: "от 100 000 до 300 000 руб",
+        workExperience: "Лаборатория КФУ",
+        employmentType: "Полная занятость",
+        aboutMe: "Очень хороший человек")))
         .environmentObject(ProfileViewModel())
 }
