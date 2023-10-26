@@ -37,8 +37,7 @@ final class EnterViewModel:ObservableObject {
         .init(title: "Казанский государственный медицинский университет"),
         .init(title: "Российский исламский институтка")]
     
-    @Published var student:StudentData = StudentData(firstName: "", secondName: "", patronymicName: "", gender: .male, city: "", university: "", phoneNumber: "", image: "", email: "", password: "")
-
+    @Published var student:StudentData = StudentData(firstName: "", secondName: "", patronymicName: "", gender: .male, city: "", university: "", phoneNumber: "", image: "", email: "", password: "", birthDate: "", aboutMe: "", institute: "", direction: "")
     
     @Published var secondPassword:String = ""
     @Published var emailAgree: Bool = false

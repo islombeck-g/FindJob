@@ -36,7 +36,7 @@ final class ProfileViewModel:ObservableObject {
     
     init(userStateViewModel:UserStateViewModel) {
         self.userStateViewModel = userStateViewModel
-        self.student = userStateViewModel.user
+        self.student = userStateViewModel.getUserData()
     }
     
     func logOut(){

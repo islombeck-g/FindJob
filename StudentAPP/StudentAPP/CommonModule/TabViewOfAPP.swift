@@ -5,15 +5,15 @@ struct TabViewOfAPP: View {
     @StateObject var userStateViewModel:UserStateViewModel
     
     var body: some View {
-        NavigationStack {
+//        NavigationStack {
             TabView{
                 
-                StudentMainView()
+                MainView()
                     .tabItem {
                         Label("Главная", systemImage: "doc.text.magnifyingglass")
                     }
                 
-                StudentResponsesMainView()
+                ResponsesMainView()
                     .tabItem {
                         Label("Отклики", systemImage: "hand.thumbsup")
                     }
@@ -24,11 +24,12 @@ struct TabViewOfAPP: View {
                     }
                    
             }
+            .background(.white)
             .navigationBarBackButtonHidden(true)
         }
         
     }
-}
+//}
 
 #Preview {
     TabViewOfAPP(userStateViewModel: UserStateViewModel())

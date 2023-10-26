@@ -1,11 +1,11 @@
 import SwiftUI
 
-struct StudentResponsesMainView: View {
+struct ResponsesMainView: View {
     var body: some View {
         Text(/*@START_MENU_TOKEN@*/"Hello, World!"/*@END_MENU_TOKEN@*/)
     }
 }
 
 #Preview {
-    StudentResponsesMainView()
+    ResponsesMainView()
 }

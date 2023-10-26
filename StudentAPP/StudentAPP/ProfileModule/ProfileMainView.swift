@@ -89,17 +89,19 @@ struct ProfileMainView: View {
                         Spacer()
                             .frame(height: 36)
                         
-                        ProfileItemsView(
-                            aboutMe: self.$viewModel.newAboutMe ,
-                                           birthDate:
-                                self.$viewModel.newBirthday,
-                                           institute:
-                                self.$viewModel.newInstitute,
-                                           direction:
-                                self.$viewModel.newDirection ,
-                                           university:
-                                self.$viewModel.newUniversity)
+//                        ProfileItemsView(
+//                            aboutMe: self.$viewModel.newAboutMe ,
+//                                           birthDate:
+//                                self.$viewModel.newBirthday,
+//                                           institute:
+//                                self.$viewModel.newInstitute,
+//                                           direction:
+//                                self.$viewModel.newDirection ,
+//                                           university:
+//                                self.$viewModel.newUniversity)
+                        ProfileItemsView(aboutMe: self.$viewModel.student.aboutMe, birthDate: self.$viewModel.student.birthDate, institute: self.$viewModel.student.institute, direction: self.$viewModel.student.direction, university: self.$viewModel.student.university)
                         
+                    
                         Spacer()
                             .frame(height: 30)
                         
