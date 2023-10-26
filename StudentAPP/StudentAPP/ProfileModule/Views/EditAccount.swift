@@ -10,7 +10,6 @@ struct EditAccount: View {
             
             HStack{
                 Button {
-                    self.viewModel.updateAfterChangeInEditView()
                     self.dismiss()
                 } label: {
                     Image(systemName: "chevron.left")

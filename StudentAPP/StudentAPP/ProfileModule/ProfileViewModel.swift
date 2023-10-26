@@ -44,17 +44,6 @@ final class ProfileViewModel:ObservableObject {
     }
     
     //good
-    func updateAfterChangeInEditView(){
-        
-        print(newBirthday, newAboutMe, newInstitute, newDirection, newUniversity)
-        self.student.birthDate = newBirthday
-        self.student.aboutMe = newAboutMe
-        self.student.institute = newInstitute
-        self.student.direction = newDirection
-        self.student.university = newUniversity
-        
-        print(self.student)
-    }
     
     func appendNewCV(newCV:CvData){
         if newCV.position != "" && newCV.employmentType != "" && newCV.aboutMe != "" && newCV.university != "" {

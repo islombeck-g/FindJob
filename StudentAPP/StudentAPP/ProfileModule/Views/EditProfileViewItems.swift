@@ -32,32 +32,30 @@ struct EditProfileViewItems: View {
                 CustomTextFieldWithSize(isSecureField: false, text: "", result: self.$viewModel.student.patronymicName, size: 0)
             }
             
-            
-            
             Group {
                 Text("Дата рождения")
                 
-                CustomTextFieldWithSize(isSecureField: false, text: "", result: self.$viewModel.newBirthday, size: 0)
+                CustomTextFieldWithSize(isSecureField: false, text: "", result: self.$viewModel.student.birthDate, size: 0)
             }
             Group {
                 Text("О себе")
                 
-                CustomTextFieldWithSize(isSecureField: false, text: "", result: self.$viewModel.newAboutMe, size: 0)
+                CustomTextFieldWithSize(isSecureField: false, text: "", result: self.$viewModel.student.aboutMe, size: 0)
             }
             Group {
                 Text("Университет")
                 
-                CustomTextFieldWithSize(isSecureField: false, text: "", result: self.$viewModel.newUniversity, size: 0)
+                CustomTextFieldWithSize(isSecureField: false, text: "", result: self.$viewModel.student.university, size: 0)
             }
             Group {
                 Text("Институт")
                 
-                CustomTextFieldWithSize(isSecureField: false, text: "", result: self.$viewModel.newInstitute, size: 0)
+                CustomTextFieldWithSize(isSecureField: false, text: "", result: self.$viewModel.student.institute, size: 0)
             }
             Group {
                 Text("Направление")
                 
-                CustomTextFieldWithSize(isSecureField: false, text: "", result: self.$viewModel.newDirection, size: 0)
+                CustomTextFieldWithSize(isSecureField: false, text: "", result: self.$viewModel.student.direction, size: 0)
             }
             
         }
