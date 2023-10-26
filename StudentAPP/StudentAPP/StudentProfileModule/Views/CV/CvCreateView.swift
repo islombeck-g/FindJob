@@ -108,5 +108,5 @@ struct CvCreateView: View {
 
 #Preview {
     CvCreateView()
-        .environmentObject(ProfileViewModel())
+        .environmentObject(ProfileViewModel(userStateViewModel: UserStateViewModel()))
 }

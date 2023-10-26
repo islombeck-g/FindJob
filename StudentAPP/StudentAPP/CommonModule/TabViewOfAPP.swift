@@ -1,6 +1,9 @@
 import SwiftUI
 
 struct TabViewOfAPP: View {
+    
+    @StateObject var userStateViewModel:UserStateViewModel
+    
     var body: some View {
         NavigationStack {
             TabView{
@@ -15,7 +18,7 @@ struct TabViewOfAPP: View {
                         Label("Отклики", systemImage: "hand.thumbsup")
                     }
                 
-                ProfileMainView()
+                ProfileMainView(userStateViewModel: userStateViewModel)
                     .tabItem {
                         Label("Профиль", systemImage: "person")
                     }
@@ -28,5 +31,5 @@ struct TabViewOfAPP: View {
 }
 
 #Preview {
-    TabViewOfAPP()
+    TabViewOfAPP(userStateViewModel: UserStateViewModel())
 }

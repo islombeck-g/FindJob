@@ -3,6 +3,12 @@ import SwiftUI
 
 final class EnterViewModel:ObservableObject {
    
+    private var userStateViewModel:UserStateViewModel
+    
+    init(userStateViewModel: UserStateViewModel) {
+        self.userStateViewModel = userStateViewModel
+    }
+    
     @Published var loginText: String = ""
     @Published var passwodText: String = ""
  
@@ -40,6 +46,21 @@ final class EnterViewModel:ObservableObject {
     @Published var chosenCity: String = "Город*"
     @Published var chosenUniversity: String = "Учебное заведение*"
   
+    
+    func sendData(){
+        print(11)
+        if checkData() {
+            print(21)
+            self.userStateViewModel.logIn(user: self.student)
+        }
+    }
+    
+    private func checkData() -> Bool {
+        
+        return true
+    }
+    
+    //good
     func nextTabView(){
         guard selectedTab != 3 else {
             selectedTab = 1
@@ -47,15 +68,6 @@ final class EnterViewModel:ObservableObject {
         }
         self.selectedTab += 1
     }
-    
-    func checkData()-> Bool {
-        return true
-    }
-    
-    func sendData(){
-        
-    }
-    
 }
 
 

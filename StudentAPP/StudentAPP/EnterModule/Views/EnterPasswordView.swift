@@ -102,5 +102,5 @@ struct EnterPasswordView: View {
 
 #Preview {
     EnterPasswordView()
-        .environmentObject(EnterViewModel())
+        .environmentObject(EnterViewModel(userStateViewModel: UserStateViewModel()))
 }

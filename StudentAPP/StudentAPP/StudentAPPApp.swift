@@ -2,9 +2,17 @@ import SwiftUI
 
 @main
 struct StudentAPPApp: App {
+    
+    @StateObject var userStateViewModel = UserStateViewModel()
+    
     var body: some Scene {
         WindowGroup {
-            EnterMainView()
+            if self.userStateViewModel.isLoggedIn {
+                TabViewOfAPP(userStateViewModel: userStateViewModel)
+            } else {
+                EnterMainView(userStateViewModel: userStateViewModel)
+            }
+            
         }
     }
 }

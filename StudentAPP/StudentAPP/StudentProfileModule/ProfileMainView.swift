@@ -2,11 +2,16 @@ import SwiftUI
 
 struct ProfileMainView: View {
     
-    @StateObject private var viewModel:ProfileViewModel = ProfileViewModel()
+    @StateObject private var viewModel:ProfileViewModel
+    
+    init(userStateViewModel: UserStateViewModel) {
+           _viewModel = StateObject(wrappedValue: ProfileViewModel(userStateViewModel: userStateViewModel))
+       }
     
     @State private var logOut_isAllertShow:Bool = false
     @State private var deleteAcount_isAllertShow:Bool = false
     @State private var isFavorite = false
+    
     
     var body: some View {
         NavigationStack{
@@ -135,7 +140,7 @@ struct ProfileMainView: View {
                                 Text("Отмена")
                             
                             Button{
-                                //выход из приложения
+                                self.viewModel.logOut()
                             }label: {
                                 Text("Выйти")
                             }
@@ -149,7 +154,7 @@ struct ProfileMainView: View {
                             }
                                 
                             Button{
-                                //удалить аккаунт из приложения
+                                
                             }label: {
                                 Text("Удалить")
                             }
@@ -161,12 +166,9 @@ struct ProfileMainView: View {
             }
             .navigationBarBackButtonHidden(true)
         }
-        
-        
-        
     }
 }
 
 #Preview {
-    ProfileMainView()
+    ProfileMainView(userStateViewModel: UserStateViewModel())
 }

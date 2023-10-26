@@ -44,5 +44,5 @@ struct EditAccount: View {
 }
 #Preview {
     EditAccount()
-        .environmentObject(ProfileViewModel())
+        .environmentObject(ProfileViewModel(userStateViewModel: UserStateViewModel()))
 }

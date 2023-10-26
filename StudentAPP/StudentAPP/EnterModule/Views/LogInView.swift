@@ -49,6 +49,7 @@ struct LoginView: View {
                     LoginRoundedRectangleView(
                         loginText: self.$viewModel.loginText,
                         passwodText: self.$viewModel.passwodText)
+                    .environmentObject(self.viewModel)
                     .frame(
                         width: 343,
                         height: 287)
@@ -88,5 +89,5 @@ struct LoginView: View {
 
 #Preview {
     LoginView()
-        .environmentObject(EnterViewModel())
+        .environmentObject(EnterViewModel(userStateViewModel: UserStateViewModel()))
 }

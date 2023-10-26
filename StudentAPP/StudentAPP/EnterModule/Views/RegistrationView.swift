@@ -70,5 +70,5 @@ struct RegistrationView: View {
 
 #Preview {
     RegistrationView()
-        .environmentObject(EnterViewModel())
+        .environmentObject(EnterViewModel(userStateViewModel: UserStateViewModel()))
 }

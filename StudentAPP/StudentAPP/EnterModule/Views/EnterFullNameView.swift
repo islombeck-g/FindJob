@@ -102,5 +102,5 @@ struct EnterFullNameView: View {
 
 #Preview {
     EnterFullNameView()
-        .environmentObject(EnterViewModel())
+        .environmentObject(EnterViewModel(userStateViewModel: UserStateViewModel()))
 }

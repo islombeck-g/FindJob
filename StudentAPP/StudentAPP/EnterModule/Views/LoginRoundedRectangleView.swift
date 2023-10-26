@@ -2,6 +2,7 @@ import SwiftUI
 
 struct LoginRoundedRectangleView: View {
     
+    @EnvironmentObject var viewModel: EnterViewModel
     @Binding var loginText:String
     @Binding var passwodText:String
     
@@ -28,8 +29,8 @@ struct LoginRoundedRectangleView: View {
                 Spacer()
                     .frame(height: 20)
                 
-                NavigationLink {
-                    TabViewOfAPP()
+                Button {
+                    self.viewModel.sendData()
                 } label: {
                     ZStack {
                         RoundedRectangle(cornerRadius: 8)
@@ -42,7 +43,9 @@ struct LoginRoundedRectangleView: View {
                     }
                 }
                 
-                Button{}label: {
+                Button{
+                    
+                }label: {
                     Text("Забыли пароль")
                         .font(.system(size: 15))
                         .underline()
@@ -55,4 +58,5 @@ struct LoginRoundedRectangleView: View {
 
 #Preview {
     LoginRoundedRectangleView(loginText: .constant(""), passwodText: .constant(""))
+        .environmentObject(EnterViewModel(userStateViewModel: UserStateViewModel()))
 }

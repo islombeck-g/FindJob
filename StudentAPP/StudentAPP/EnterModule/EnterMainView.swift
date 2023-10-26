@@ -2,7 +2,11 @@ import SwiftUI
 
 struct EnterMainView: View {
     
-    @StateObject var viewModel:EnterViewModel = EnterViewModel()
+    @StateObject var viewModel:EnterViewModel
+    
+    init(userStateViewModel: UserStateViewModel) {
+        _viewModel = StateObject(wrappedValue: EnterViewModel(userStateViewModel: userStateViewModel))
+            }
     
     var body: some View {
         NavigationStack {
@@ -61,5 +65,5 @@ struct EnterMainView: View {
     }
 }
 #Preview {
-    EnterMainView()
+    EnterMainView(userStateViewModel: UserStateViewModel())
 }
