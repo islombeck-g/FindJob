@@ -35,7 +35,7 @@ struct CvFullInfoView: View {
                         
                         Menu {
                             NavigationLink{
-                               
+                                CvUpdateView(cv: self.$cv)
                             }label:{
                                 Text("Редактировать резюме")
                             }
@@ -61,18 +61,17 @@ struct CvFullInfoView: View {
                     ScrollView {
                         
                         ProfileImage(
-                            name: self.$viewModel.student.firstName,
-                            secondName: self.$viewModel.student.secondName,
-                            patronymicName: self.$viewModel.student.patronymicName,
+                            name: self.$cv.firstName,
+                            secondName: self.$cv.secondName,
+                            patronymicName: self.$cv.patronymicName,
                             image: self.$viewModel.student.image,
-                            phoneNumber: self.$viewModel.student.phoneNumber)
+                            phoneNumber: self.$cv.phoneNumber)
                             .padding(.vertical, 16)
                          
                         Spacer()
                             .frame(height: 25)
                         
-                        CvFullInfoListView()
-                            .environmentObject(self.viewModel)
+                        CvFullInfoListView(cv: self.$cv)
                         
                         Spacer()
                             .frame(height: 30)

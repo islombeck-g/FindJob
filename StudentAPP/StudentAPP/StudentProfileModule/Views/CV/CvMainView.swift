@@ -3,15 +3,24 @@ import SwiftUI
 struct CvMainView: View {
     
     @EnvironmentObject var viewModel: ProfileViewModel
+    @Environment (\.dismiss) var dismiss
     var body: some View {
         NavigationStack {
             ZStack {
                 Color.white.ignoresSafeArea()
                 
-                VStack{
+                VStack {
                     HStack {
                         
-                        Spacer().frame(width: 45)
+                        Button {
+                            self.dismiss()
+                        } label: {
+                                Image(systemName: "chevron.left")
+                            .font(.system(size: 19))
+                            .fontWeight(.regular)
+                            .foregroundStyle(.black)
+                        }
+                        .padding(.leading, 20)
                         
                         Spacer()
                         
@@ -35,6 +44,10 @@ struct CvMainView: View {
                     }
                     .font(.system(size: 18))
                     ScrollView {
+                        
+                        Spacer()
+                            .frame(height: 20)
+                        
                         ForEach(self.viewModel.cvArray.indices, id: \.self) { i in
                             
                             NavigationLink {
