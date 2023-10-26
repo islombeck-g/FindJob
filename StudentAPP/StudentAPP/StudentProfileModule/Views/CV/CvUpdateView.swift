@@ -48,6 +48,7 @@ struct CvUpdateView: View {
                 }
             }
         }
+        .navigationBarBackButtonHidden(true)
     }
 }
 
