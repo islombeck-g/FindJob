@@ -4,7 +4,7 @@ class UserStateViewModel:ObservableObject{
     
     @Published var isLoggedIn = false
     
-    @Published var user:StudentData = StudentData(
+    private var user:StudentData = StudentData(
             firstName: "SomeName",
             secondName: "someSecondName",
             patronymicName: "somePatronymicName",
@@ -25,6 +25,12 @@ class UserStateViewModel:ObservableObject{
     }
     
     func logOut() {
-        self.isLoggedIn = false
+        
+        self.isLoggedIn = false 
+    }
+    
+    func getUserData() -> StudentData {
+        
+        return self.user
     }
 }
