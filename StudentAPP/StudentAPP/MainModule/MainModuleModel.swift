@@ -1,6 +1,6 @@
 import Foundation
 
-struct Job {
+struct Job:Hashable {
     var activity:String // деятельность компании
     var nameOfCompany:String
     var position:String // должность
@@ -9,4 +9,5 @@ struct Job {
     var location:String // Расположение
     var money:String // зп
     var description:String
+    var minExperience:Int // минимальный опыт работы
 }
