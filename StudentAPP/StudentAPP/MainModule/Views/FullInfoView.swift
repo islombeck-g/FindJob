@@ -7,7 +7,7 @@ struct FullInfoView: View {
     var body: some View {
         VStack(alignment: .leading) {
             HStack{Spacer()}
-           
+            
             Group {
                 
                 Text(vc.position)
@@ -15,7 +15,7 @@ struct FullInfoView: View {
                     .fontWeight(.bold)
                 Spacer()
                     .frame(height: 30)
-               
+                
                 Text("Компания")
                     .font(.system(size: 15))
                     .foregroundStyle(Color("darkGray"))
@@ -44,7 +44,7 @@ struct FullInfoView: View {
                 Text(vc.jobType)
                     .font(.system(size: 17))
                 Divider()
-               
+                
             }
             Spacer()
                 .frame(height: 10)
@@ -54,7 +54,7 @@ struct FullInfoView: View {
                 .foregroundStyle(Color("darkGray"))
             
             ForEach(vc.experience.indices, id: \.self) {index in
-
+                
                 HStack {
                     Circle()
                         .frame(width: 7)
@@ -89,6 +89,8 @@ struct FullInfoView: View {
                 .foregroundStyle(Color("darkGray"))
             Text(vc.description)
                 .font(.system(size: 17))
+            
+           
         }
     }
 }

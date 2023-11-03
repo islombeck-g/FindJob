@@ -23,12 +23,10 @@ struct MainView: View {
                     Spacer()
                     
                     Button {
-                        
                     }label: {
-                        Image(systemName: "arrow.up.and.down.text.horizontal")
-                        //                            .frame(width: 20, height: 30)
-                            .padding(8)
                         
+                        Image(systemName: "arrow.up.and.down.text.horizontal")
+                            .padding(8)
                     }
                     .padding(.trailing, 16)
                 }
@@ -40,25 +38,31 @@ struct MainView: View {
                         
                         ForEach(self.viewModel.exampleFavouriteListOfJob.indices, id: \.self){ index in
                             
-                            JobInfoView(vc: self.$viewModel.exampleFavouriteListOfJob[index])
-                                .padding(.vertical, 10)
+                            NavigationLink {
+                                JobFullInfoView(isFavour: true, vc: self.$viewModel.exampleFavouriteListOfJob[index])
+                                    .environmentObject(self.viewModel)
+                            } label: {
+                                JobInfoView(vc: self.$viewModel.exampleFavouriteListOfJob[index])
+                                    .padding(.vertical, 10)
+                            }
                         }
                         .listStyle(.inset)
                     } else {
                         
                         ForEach(self.viewModel.exampleListOfJobs.indices, id: \.self){ index in
-                            
-                            JobInfoView(vc: self.$viewModel.exampleListOfJobs[index])
-                                .padding(.vertical, 10)
+                            NavigationLink {
+                                JobFullInfoView(isFavour: false, vc: self.$viewModel.exampleListOfJobs[index])
+                                    .environmentObject(self.viewModel)
+                            }label: {
+                                JobInfoView(vc: self.$viewModel.exampleListOfJobs[index])
+                                    .padding(.vertical, 10)
+                            }
                         }
                         .listStyle(.inset)
                     }
                 }
-                
-                
                 Spacer()
             }
-            
         }
     }
 }
