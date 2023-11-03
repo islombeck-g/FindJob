@@ -26,9 +26,9 @@ struct MainView: View {
                         
                     }label: {
                         Image(systemName: "arrow.up.and.down.text.horizontal")
-//                            .frame(width: 20, height: 30)
+                        //                            .frame(width: 20, height: 30)
                             .padding(8)
-                            
+                        
                     }
                     .padding(.trailing, 16)
                 }
@@ -38,9 +38,9 @@ struct MainView: View {
                     
                     if self.viewModel.isFavouriteList == true {
                         
-                        ForEach(self.viewModel.exampleFavouriteListOfjob.indices, id: \.self){ index in
+                        ForEach(self.viewModel.exampleFavouriteListOfJob.indices, id: \.self){ index in
                             
-                            JobInfoView(vc: self.$viewModel.exampleFavouriteListOfjob[index])
+                            JobInfoView(vc: self.$viewModel.exampleFavouriteListOfJob[index])
                                 .padding(.vertical, 10)
                         }
                         .listStyle(.inset)
@@ -52,7 +52,6 @@ struct MainView: View {
                                 .padding(.vertical, 10)
                         }
                         .listStyle(.inset)
-  
                     }
                 }
                 

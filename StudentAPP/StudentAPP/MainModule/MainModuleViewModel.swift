@@ -15,15 +15,26 @@ final class MainModuleViewModel: ObservableObject {
     @Published var exampleListOfJobs: [Job]
     @Published var isFavouriteList = false
     
-    @Published var exampleFavouriteListOfjob: [Job] = [Job]()
+    @Published var exampleFavouriteListOfJob: [Job] = [Job]()
     
     init(){
-        self.exampleListOfJobs = [exampleJob,exampleJob,exampleJob,exampleJob,exampleJob,exampleJob,exampleJob,exampleJob,exampleJob,exampleJob,exampleJob,exampleJob]
+        self.exampleListOfJobs = [exampleJob,exampleJob,exampleJob,exampleJob,exampleJob,exampleJob,exampleJob,exampleJob,exampleJob]
     }
     
-    func addToFavourite(job: Job){
-        self.exampleFavouriteListOfjob.append(job)
+    func addToFavourite(job: Job) {
+        if !exampleFavouriteListOfJob.contains(job) {
+            exampleFavouriteListOfJob.append(job)
+            isFavouriteList = true
+        }
     }
     
+    func removeFromFavourite(job: Job) {
+        if let index = exampleFavouriteListOfJob.firstIndex(of: job) {
+            exampleFavouriteListOfJob.remove(at: index)
+            if exampleFavouriteListOfJob.isEmpty {
+                isFavouriteList = false
+            }
+        }
+    }
     
 }
