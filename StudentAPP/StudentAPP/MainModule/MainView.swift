@@ -3,6 +3,7 @@ import SwiftUI
 struct MainView: View {
     
     @StateObject private var viewModel:MainModuleViewModel = MainModuleViewModel()
+    @State private var searchText: String = ""
     
     var body: some View {
         NavigationStack {
@@ -19,6 +20,8 @@ struct MainView: View {
                     Spacer()
                     
                     Text("Главная")
+                        .font(.system(size: 22))
+                        .fontWeight(.bold)
                     
                     Spacer()
                     
@@ -31,6 +34,18 @@ struct MainView: View {
                     .padding(.trailing, 16)
                 }
                 .font(.system(size: 18))
+                
+                HStack(spacing: 15) {
+                    Image(systemName: "magnifyingglass")
+                    TextField("Поиск вакансий", text: self.$searchText)
+                }
+                .padding(.vertical, 10)
+                .padding(.horizontal)
+                .background(Color.primary.opacity(0.05))
+                .clipShape(.rect(cornerRadius: 10))
+                .padding()
+                
+                
                 
                 ScrollView {
                     
@@ -60,9 +75,14 @@ struct MainView: View {
                         }
                         .listStyle(.inset)
                     }
+                    
                 }
+                
+                
+                
                 Spacer()
             }
+            
         }
     }
 }
