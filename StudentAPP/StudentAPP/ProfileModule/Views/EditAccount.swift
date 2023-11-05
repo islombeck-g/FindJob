@@ -38,6 +38,7 @@ struct EditAccount: View {
             
         }
         .navigationBarBackButtonHidden(true)
+        .toolbar(.hidden, for: .tabBar)
     }
     
 }

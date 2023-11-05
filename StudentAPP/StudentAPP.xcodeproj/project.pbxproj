@@ -12,9 +12,13 @@
 		630971482AE6BFEA00A0714A /* ProfileModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 630971472AE6BFEA00A0714A /* ProfileModel.swift */; };
 		6309714A2AE6FB5900A0714A /* CvFullInfoView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 630971492AE6FB5900A0714A /* CvFullInfoView.swift */; };
 		6309714C2AE6FD3100A0714A /* CvFullInfoListView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6309714B2AE6FD3100A0714A /* CvFullInfoListView.swift */; };
+		633D4BA82AF6463100108D18 /* SearchResultView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 633D4BA72AF6463000108D18 /* SearchResultView.swift */; };
 		634B6CED2AF4D393001A5FDA /* FullInfoView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 634B6CEC2AF4D392001A5FDA /* FullInfoView.swift */; };
 		636F17242AE7CA18006B7D20 /* CVInfoView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 636F17232AE7CA18006B7D20 /* CVInfoView.swift */; };
 		636F17262AE81CA1006B7D20 /* CvUpdateView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 636F17252AE81CA1006B7D20 /* CvUpdateView.swift */; };
+		637319C42AF673A000CD3BB6 /* SupportMainView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 637319C32AF673A000CD3BB6 /* SupportMainView.swift */; };
+		637319C62AF673EF00CD3BB6 /* SupportViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 637319C52AF673EF00CD3BB6 /* SupportViewModel.swift */; };
+		63772C0A2AF6D03D00FB0EEA /* CvViewModule.swift in Sources */ = {isa = PBXBuildFile; fileRef = 63772C092AF6D03D00FB0EEA /* CvViewModule.swift */; };
 		6377D3582AE66D870090714E /* StudentAPPApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6377D3572AE66D870090714E /* StudentAPPApp.swift */; };
 		6377D35A2AE66D870090714E /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6377D3592AE66D870090714E /* ContentView.swift */; };
 		6377D35C2AE66D880090714E /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 6377D35B2AE66D880090714E /* Assets.xcassets */; };
@@ -55,9 +59,13 @@
 		630971472AE6BFEA00A0714A /* ProfileModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileModel.swift; sourceTree = "<group>"; };
 		630971492AE6FB5900A0714A /* CvFullInfoView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CvFullInfoView.swift; sourceTree = "<group>"; };
 		6309714B2AE6FD3100A0714A /* CvFullInfoListView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CvFullInfoListView.swift; sourceTree = "<group>"; };
+		633D4BA72AF6463000108D18 /* SearchResultView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchResultView.swift; sourceTree = "<group>"; };
 		634B6CEC2AF4D392001A5FDA /* FullInfoView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FullInfoView.swift; sourceTree = "<group>"; };
 		636F17232AE7CA18006B7D20 /* CVInfoView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CVInfoView.swift; sourceTree = "<group>"; };
 		636F17252AE81CA1006B7D20 /* CvUpdateView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CvUpdateView.swift; sourceTree = "<group>"; };
+		637319C32AF673A000CD3BB6 /* SupportMainView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SupportMainView.swift; sourceTree = "<group>"; };
+		637319C52AF673EF00CD3BB6 /* SupportViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SupportViewModel.swift; sourceTree = "<group>"; };
+		63772C092AF6D03D00FB0EEA /* CvViewModule.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CvViewModule.swift; sourceTree = "<group>"; };
 		6377D3542AE66D870090714E /* StudentAPP.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = StudentAPP.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		6377D3572AE66D870090714E /* StudentAPPApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StudentAPPApp.swift; sourceTree = "<group>"; };
 		6377D3592AE66D870090714E /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
@@ -108,6 +116,7 @@
 			isa = PBXGroup;
 			children = (
 				630971442AE6BFA300A0714A /* CvMainView.swift */,
+				63772C092AF6D03D00FB0EEA /* CvViewModule.swift */,
 				636F17232AE7CA18006B7D20 /* CVInfoView.swift */,
 				630971492AE6FB5900A0714A /* CvFullInfoView.swift */,
 				636F17252AE81CA1006B7D20 /* CvUpdateView.swift */,
@@ -116,6 +125,15 @@
 				63BCD0612AE85BEA0075DC8C /* CVTextField.swift */,
 			);
 			path = CV;
+			sourceTree = "<group>";
+		};
+		637319C22AF6734F00CD3BB6 /* Support */ = {
+			isa = PBXGroup;
+			children = (
+				637319C32AF673A000CD3BB6 /* SupportMainView.swift */,
+				637319C52AF673EF00CD3BB6 /* SupportViewModel.swift */,
+			);
+			path = Support;
 			sourceTree = "<group>";
 		};
 		6377D34B2AE66D870090714E = {
@@ -232,6 +250,7 @@
 				6377D3A82AE679500090714E /* ProfileImage.swift */,
 				6377D3AA2AE679BC0090714E /* EditProfileViewItems.swift */,
 				6377D3B02AE67B460090714E /* ProfileEditCenterImage.swift */,
+				637319C22AF6734F00CD3BB6 /* Support */,
 				630971462AE6BFB300A0714A /* CV */,
 			);
 			path = Views;
@@ -241,6 +260,7 @@
 			isa = PBXGroup;
 			children = (
 				638E0F4A2AF3C489006D5770 /* JobInfoView.swift */,
+				633D4BA72AF6463000108D18 /* SearchResultView.swift */,
 				638E0F4C2AF3EF53006D5770 /* JobFullInfoView.swift */,
 				634B6CEC2AF4D392001A5FDA /* FullInfoView.swift */,
 			);
@@ -326,6 +346,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				6377D3AF2AE67A740090714E /* ProfileItemsView.swift in Sources */,
+				63772C0A2AF6D03D00FB0EEA /* CvViewModule.swift in Sources */,
 				6377D38F2AE670150090714E /* EnterModel.swift in Sources */,
 				6377D3B12AE67B460090714E /* ProfileEditCenterImage.swift in Sources */,
 				6393AA7A2AEA9A120052BF06 /* UserStateViewModel.swift in Sources */,
@@ -335,9 +356,12 @@
 				6377D3A02AE676AF0090714E /* ResponsesMainView.swift in Sources */,
 				6377D35A2AE66D870090714E /* ContentView.swift in Sources */,
 				634B6CED2AF4D393001A5FDA /* FullInfoView.swift in Sources */,
+				637319C62AF673EF00CD3BB6 /* SupportViewModel.swift in Sources */,
 				6377D3912AE6706B0090714E /* DropDownMenuView.swift in Sources */,
 				6377D3892AE66F590090714E /* EnterViewModel.swift in Sources */,
 				630971482AE6BFEA00A0714A /* ProfileModel.swift in Sources */,
+				637319C42AF673A000CD3BB6 /* SupportMainView.swift in Sources */,
+				633D4BA82AF6463100108D18 /* SearchResultView.swift in Sources */,
 				6309714C2AE6FD3100A0714A /* CvFullInfoListView.swift in Sources */,
 				6377D3982AE673E60090714E /* EnterPositionView.swift in Sources */,
 				6377D3582AE66D870090714E /* StudentAPPApp.swift in Sources */,

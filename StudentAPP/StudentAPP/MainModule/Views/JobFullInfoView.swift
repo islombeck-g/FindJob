@@ -1,14 +1,14 @@
 import SwiftUI
 
 struct JobFullInfoView: View {
-    
+
         @Environment(\.dismiss) var dismiss
         @EnvironmentObject var viewModel: MainModuleViewModel
         @Binding var vc: Job
         let isFavour: Bool
         @State var isF: Bool
     
-        init(isFavour: Bool, vc: Binding<Job>) {
+    init(isFavour: Bool, vc: Binding<Job>) {
             self.isFavour = isFavour
             self._vc = vc
             self._isF = State(initialValue: isFavour)
@@ -74,6 +74,8 @@ struct JobFullInfoView: View {
             }
             .navigationBarBackButtonHidden(true)
         }
+        .toolbar(.hidden, for: .tabBar)
+
     }
 }
 

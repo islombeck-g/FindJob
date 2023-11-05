@@ -95,7 +95,8 @@ struct ProfileMainView: View {
                             .frame(height: 30)
                         
                         NavigationLink{
-                            
+                            SupportMainView()
+                                .environmentObject(self.viewModel)
                         }label: {
                             Group {
                                 Text("Тех. поддержка")

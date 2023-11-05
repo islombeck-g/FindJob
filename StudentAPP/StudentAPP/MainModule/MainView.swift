@@ -3,7 +3,7 @@ import SwiftUI
 struct MainView: View {
     
     @StateObject private var viewModel:MainModuleViewModel = MainModuleViewModel()
-    @State private var searchText: String = ""
+
     
     var body: some View {
         NavigationStack {
@@ -35,18 +35,6 @@ struct MainView: View {
                 }
                 .font(.system(size: 18))
                 
-                HStack(spacing: 15) {
-                    Image(systemName: "magnifyingglass")
-                    TextField("Поиск вакансий", text: self.$searchText)
-                }
-                .padding(.vertical, 10)
-                .padding(.horizontal)
-                .background(Color.primary.opacity(0.05))
-                .clipShape(.rect(cornerRadius: 10))
-                .padding()
-                
-                
-                
                 ScrollView {
                     
                     if self.viewModel.isFavouriteList == true {
@@ -77,16 +65,59 @@ struct MainView: View {
                     }
                     
                 }
-                
-                
+                .searchable(text: self.$viewModel.searchText)
                 
                 Spacer()
             }
-            
         }
+       
     }
 }
 
 #Preview {
     MainView()
 }
+
+//                HStack(spacing: 15) {
+//                    Image(systemName: "magnifyingglass")
+//                    TextField("Поиск вакансий", text: self.$searchText)
+//                }
+//                .padding(.vertical, 10)
+//                .padding(.horizontal)
+//                .background(Color.primary.opacity(0.05))
+//                .clipShape(.rect(cornerRadius: 10))
+//                .padding()
+
+
+
+//
+//ScrollView {
+//
+//    if self.viewModel.isFavouriteList == true {
+//
+//        ForEach(self.viewModel.exampleFavouriteListOfJob.indices, id: \.self){ index in
+//
+//            NavigationLink {
+//                JobFullInfoView(isFavour: true, vc: self.$viewModel.exampleFavouriteListOfJob[index])
+//                    .environmentObject(self.viewModel)
+//            } label: {
+//                JobInfoView(vc: self.$viewModel.exampleFavouriteListOfJob[index])
+//                    .padding(.vertical, 10)
+//            }
+//        }
+//        .listStyle(.inset)
+//    } else {
+//
+//        ForEach(self.viewModel.exampleListOfJobs.indices, id: \.self){ index in
+//            NavigationLink {
+//                JobFullInfoView(isFavour: false, vc: self.$viewModel.exampleListOfJobs[index])
+//                    .environmentObject(self.viewModel)
+//            }label: {
+//                JobInfoView(vc: self.$viewModel.exampleListOfJobs[index])
+//                    .padding(.vertical, 10)
+//            }
+//        }
+//        .listStyle(.inset)
+//    }
+//
+//}

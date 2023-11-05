@@ -7,44 +7,45 @@ final class MainModuleViewModel: ObservableObject {
     
     @Published var exampleFavouriteListOfJob: [Job] = [Job]()
     
+    @Published var searchText = ""
     init(){
         self.exampleListOfJobs = [
             Job(activity: "Программировани",
-            nameOfCompany: "Газпром нефть",
-            position: "Программист 1С",
-            jobType: "Полный день",
-            experience: ["Диплом о высшем образовании","Коммерческий опыт от 2-ух лет","Знание английского языка"],
-            location: "Центр Казани",
-            money: "от 40 000 до 120 000",
-            description: "Ищем трудолюбивых и энергичных юристов в крутой коллектив",
-            minExperience: 2),
+                nameOfCompany: "Газпром нефть",
+                position: "Программист 1С",
+                jobType: "Полный день",
+                experience: ["Диплом о высшем образовании","Коммерческий опыт от 2-ух лет","Знание английского языка"],
+                location: "Центр Казани",
+                money: "от 40 000 до 120 000",
+                description: "Ищем трудолюбивых и энергичных юристов в крутой коллектив",
+                minExperience: 2),
             Job(activity: "Юриспрюденция",
-            nameOfCompany: "Газпром нефть",
-            position: "Юрист стажер",
-            jobType: "Полный день",
-            experience: ["Диплом о высшем образовании","Коммерческий опыт от 2-ух лет","Знание английского языка"],
-            location: "Центр Казани",
-            money: "от 40 000 до 120 000",
-            description: "Ищем трудолюбивых и энергичных юристов в крутой коллектив",
-            minExperience: 2),
+                nameOfCompany: "Газпром нефть",
+                position: "Юрист стажер",
+                jobType: "Полный день",
+                experience: ["Диплом о высшем образовании","Коммерческий опыт от 2-ух лет","Знание английского языка"],
+                location: "Центр Казани",
+                money: "от 40 000 до 120 000",
+                description: "Ищем трудолюбивых и энергичных юристов в крутой коллектив",
+                minExperience: 2),
             Job(activity: "Юриспрюденция",
-            nameOfCompany: "Газпром нефть",
-            position: "Юрист тимлид",
-            jobType: "Полный день",
-            experience: ["Диплом о высшем образовании","Коммерческий опыт от 2-ух лет","Знание английского языка"],
-            location: "Центр Казани",
-            money: "от 40 000 до 120 000",
-            description: "Ищем трудолюбивых и энергичных юристов в крутой коллектив",
-            minExperience: 2),
+                nameOfCompany: "Газпром нефть",
+                position: "Юрист тимлид",
+                jobType: "Полный день",
+                experience: ["Диплом о высшем образовании","Коммерческий опыт от 2-ух лет","Знание английского языка"],
+                location: "Центр Казани",
+                money: "от 40 000 до 120 000",
+                description: "Ищем трудолюбивых и энергичных юристов в крутой коллектив",
+                minExperience: 2),
             Job(activity: "Программировани",
-            nameOfCompany: "Газпром нефть",
-            position: "Java developer",
-            jobType: "Полный день",
-            experience: ["Диплом о высшем образовании","Коммерческий опыт от 2-ух лет","Знание английского языка"],
-            location: "Центр Казани",
-            money: "от 40 000 до 120 000",
-            description: "Ищем трудолюбивых и энергичных юристов в крутой коллектив",
-            minExperience: 2)]
+                nameOfCompany: "Газпром нефть",
+                position: "Java developer",
+                jobType: "Полный день",
+                experience: ["Диплом о высшем образовании","Коммерческий опыт от 2-ух лет","Знание английского языка"],
+                location: "Центр Казани",
+                money: "от 40 000 до 120 000",
+                description: "Ищем трудолюбивых и энергичных юристов в крутой коллектив",
+                minExperience: 2)]
     }
     
     func addToFavourite(job: Job) {
@@ -55,12 +56,54 @@ final class MainModuleViewModel: ObservableObject {
     }
     
     func removeFromFavourite(job: Job) {
-            if let index = exampleFavouriteListOfJob.firstIndex(where: { $0.id == job.id }) {
-                exampleFavouriteListOfJob.remove(at: index)
-                if exampleFavouriteListOfJob.isEmpty {
-                    isFavouriteList = false
-                }
+        if let index = exampleFavouriteListOfJob.firstIndex(where: { $0.id == job.id }) {
+            exampleFavouriteListOfJob.remove(at: index)
+            if exampleFavouriteListOfJob.isEmpty {
+                isFavouriteList = false
             }
         }
+    }
     
 }
+
+
+//
+//var filteredJobs: [Job] {
+//    guard !searchText.isEmpty else { return exampleListOfJobs }
+//    return exampleListOfJobs.filter { job in
+//        let searchTextLowercased = searchText.lowercased()
+//        return job.activity.lowercased().contains(searchTextLowercased) ||
+//        job.nameOfCompany.lowercased().contains(searchTextLowercased) ||
+//        job.position.lowercased().contains(searchTextLowercased) ||
+//        job.jobType.lowercased().contains(searchTextLowercased) ||
+//        job.experience.contains { exp in exp.lowercased().contains(searchTextLowercased) } ||
+//        job.location.lowercased().contains(searchTextLowercased) ||
+//        job.money.lowercased().contains(searchTextLowercased) ||
+//        job.description.lowercased().contains(searchTextLowercased) ||
+//        String(job.minExperience).contains(searchText)
+//    }
+//}
+//
+//var filteredFavouriteJobs: [Job] {
+//    guard !searchText.isEmpty else { return exampleFavouriteListOfJob }
+//    return exampleFavouriteListOfJob.filter { job in
+//        let searchTextLowercased = searchText.lowercased()
+//        return job.activity.lowercased().contains(searchTextLowercased) ||
+//        job.nameOfCompany.lowercased().contains(searchTextLowercased) ||
+//        job.position.lowercased().contains(searchTextLowercased) ||
+//        job.jobType.lowercased().contains(searchTextLowercased) ||
+//        job.experience.contains { exp in exp.lowercased().contains(searchTextLowercased) } ||
+//        job.location.lowercased().contains(searchTextLowercased) ||
+//        job.money.lowercased().contains(searchTextLowercased) ||
+//        job.description.lowercased().contains(searchTextLowercased) ||
+//        String(job.minExperience).contains(searchText)
+//    }
+//}
+//
+//func updateFilteredJobs() {
+//    if isFavouriteList {
+//        
+//    } else {
+//        
+//    }
+//}
