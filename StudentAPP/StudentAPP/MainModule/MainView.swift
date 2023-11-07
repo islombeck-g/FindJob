@@ -35,6 +35,31 @@ struct MainView: View {
                 }
                 .font(.system(size: 18))
                 
+                if !self.viewModel.isFavouriteList {
+                    ScrollView(.horizontal) {
+                        HStack {
+                            ForEach(self.viewModel.exampleListOfJobs.indices, id: \.self){ index in
+                                NavigationLink {
+                                    JobFullInfoView(isFavour: false, vc: self.$viewModel.exampleListOfJobs[index])
+                                        .environmentObject(self.viewModel)
+                                }label: {
+                                    JobInfoView(vc: self.$viewModel.exampleListOfJobs[index])
+                                }
+                                .shadow(radius: 10)
+                                .containerRelativeFrame(.horizontal)
+                            }
+                            .scrollTargetLayout()
+                            .listStyle(.inset)
+                        }
+                        
+                    }
+                    .scrollIndicators(.hidden)
+                    .scrollClipDisabled()
+                    .scrollTargetBehavior(.paging)
+                    .frame(height: 200)
+                }
+                
+                
                 ScrollView {
                     
                     if self.viewModel.isFavouriteList == true {
@@ -65,7 +90,7 @@ struct MainView: View {
                     }
                     
                 }
-                .searchable(text: self.$viewModel.searchText)
+//                .searchable(text: self.$viewModel.searchText)
                 
                 Spacer()
             }
