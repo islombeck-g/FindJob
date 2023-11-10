@@ -52,7 +52,8 @@ struct JobInfoView: View {
                 .foregroundStyle(.white)
             }
         }
-        .padding(.horizontal, 16)
+        .frame(width: 368)
+
     }
 }
 

@@ -51,7 +51,7 @@ final class MainModuleViewModel: ObservableObject {
     func addToFavourite(job: Job) {
         if !exampleFavouriteListOfJob.contains(job) {
             exampleFavouriteListOfJob.append(job)
-            isFavouriteList = true
+//            isFavouriteList = true
         }
     }
     
