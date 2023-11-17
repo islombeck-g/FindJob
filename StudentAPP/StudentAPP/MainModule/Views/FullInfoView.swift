@@ -2,7 +2,7 @@ import SwiftUI
 
 struct FullInfoView: View {
     
-    @Binding var vc: Job
+    let vc: Job
     
     var body: some View {
         VStack(alignment: .leading) {
@@ -96,7 +96,7 @@ struct FullInfoView: View {
 }
 
 #Preview {
-    FullInfoView(vc: .constant(Job(
+    FullInfoView(vc: Job(
         activity: "Юриспрюденция",
         nameOfCompany: "Газпром нефть",
         position: "Юрист",
@@ -105,5 +105,5 @@ struct FullInfoView: View {
         location: "Центр Казани",
         money: "от 40 000 до 120 000",
         description: "Ищем трудолюбивых и энергичных юристов в крутой коллектив",
-        minExperience: 2)))
+        minExperience: 2))
 }

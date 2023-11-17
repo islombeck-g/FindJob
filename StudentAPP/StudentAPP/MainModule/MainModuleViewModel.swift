@@ -7,11 +7,20 @@ final class MainModuleViewModel: ObservableObject {
     
     @Published var exampleFavouriteListOfJob: [Job] = [Job]()
     
-    @Published var searchText = ""
+    @Published var searchText:String = ""
+    
+    var filteredJobs: [Job] {
+        guard !searchText.isEmpty else { return exampleListOfJobs}
+
+        return exampleListOfJobs.filter { job in
+            job.nameOfCompany.lowercased().contains(searchText.lowercased())
+        }
+    }
+    
     init(){
         self.exampleListOfJobs = [
             Job(activity: "Программировани",
-                nameOfCompany: "Газпром нефть",
+                nameOfCompany: "ГУГЛ",
                 position: "Программист 1С",
                 jobType: "Полный день",
                 experience: ["Диплом о высшем образовании","Коммерческий опыт от 2-ух лет","Знание английского языка"],
@@ -19,7 +28,7 @@ final class MainModuleViewModel: ObservableObject {
                 money: "от 40 000 до 120 000",
                 description: "Ищем трудолюбивых и энергичных юристов в крутой коллектив",
                 minExperience: 2),
-            Job(activity: "Юриспрюденция",
+            Job(activity: "Юр испрюденция",
                 nameOfCompany: "Газпром нефть",
                 position: "Юрист стажер",
                 jobType: "Полный день",
@@ -29,7 +38,7 @@ final class MainModuleViewModel: ObservableObject {
                 description: "Ищем трудолюбивых и энергичных юристов в крутой коллектив",
                 minExperience: 2),
             Job(activity: "Юриспрюденция",
-                nameOfCompany: "Газпром нефть",
+                nameOfCompany: "Яндекс",
                 position: "Юрист тимлид",
                 jobType: "Полный день",
                 experience: ["Диплом о высшем образовании","Коммерческий опыт от 2-ух лет","Знание английского языка"],
@@ -38,7 +47,7 @@ final class MainModuleViewModel: ObservableObject {
                 description: "Ищем трудолюбивых и энергичных юристов в крутой коллектив",
                 minExperience: 2),
             Job(activity: "Программировани",
-                nameOfCompany: "Газпром нефть",
+                nameOfCompany: "Яндекс",
                 position: "Java developer",
                 jobType: "Полный день",
                 experience: ["Диплом о высшем образовании","Коммерческий опыт от 2-ух лет","Знание английского языка"],
@@ -47,6 +56,7 @@ final class MainModuleViewModel: ObservableObject {
                 description: "Ищем трудолюбивых и энергичных юристов в крутой коллектив",
                 minExperience: 2)]
     }
+    
     
     func addToFavourite(job: Job) {
         if !exampleFavouriteListOfJob.contains(job) {

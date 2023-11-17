@@ -2,7 +2,7 @@ import SwiftUI
 
 struct JobInfoView: View {
     
-    @Binding var vc:Job
+    let vc:Job
     
     var body: some View {
         VStack {
@@ -44,21 +44,17 @@ struct JobInfoView: View {
                     Text(vc.description)
                         .font(.system(size: 12))
                         .lineLimit(2)
-                    
                 }
-//                .padding(.horizontal, 10)
-//                .padding(.vertical, 20)
                 .padding(.all, 10)
                 .foregroundStyle(.white)
             }
         }
         .frame(width: 368)
-
     }
 }
 
 #Preview {
-    JobInfoView(vc: .constant(
+    JobInfoView(vc:
         Job(
             activity: "Юриспрюденция",
             nameOfCompany: "Газпром нефть",
@@ -68,5 +64,5 @@ struct JobInfoView: View {
             location: "Центр Казани",
             money: "от 40 000 до 120 000",
             description: "Ищем трудолюбивых и энергичных юристов в крутой коллектив",
-            minExperience: 2)))
+            minExperience: 2))
 }
