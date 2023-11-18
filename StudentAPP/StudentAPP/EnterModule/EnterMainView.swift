@@ -12,7 +12,7 @@ struct EnterMainView: View {
         NavigationStack {
             ZStack {
                 
-                Color.black
+                Color("ForegroundColor")
                     .ignoresSafeArea()
                 
                 VStack {
@@ -23,8 +23,10 @@ struct EnterMainView: View {
                         
                         Text ("Биржа талантов - возможность получить любимую работу")
                             .font(.system(size: 20))
+                            
                     }
-                    .foregroundStyle(.white)
+                    .foregroundStyle(Color("SecondaryColor"))
+//                    .foregroundStyle(.white)
                     .padding(.horizontal)
                     .multilineTextAlignment(.center)
                     
@@ -36,11 +38,12 @@ struct EnterMainView: View {
                             ZStack {
                                 RoundedRectangle(cornerRadius: 8)
                                     .frame(width: 343, height: 46)
-                                    .foregroundColor(.white)
+                                    .foregroundColor(Color("SecondaryColor"))
                                 
                                 Text ("Вход")
-                                    .foregroundColor(.black)
+                                    .foregroundStyle(Color("ForegroundColor"))
                                     .fontWeight(.bold)
+                                     
                             }
                         }
  
@@ -50,11 +53,11 @@ struct EnterMainView: View {
                         } label: {
                             ZStack {
                                 RoundedRectangle(cornerRadius: 8)
-                                    .stroke(Color.white, lineWidth: 2)
+                                    .stroke(Color("SecondaryColor"), lineWidth: 2)
                                     .frame(width: 343, height: 46)
-                                    .foregroundColor(.black)
+                                
                                 Text("Регистрация")
-                                    .foregroundColor(.white)
+                                    .foregroundStyle(Color("SecondaryColor"))
                                     .fontWeight(.bold)
                             }
                         }

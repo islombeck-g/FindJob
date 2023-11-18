@@ -18,7 +18,8 @@ struct FullInfoView: View {
                 
                 Text("Компания")
                     .font(.system(size: 15))
-                    .foregroundStyle(Color("darkGray"))
+                    .fontWeight(.bold)
+                
                 Text(vc.nameOfCompany)
                     .font(.system(size: 17))
                 Spacer()
@@ -26,7 +27,7 @@ struct FullInfoView: View {
                 
                 Text("Отрасль")
                     .font(.system(size: 15))
-                    .foregroundStyle(Color("darkGray"))
+                    .fontWeight(.bold)
                 Text(vc.activity)
                     .font(.system(size: 17))
                 Spacer()
@@ -40,7 +41,7 @@ struct FullInfoView: View {
                 
                 Text("Тип занятости")
                     .font(.system(size: 15))
-                    .foregroundStyle(Color("darkGray"))
+                    .fontWeight(.bold)
                 Text(vc.jobType)
                     .font(.system(size: 17))
                 Divider()
@@ -51,7 +52,7 @@ struct FullInfoView: View {
             
             Text("Требуемый опыт")
                 .font(.system(size: 15))
-                .foregroundStyle(Color("darkGray"))
+                .fontWeight(.bold)
             
             ForEach(vc.experience.indices, id: \.self) {index in
                 
@@ -68,7 +69,7 @@ struct FullInfoView: View {
             
             Text("Расположение")
                 .font(.system(size: 15))
-                .foregroundStyle(Color("darkGray"))
+                .fontWeight(.bold)
             Text(vc.location)
                 .font(.system(size: 17))
             Divider()
@@ -77,7 +78,7 @@ struct FullInfoView: View {
             
             Text("Заработная плата")
                 .font(.system(size: 15))
-                .foregroundStyle(Color("darkGray"))
+                .fontWeight(.bold)
             Text(vc.money)
                 .font(.system(size: 17))
             Divider()
@@ -86,12 +87,13 @@ struct FullInfoView: View {
             
             Text("О вакансии")
                 .font(.system(size: 15))
-                .foregroundStyle(Color("darkGray"))
+                .fontWeight(.bold)
             Text(vc.description)
                 .font(.system(size: 17))
             
            
         }
+        .foregroundColor(Color("SecondaryColor"))
     }
 }
 

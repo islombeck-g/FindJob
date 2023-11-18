@@ -11,11 +11,12 @@ struct LoginRoundedRectangleView: View {
             
             RoundedRectangle(cornerRadius: 25)
                 .frame(height: 287)
-                .foregroundStyle(.white)
+                .foregroundStyle(Color("SecondaryColor"))
             
             VStack(alignment: .center) {
                 Text("Личные данные")
-                    .foregroundStyle(.black)
+//                    .foregroundStyle(.black)
+                    .foregroundStyle(Color("ForegroundColor"))
                     .fontWeight(.bold)
                     .font(.system(size: 28))
                 
@@ -35,7 +36,7 @@ struct LoginRoundedRectangleView: View {
                     ZStack {
                         RoundedRectangle(cornerRadius: 8)
                             .frame(width: 293, height: 50)
-                            .foregroundColor(.black)
+                            .foregroundColor(Color("AccentColor"))
                         
                         Text ("Вход")
                             .foregroundColor(.white)
@@ -49,7 +50,7 @@ struct LoginRoundedRectangleView: View {
                     Text("Забыли пароль")
                         .font(.system(size: 15))
                         .underline()
-                        .foregroundColor(.gray)
+                        .foregroundStyle(Color("ForegroundColor"))
                 }
             }
         }
@@ -57,6 +58,9 @@ struct LoginRoundedRectangleView: View {
 }
 
 #Preview {
-    LoginRoundedRectangleView(loginText: .constant(""), passwodText: .constant(""))
+    LoginView()
         .environmentObject(EnterViewModel(userStateViewModel: UserStateViewModel()))
+    
+//    LoginRoundedRectangleView(loginText: .constant(""), passwodText: .constant(""))
+//        .environmentObject(EnterViewModel(userStateViewModel: UserStateViewModel()))
 }

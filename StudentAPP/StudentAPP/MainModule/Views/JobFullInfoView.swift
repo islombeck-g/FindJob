@@ -9,56 +9,68 @@ struct JobFullInfoView: View {
     
     var body: some View {
         NavigationStack {
-            VStack {
-                HStack {
-                    Button {
-                        self.dismiss()
-                        
-                    } label: {
-                        Image(systemName: "chevron.left")
-                            .font(.system(size: 19))
-                            .fontWeight(.regular)
-                    }
-                    .padding(.leading, 20)
-                    
-                    Spacer()
-                    
-                    Text("Вакансия")
-                    
-                    Spacer()
-                    
-                    Button {
-                        self.toggleFavorite()
-                    }label: {
-                        Image(systemName: self.isFavorite == true ?  "star.fill" : "star")
-                            .rotationEffect(.degrees(90))
-                            .frame(width: 20, height: 30)
-                            .padding(4)
-                            .padding(.trailing, 13)
-                    }
-                }
-                .font(.system(size: 18))
+            
+            ZStack {
+                Color("ForegroundColor")
+                    .ignoresSafeArea()
                 
-                ScrollView {
-                    FullInfoView(vc: vc)
-                        .padding(.horizontal, 16)
-                    
-                    Spacer()
-                        .frame(height: 25)
-                    Button{
-                        self.dismiss()
-                    } label: {
+                VStack {
+                    HStack {
                         
-                        Text("Откликнутся")
-                            .foregroundStyle(.white)
-                            .frame(maxWidth: .infinity)
-                            .frame(height: 60)
-                            .background(Color("buttonBlue"))
-                            .clipShape(.rect(cornerRadius: 13))
+                        Button {
+                            self.dismiss()
+                            
+                        } label: {
+                            Image(systemName: "chevron.left")
+                                .font(.system(size: 19))
+                                .fontWeight(.regular)
+                            
+                        }
+                        .padding(.leading, 20)
+                        
+                        Spacer()
+                        
+                        Text("Вакансия")
+                        
+                        Spacer()
+                        
+                        Button {
+                            withAnimation(.spring) {
+                                self.toggleFavorite()
+                            }
+                        }label: {
+                            Image(systemName: self.isFavorite == true ?  "star.fill" : "star")
+                                .rotationEffect(.degrees(90))
+                                .frame(width: 20, height: 30)
+                                .padding(4)
+                                .padding(.trailing, 13)
+                        }
+                    }
+                    .font(.system(size: 18))
+                    .foregroundStyle(Color("SecondaryColor"))
+                    
+                    ScrollView {
+                        FullInfoView(vc: vc)
                             .padding(.horizontal, 16)
+                        
+                        Spacer()
+                            .frame(height: 25)
+                        Button{
+                            self.dismiss()
+                        } label: {
+                            
+                            Text("Откликнутся")
+                                .foregroundStyle(.white)
+                                .frame(maxWidth: .infinity)
+                                .frame(height: 60)
+                                .background(Color("AccentColor"))
+                                .clipShape(.rect(cornerRadius: 13))
+                                .padding(.horizontal, 16)
+                        }
                     }
                 }
             }
+            
             .navigationBarBackButtonHidden(true)
         }
         .toolbar(.hidden, for: .tabBar)

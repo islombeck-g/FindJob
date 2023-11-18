@@ -8,7 +8,7 @@ struct JobInfoView: View {
         VStack {
             ZStack {
          
-                Color("buttonBlue")
+                Color("SecondaryColor")
                     .frame(maxWidth: .infinity, maxHeight: 175)
                     .clipShape(.rect(cornerRadius: 15))
                 
@@ -46,7 +46,7 @@ struct JobInfoView: View {
                         .lineLimit(2)
                 }
                 .padding(.all, 10)
-                .foregroundStyle(.white)
+                .foregroundStyle(Color("ForegroundColor"))
             }
         }
         .frame(width: 368)

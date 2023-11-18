@@ -1,7 +1,7 @@
 import SwiftUI
 
 struct CustomTextFieldView: View {
-
+    
     @State private var showPassword: Bool = false
     
     var isSecureField: Bool
@@ -13,20 +13,24 @@ struct CustomTextFieldView: View {
             
             RoundedRectangle(cornerRadius: 10.0)
                 .foregroundStyle(Color("lightGray"))
-
+            
             Group {
                 if !self.isSecureField {
                     
-                    TextField(self.text, text: self.$result)
+                    
+                    TextField("", text: $result, prompt: Text(self.text).foregroundColor(Color("darkGray")))
                         .padding(.horizontal, 16)
                     
                 } else {
                     Group {
                         if self.showPassword {
-                            TextField(self.text, text: self.$result)
+                            
+                            TextField("", text: $result, prompt: Text(self.text).foregroundColor(Color("darkGray")))
                         }
                         else{
-                            SecureField(self.text, text: self.$result)
+                    
+                            SecureField("", text: $result, prompt: Text(self.text).foregroundColor(Color("darkGray")))
+                                
                         }
                     }
                     .padding(.leading, 16)
@@ -42,7 +46,7 @@ struct CustomTextFieldView: View {
                 }
             }
         }
-        .foregroundStyle(Color("darkGray"))
+        .foregroundStyle(Color("black"))
         .frame(width: 293, height: 50)
     }
 }
