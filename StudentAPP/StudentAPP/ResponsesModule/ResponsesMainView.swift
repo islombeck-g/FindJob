@@ -21,8 +21,8 @@ struct ResponsesMainView: View {
                         Text("Приглашения")
                             .tag("Приглашения")
                     }
-                    .background(Color("SecondaryColor"))
-                    .foregroundStyle(Color("ForegroundColor"))
+                    .background(Color("darkAccentColor"))
+                    .foregroundStyle(Color("SecondaryColor"))
                     .clipShape(.rect(cornerRadius: 8))
                     .pickerStyle(.palette)
                     .padding(.horizontal, 16)

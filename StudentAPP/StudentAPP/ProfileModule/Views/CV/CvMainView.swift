@@ -7,7 +7,7 @@ struct CvMainView: View {
     var body: some View {
         NavigationStack {
             ZStack {
-                Color.white.ignoresSafeArea()
+                Color("ForegroundColor").ignoresSafeArea()
                 
                 VStack {
                     HStack {
@@ -18,14 +18,14 @@ struct CvMainView: View {
                                 Image(systemName: "chevron.left")
                             .font(.system(size: 19))
                             .fontWeight(.regular)
-                            .foregroundStyle(.black)
+                            .foregroundStyle(Color("AccentColor"))
                         }
                         .padding(.leading, 20)
                         
                         Spacer()
                         
                         Text("Резюме")
-                        
+                            .foregroundStyle(Color("SecondaryColor"))
                         Spacer()
                         
                         NavigationLink {
@@ -35,13 +35,14 @@ struct CvMainView: View {
                             
                         }label: {
                             Image(systemName: "square.badge.plus")
-                                .foregroundStyle(.black)
+                                .foregroundStyle(Color("AccentColor"))
                                 .rotationEffect(.degrees(90))
                                 .frame(width: 20, height: 30)
                                 .padding(4)
                                 .padding(.trailing, 16)
                         }
                     }
+                    .foregroundStyle(Color("SecondaryColor"))
                     .font(.system(size: 18))
                     ScrollView {
                         

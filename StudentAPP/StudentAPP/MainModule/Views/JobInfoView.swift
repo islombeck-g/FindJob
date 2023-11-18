@@ -8,9 +8,12 @@ struct JobInfoView: View {
         VStack {
             ZStack {
          
-                Color("SecondaryColor")
+                RoundedRectangle(cornerRadius: 15)
                     .frame(maxWidth: .infinity, maxHeight: 175)
-                    .clipShape(.rect(cornerRadius: 15))
+                    .foregroundColor(Color("infoView"))
+                    RoundedRectangle(cornerRadius: 15)
+                    .stroke(Color("SecondaryColor"), lineWidth: 2)
+                    .frame(maxWidth: .infinity, maxHeight: 175)
                 
                 VStack(alignment: .leading) {
                     HStack{ Spacer() }
@@ -46,11 +49,15 @@ struct JobInfoView: View {
                         .lineLimit(2)
                 }
                 .padding(.all, 10)
-                .foregroundStyle(Color("ForegroundColor"))
+                .foregroundStyle(Color("SecondaryColor"))
             }
         }
         .frame(width: 368)
     }
+}
+
+#Preview {
+    MainView()
 }
 
 #Preview {

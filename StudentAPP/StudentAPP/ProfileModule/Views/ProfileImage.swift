@@ -32,12 +32,13 @@ struct ProfileImage: View {
                     .fontWeight(.bold)
                 Text("\(phoneNumber)")
             }
+            .foregroundStyle(Color("SecondaryColor"))
             
             Spacer()
         }
     }
 }
 
-//#Preview {
-//    ProfileImage()
-//}
+#Preview {
+    ProfileMainView(userStateViewModel: UserStateViewModel())
+}

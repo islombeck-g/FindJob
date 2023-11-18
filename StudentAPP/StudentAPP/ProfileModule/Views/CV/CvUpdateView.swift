@@ -8,7 +8,7 @@ struct CvUpdateView: View {
     var body: some View {
         VStack {
             ZStack {
-                Color.white.ignoresSafeArea()
+                Color("ForegroundColor").ignoresSafeArea()
                 
                 VStack{
                     
@@ -27,6 +27,7 @@ struct CvUpdateView: View {
                         
                         Text("Редактировать резюме")
                             .padding(.trailing, 35)
+                            .fontWeight(.bold)
                         
                         Spacer()
                     }

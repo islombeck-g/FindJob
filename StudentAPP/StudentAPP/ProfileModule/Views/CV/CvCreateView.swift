@@ -28,7 +28,7 @@ struct CvCreateView: View {
     var body: some View {
         VStack {
             ZStack {
-                Color.white.ignoresSafeArea()
+                Color("ForegroundColor").ignoresSafeArea()
                 
                 VStack{
                     
@@ -40,6 +40,7 @@ struct CvCreateView: View {
                             Image(systemName: "chevron.left")
                                 .font(.system(size: 19))
                                 .fontWeight(.regular)
+                                .foregroundStyle(Color("AccentColor"))
                         }
                         .padding(.leading, 20)
                         
@@ -47,6 +48,8 @@ struct CvCreateView: View {
                         
                         Text("Создание резюме")
                             .padding(.trailing, 35)
+                            .fontWeight(.bold)
+                            .foregroundStyle(Color("SecondaryColor"))
                         
                         Spacer()
                     }
@@ -90,7 +93,7 @@ struct CvCreateView: View {
                                     .frame(maxWidth: .infinity)
                                     .frame(height: 60)
                                     .foregroundStyle(.white)
-                                    .background(Color("buttonBlue"))
+                                    .background(Color("AccentColor"))
                                     .clipShape(.rect(cornerRadius: 13))
                             }
                             .padding(.horizontal, 16)

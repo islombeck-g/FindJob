@@ -12,7 +12,7 @@ struct ProfileItemsView: View {
             
             HStack {
                 Text("Дата рождения")
-                    .foregroundColor(.gray)
+                    .fontWeight(.bold)
                     .font(.system(size:15))
                 
                 Spacer()
@@ -26,12 +26,11 @@ struct ProfileItemsView: View {
             
             Group {
                 Text("Место учёбы")
-                    .foregroundColor(.black)
-                    .font(.system(size:20))
                     .fontWeight(.bold)
+                    .font(.system(size:20))
                 
                 Text("Университет")
-                    .foregroundColor(.gray)
+                    .fontWeight(.bold)
                     .font(.system(size:15))
                 
                 Text(university)
@@ -41,7 +40,7 @@ struct ProfileItemsView: View {
                 Divider()
                 
                 Text("Институт")
-                    .foregroundColor(.gray)
+                    .fontWeight(.bold)
                     .font(.system(size: 15))
                 
                 Text(institute)
@@ -51,7 +50,7 @@ struct ProfileItemsView: View {
                 Divider()
                 
                 Text("Направление")
-                    .foregroundColor(.gray)
+                    .fontWeight(.bold)
                     .font(.system(size: 15))
                 
                 Text(direction)
@@ -64,14 +63,16 @@ struct ProfileItemsView: View {
             
             Group {
                 Text("О себе")
-                    .font(.system(size: 20))
                     .fontWeight(.bold)
+                    .font(.system(size: 20))
+                    
                 
                 Text(aboutMe)
                     .font(.system(size: 17))
             }
 //            .navigationBarBackButtonHidden(true)
         }
+        .foregroundColor(Color("SecondaryColor"))
         .padding(.horizontal, 16)
         .navigationBarBackButtonHidden(true)
     }

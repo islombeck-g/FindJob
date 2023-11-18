@@ -16,7 +16,7 @@ struct ProfileMainView: View {
     var body: some View {
         NavigationStack{
             ZStack{
-                Color.white.ignoresSafeArea()
+                Color("ForegroundColor").ignoresSafeArea()
                 
                 VStack {
                     HStack {
@@ -25,12 +25,16 @@ struct ProfileMainView: View {
                         }label: {
                             Image(systemName: "bell")
                                 .padding(5)
+                                .foregroundStyle(Color("SecondaryColor"))
                         }
                         .padding(.leading, 7)
                         
                         Spacer()
                         
                         Text("Профиль")
+                            .font(.system(size: 22))
+                            .fontWeight(.bold)
+                            .foregroundStyle(Color("SecondaryColor"))
                         
                         Spacer()
                         
@@ -49,13 +53,14 @@ struct ProfileMainView: View {
                             }label:{
                                 Text("Удалить аккаунт")
                             }
-                        }label: {
+                        } label: {
                             Image(systemName: "ellipsis")
                                 .rotationEffect(.degrees(90))
                                 .frame(width: 20, height: 30)
                                 .padding(4)
                                 .padding(.trailing, 6)
                         }
+                        .foregroundStyle(Color("SecondaryColor"))
                     }
                     .font(.system(size: 18))
                     
@@ -76,15 +81,18 @@ struct ProfileMainView: View {
                         }label: {
                             Group {
                                 Text("Мое резюме")
-                                    .bold()
+                                    .fontWeight(.bold)
                                     .frame(maxWidth: .infinity)
                                     .frame(height: 60)
-                                    .foregroundStyle(.white)
-                                    .background(Color("buttonBlue"))
+                                    .foregroundStyle(Color.white)
+                                    .background(Color("AccentColor"))
                                     .clipShape(.rect(cornerRadius: 13))
+                                
                             }
                             .padding(.horizontal, 16)
+                            
                         }
+                        
                         
                         Spacer()
                             .frame(height: 36)
@@ -103,8 +111,8 @@ struct ProfileMainView: View {
                                     .bold()
                                     .frame(maxWidth: .infinity)
                                     .frame(height: 60)
-                                    .foregroundStyle(.white)
-                                    .background(.black)
+                                    .foregroundStyle(Color.white)
+                                    .background(Color("AccentColor"))
                                     .clipShape(.rect(cornerRadius: 13))
                             }
                             .padding(.horizontal, 16)
@@ -123,10 +131,15 @@ struct ProfileMainView: View {
                         }label: {
                             
                             Text("Выйти")
-                                .padding()
-                                .bold()
+                                
+                                .frame(maxWidth: .infinity)
+                                .frame(height: 60)
                                 .foregroundStyle(.red)
+                                .background(Color("darkAccentColor"))
+                                .clipShape(.rect(cornerRadius: 13))
+                                
                         }
+                        .padding(.horizontal, 16)
                         .alert("Хотите выйти?", isPresented: self.$logOut_isAllertShow) {
                            
                                 Text("Отмена")

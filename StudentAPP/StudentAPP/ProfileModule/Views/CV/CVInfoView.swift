@@ -8,9 +8,13 @@ struct CVInfoView: View {
         VStack {
             ZStack {
          
-                Color("buttonBlue")
+                RoundedRectangle(cornerRadius: 15)
                     .frame(maxWidth: .infinity, maxHeight: 175)
-                    .clipShape(.rect(cornerRadius: 15))
+                    .foregroundColor(Color("infoView"))
+                    RoundedRectangle(cornerRadius: 15)
+                    .stroke(Color("SecondaryColor"), lineWidth: 2)
+                    .frame(maxWidth: .infinity, maxHeight: 175)
+                    
                 
                 VStack(alignment: .leading) {
                     HStack{ Spacer() }
@@ -46,19 +50,18 @@ struct CVInfoView: View {
                         .lineLimit(2)
                     
                 }
-//                .padding(.horizontal, 10)
-//                .padding(.vertical, 20)
                 .padding(.all, 10)
-                .foregroundStyle(.white)
+                .foregroundStyle(Color("SecondaryColor"))
             }
         }
         .padding(.horizontal, 16)
     }
 }
 
-//#Preview {
-//    CVInfoView()
-//}
+#Preview {
+    CvMainView()
+        .environmentObject(ProfileViewModel(userStateViewModel: UserStateViewModel()))
+}
 
 
 //@State private var cv:CvData = CvData(

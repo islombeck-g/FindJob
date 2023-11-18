@@ -13,7 +13,7 @@ struct CvFullInfoView: View {
     var body: some View {
         NavigationStack{
             ZStack{
-                Color.white.ignoresSafeArea()
+                Color("ForegroundColor").ignoresSafeArea()
                 
                 VStack {
                     HStack {
@@ -23,13 +23,15 @@ struct CvFullInfoView: View {
                                 Image(systemName: "chevron.left")
                             .font(.system(size: 19))
                             .fontWeight(.regular)
+                            .foregroundStyle(Color("AccentColor"))
                         }
                         .padding(.leading, 20)
                         
                         Spacer()
                         
                         Text("Резюме")
-                        
+                            .foregroundColor(Color("SecondaryColor"))
+                            .fontWeight(.bold)
                         
                         Spacer()
                         
@@ -53,6 +55,7 @@ struct CvFullInfoView: View {
                                 .frame(width: 20, height: 30)
                                 .padding(4)
                                 .padding(.trailing, 13)
+                                .foregroundStyle(Color("AccentColor"))
                         }
                     }
                     .font(.system(size: 18))
@@ -97,6 +100,7 @@ struct CvFullInfoView: View {
                             Text("Восстановление аккаунта невозможно после удаления.")
                         }
                     }
+                    .foregroundStyle(Color("SecondaryColor"))
                 }
             }
             .navigationBarBackButtonHidden(true)

@@ -6,39 +6,45 @@ struct EditAccount: View {
     @Environment(\.dismiss) var dismiss
     
     var body: some View {
-        VStack {
+        
+        ZStack {
             
-            HStack{
-                Button {
-                    self.dismiss()
-                } label: {
-                    Image(systemName: "chevron.left")
-                        .padding(.leading, 15)
-                        .font(.system(size: 25))
+            Color("ForegroundColor").ignoresSafeArea()
+            
+            VStack {
+                
+                HStack{
+                    Button {
+                        self.dismiss()
+                    } label: {
+                        Image(systemName: "chevron.left")
+                            .padding(.leading, 15)
+                            .font(.system(size: 25))
+                    }
+                    
+                    Text("Редактирование профиля")
+                        .frame(maxWidth: .infinity)
+                        .padding(.trailing, 25)
+                }
+                .foregroundColor(Color("SecondaryColor"))
+                .fontWeight(.regular)
+                
+                
+                
+                ScrollView {
+                    ProfileEditCenterImage(image: self.viewModel.student.image)
+                    
+                    EditProfileViewItems()
+                        .environmentObject(self.viewModel)
+                    
+                    Spacer()
                 }
                 
-                Text("Редактирование профиля")
-                    .frame(maxWidth: .infinity)
-                    .padding(.trailing, 25)
-                
             }
-
-            .fontWeight(.regular)
-            .foregroundStyle(.black)
-            
-            
-            ScrollView {
-                ProfileEditCenterImage(image: self.viewModel.student.image)
-                
-                EditProfileViewItems()
-                    .environmentObject(self.viewModel)
-                
-                Spacer()
-            }
-            
+            .navigationBarBackButtonHidden(true)
+            .toolbar(.hidden, for: .tabBar)
         }
-        .navigationBarBackButtonHidden(true)
-        .toolbar(.hidden, for: .tabBar)
+        
     }
     
 }

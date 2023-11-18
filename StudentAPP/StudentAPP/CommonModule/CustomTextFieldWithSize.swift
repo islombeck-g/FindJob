@@ -13,18 +13,22 @@ struct CustomTextFieldWithSize: View {
         ZStack(alignment: .trailing) {
             
             RoundedRectangle(cornerRadius: 10.0)
-                .foregroundStyle(Color("lightBlue"))
+                .foregroundStyle(Color("textFieldBack"))
 
             Group {
                 if !self.isSecureField {
                     
                     TextField(self.text, text: self.$result)
+                        
                         .padding(.horizontal, 16)
+                    
                     
                 } else {
                     Group {
                         if self.showPassword {
                             TextField(self.text, text: self.$result)
+                                .background(Color.black)
+                                .foregroundStyle(.red)
                         }
                         else{
                             SecureField(self.text, text: self.$result)
@@ -43,7 +47,7 @@ struct CustomTextFieldWithSize: View {
                 }
             }
         }
-        .foregroundStyle(Color("darkGray"))
+        .foregroundStyle(Color("TextColor"))
         .frame(maxWidth: .infinity)
         .frame(height: 50)
         .padding(.horizontal, size)

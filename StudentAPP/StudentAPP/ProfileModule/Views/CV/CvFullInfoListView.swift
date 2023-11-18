@@ -12,6 +12,7 @@ struct CvFullInfoListView: View {
                     if self.cv.secondName != "" {
                         Text("Фамилия")
                             .font(.system(size:15))
+                            .fontWeight(.bold)
                     }
                     
                     
@@ -26,7 +27,7 @@ struct CvFullInfoListView: View {
                 if self.cv.firstName != "" {
                     
                     Text("Имя")
-                        .foregroundColor(.gray)
+                        .fontWeight(.bold)
                         .font(.system(size:15))
                     Text(self.cv.firstName)
                         .font(.system(size: 17))
@@ -37,7 +38,7 @@ struct CvFullInfoListView: View {
             Group {
                 if self.cv.patronymicName != "" {
                     Text("Отчество")
-                        .foregroundColor(.gray)
+                        .fontWeight(.bold)
                         .font(.system(size:15))
                     
                     Text(self.cv.patronymicName)
@@ -49,7 +50,7 @@ struct CvFullInfoListView: View {
             Group {
                 if self.cv.patronymicName != "" {
                     Text("Дата рождения")
-                        .foregroundColor(.gray)
+                        .fontWeight(.bold)
                         .font(.system(size:15))
                     
                     Text(self.cv.birthDate)
@@ -61,7 +62,7 @@ struct CvFullInfoListView: View {
             Group {
                 if self.cv.patronymicName != "" {
                     Text("Гражданство")
-                        .foregroundColor(.gray)
+                        .fontWeight(.bold)
                         .font(.system(size:15))
                     
                     Text(self.cv.birthCountry)
@@ -74,7 +75,7 @@ struct CvFullInfoListView: View {
             Group {
                 if self.cv.patronymicName != "" {
                     Text("Телефон")
-                        .foregroundColor(.gray)
+                        .fontWeight(.bold)
                         .font(.system(size:15))
                     
                     Text(self.cv.phoneNumber)
@@ -94,12 +95,12 @@ struct CvFullInfoListView: View {
                 Group {
                     
                     Text("Образование")
-                        .foregroundColor(.black)
+                        .fontWeight(.bold)
                         .font(.system(size:20))
                         .fontWeight(.bold)
                     if self.cv.university != "" {
                         Text("Университет")
-                            .foregroundColor(.gray)
+                            .fontWeight(.bold)
                             .font(.system(size:15))
                         
                         Text(self.cv.university)
@@ -111,7 +112,7 @@ struct CvFullInfoListView: View {
                 Group {
                     if self.cv.institute != "" {
                         Text("Институт")
-                            .foregroundColor(.gray)
+                            .fontWeight(.bold)
                             .font(.system(size:15))
                         
                         Text(self.cv.institute)
@@ -123,7 +124,7 @@ struct CvFullInfoListView: View {
                 Group {
                     if self.cv.direction != "" {
                         Text("Направление")
-                            .foregroundColor(.gray)
+                            .fontWeight(.bold)
                             .font(.system(size:15))
                         
                         Text(self.cv.direction)
@@ -135,7 +136,7 @@ struct CvFullInfoListView: View {
                 Group {
                     if self.cv.anotherEducation != "" {
                         Text("Дополнительное образование")
-                            .foregroundColor(.gray)
+                            .fontWeight(.bold)
                             .font(.system(size:15))
                         
                         Text(self.cv.anotherEducation)
@@ -147,7 +148,7 @@ struct CvFullInfoListView: View {
                 Group {
                     if self.cv.certificates != "" {
                         Text("Сертификаты, рекомендательные письма")
-                            .foregroundColor(.gray)
+                            .fontWeight(.bold)
                             .font(.system(size:15))
                         
                         Text(self.cv.certificates)
@@ -169,13 +170,13 @@ struct CvFullInfoListView: View {
                 
                 Group {
                     Text("Основное")
-                        .foregroundColor(.black)
+                        .fontWeight(.bold)
                         .font(.system(size:20))
                         .fontWeight(.bold)
                    
                     if self.cv.skills != "" {
                         Text("Навыки") 
-                            .foregroundColor(.gray)
+                            .fontWeight(.bold)
                             .font(.system(size:15))
                         
                         Text(self.cv.skills)
@@ -187,7 +188,7 @@ struct CvFullInfoListView: View {
                 Group {
                     if self.cv.money != "" {
                         Text("Желаемый уровень заработной платы")
-                            .foregroundColor(.gray)
+                            .fontWeight(.bold)
                             .font(.system(size:15))
                         
                         Text(self.cv.money)
@@ -199,7 +200,7 @@ struct CvFullInfoListView: View {
                 Group {
                     if self.cv.workExperience != "" {
                         Text("Тип занятости")
-                            .foregroundColor(.gray)
+                            .fontWeight(.bold)
                             .font(.system(size:15))
                         
                         Text(self.cv.workExperience)
@@ -211,7 +212,7 @@ struct CvFullInfoListView: View {
                 Group {
                     if self.cv.employmentType != "" {
                         Text("Опыт работы")
-                            .foregroundColor(.gray)
+                            .fontWeight(.bold)
                             .font(.system(size:15))
                         
                         Text(self.cv.employmentType)
@@ -223,7 +224,7 @@ struct CvFullInfoListView: View {
                 Group {
                     if self.cv.aboutMe != "" {
                         Text("Обо мне")
-                            .foregroundColor(.gray)
+                            .fontWeight(.bold)
                             .font(.system(size:15))
                         
                         Text(self.cv.aboutMe)
@@ -233,6 +234,7 @@ struct CvFullInfoListView: View {
                 }
             }
         }
+        .foregroundStyle(Color("SecondaryColor"))
         .padding(.horizontal, 16)
     }
 }

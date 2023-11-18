@@ -14,6 +14,7 @@ struct MainView: View {
             ZStack {
                 
                 Color("ForegroundColor")
+//                    .opacity(2.1)
                     .ignoresSafeArea()
                 
                 ScrollView {
@@ -80,7 +81,7 @@ struct MainView: View {
                         }
                     
                 }
-
+                .navigationBarTitleDisplayMode(.inline)
                 .toolbar {
                     
                     ToolbarItem(placement: .topBarLeading) {
