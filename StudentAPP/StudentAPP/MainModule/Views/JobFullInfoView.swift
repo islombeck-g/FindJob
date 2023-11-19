@@ -15,39 +15,6 @@ struct JobFullInfoView: View {
                     .ignoresSafeArea()
                 
                 VStack {
-                    HStack {
-                        
-                        Button {
-                            self.dismiss()
-                            
-                        } label: {
-                            Image(systemName: "chevron.left")
-                                .font(.system(size: 19))
-                                .fontWeight(.regular)
-                            
-                        }
-                        .padding(.leading, 20)
-                        
-                        Spacer()
-                        
-                        Text("Вакансия")
-                        
-                        Spacer()
-                        
-                        Button {
-                            withAnimation(.spring) {
-                                self.toggleFavorite()
-                            }
-                        }label: {
-                            Image(systemName: self.isFavorite == true ?  "star.fill" : "star")
-                                .rotationEffect(.degrees(90))
-                                .frame(width: 20, height: 30)
-                                .padding(4)
-                                .padding(.trailing, 13)
-                        }
-                    }
-                    .font(.system(size: 18))
-                    .foregroundStyle(Color("SecondaryColor"))
                     
                     ScrollView {
                         FullInfoView(vc: vc)
@@ -70,7 +37,44 @@ struct JobFullInfoView: View {
                     }
                 }
             }
-            
+            .navigationBarTitleDisplayMode(.inline)
+            .toolbar {
+                
+                ToolbarItem(placement: .topBarLeading) {
+                    
+                    Button {
+                        self.dismiss()
+                        
+                    } label: {
+                        Image(systemName: "chevron.left")
+                            .font(.system(size: 19))
+                            .fontWeight(.regular)
+                            .foregroundStyle(Color("SecondaryColor"))
+                    }
+                }
+                
+                ToolbarItem(placement: .principal) {
+                    
+                    Text("Вакансия")
+                        .font(.system(size: 22))
+                        .fontWeight(.bold)
+                        .foregroundStyle(Color("SecondaryColor"))
+                }
+                
+                ToolbarItem(placement: .topBarTrailing) {
+                    withAnimation(.spring) {
+                        Button {
+                            self.toggleFavorite()
+                        }label: {
+                            Image(systemName: self.isFavorite == true ?  "star.fill" : "star")
+                                .rotationEffect(.degrees(90))
+                                .frame(width: 20, height: 30)
+                                .padding(4)
+                                .padding(.trailing, 13)
+                        }
+                    }
+                }
+            }
             .navigationBarBackButtonHidden(true)
         }
         .toolbar(.hidden, for: .tabBar)

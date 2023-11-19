@@ -5,8 +5,8 @@ struct ProfileMainView: View {
     @StateObject private var viewModel:ProfileViewModel
     
     init(userStateViewModel: UserStateViewModel) {
-           _viewModel = StateObject(wrappedValue: ProfileViewModel(userStateViewModel: userStateViewModel))
-       }
+        _viewModel = StateObject(wrappedValue: ProfileViewModel(userStateViewModel: userStateViewModel))
+    }
     
     @State private var logOut_isAllertShow:Bool = false
     @State private var deleteAcount_isAllertShow:Bool = false
@@ -19,50 +19,7 @@ struct ProfileMainView: View {
                 Color("ForegroundColor").ignoresSafeArea()
                 
                 VStack {
-                    HStack {
-                        Button{
-                            //don't understand why it is here
-                        }label: {
-                            Image(systemName: "bell")
-                                .padding(5)
-                                .foregroundStyle(Color("SecondaryColor"))
-                        }
-                        .padding(.leading, 7)
-                        
-                        Spacer()
-                        
-                        Text("Профиль")
-                            .font(.system(size: 22))
-                            .fontWeight(.bold)
-                            .foregroundStyle(Color("SecondaryColor"))
-                        
-                        Spacer()
-                        
-                        Menu {
-                            NavigationLink{
-                                EditAccount()
-                                    .environmentObject(self.viewModel)
-                            }label:{
-                                Text("Редактировать профиль")
-                            }
-                            
-                            Divider()
-                            
-                            Button(role: .destructive) {
-                                self.deleteAcount_isAllertShow.toggle()
-                            }label:{
-                                Text("Удалить аккаунт")
-                            }
-                        } label: {
-                            Image(systemName: "ellipsis")
-                                .rotationEffect(.degrees(90))
-                                .frame(width: 20, height: 30)
-                                .padding(4)
-                                .padding(.trailing, 6)
-                        }
-                        .foregroundStyle(Color("SecondaryColor"))
-                    }
-                    .font(.system(size: 18))
+                    
                     
                     
                     ScrollView {
@@ -73,7 +30,7 @@ struct ProfileMainView: View {
                             patronymicName: self.$viewModel.student.patronymicName,
                             image: self.$viewModel.student.image,
                             phoneNumber: self.$viewModel.student.phoneNumber)
-                            .padding(.vertical, 16)
+                        .padding(.vertical, 16)
                         
                         NavigationLink{
                             CvMainView()
@@ -131,18 +88,18 @@ struct ProfileMainView: View {
                         }label: {
                             
                             Text("Выйти")
-                                
+                            
                                 .frame(maxWidth: .infinity)
                                 .frame(height: 60)
                                 .foregroundStyle(.red)
                                 .background(Color("darkAccentColor"))
                                 .clipShape(.rect(cornerRadius: 13))
-                                
+                            
                         }
                         .padding(.horizontal, 16)
                         .alert("Хотите выйти?", isPresented: self.$logOut_isAllertShow) {
-                           
-                                Text("Отмена")
+                            
+                            Text("Отмена")
                             
                             Button{
                                 self.viewModel.logOut()
@@ -157,7 +114,7 @@ struct ProfileMainView: View {
                             Button{}label: {
                                 Text("Отмена")
                             }
-                                
+                            
                             Button{
                                 
                             }label: {
@@ -170,6 +127,55 @@ struct ProfileMainView: View {
                 }
             }
             .navigationBarBackButtonHidden(true)
+            .navigationBarTitleDisplayMode(.inline)
+            .toolbar {
+                
+                ToolbarItem(placement: .topBarLeading) {
+                    
+                    Button {
+                        //don't understand why it is here
+                    } label: {
+                        Image(systemName: "bell")
+                            .font(.system(size: 19))
+                            .fontWeight(.regular)
+                            .foregroundStyle(Color("SecondaryColor"))
+                    }
+                }
+                
+                ToolbarItem(placement: .principal) {
+                    
+                    Text("Профиль")
+                        .font(.system(size: 22))
+                        .fontWeight(.bold)
+                        .foregroundStyle(Color("SecondaryColor"))
+                }
+                
+                ToolbarItem(placement: .topBarTrailing) {
+                    Menu {
+                        NavigationLink{
+                            EditAccount()
+                                .environmentObject(self.viewModel)
+                        }label:{
+                            Text("Редактировать профиль")
+                        }
+                        
+                        Divider()
+                        
+                        Button(role: .destructive) {
+                            self.deleteAcount_isAllertShow.toggle()
+                        }label:{
+                            Text("Удалить аккаунт")
+                        }
+                    } label: {
+                        Image(systemName: "ellipsis")
+                            .rotationEffect(.degrees(90))
+                            .frame(width: 20, height: 30)
+                            .padding(4)
+                            .padding(.trailing, 6)
+                    }
+                    .foregroundStyle(Color("SecondaryColor"))
+                }
+            }
         }
     }
 }

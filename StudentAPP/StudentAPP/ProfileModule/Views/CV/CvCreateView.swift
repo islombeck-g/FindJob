@@ -26,34 +26,11 @@ struct CvCreateView: View {
         aboutMe: "")
     
     var body: some View {
-        VStack {
+        NavigationStack {
             ZStack {
                 Color("ForegroundColor").ignoresSafeArea()
                 
                 VStack{
-                    
-                    HStack {
-                        
-                        Button {
-                            self.dismiss()
-                        } label: {
-                            Image(systemName: "chevron.left")
-                                .font(.system(size: 19))
-                                .fontWeight(.regular)
-                                .foregroundStyle(Color("AccentColor"))
-                        }
-                        .padding(.leading, 20)
-                        
-                        Spacer()
-                        
-                        Text("Создание резюме")
-                            .padding(.trailing, 35)
-                            .fontWeight(.bold)
-                            .foregroundStyle(Color("SecondaryColor"))
-                        
-                        Spacer()
-                    }
-                    .font(.system(size: 18))
                     
                     ScrollView {
                         
@@ -101,6 +78,31 @@ struct CvCreateView: View {
                         
                         Spacer()
                             .frame(height: 20)
+                    }
+
+                    .navigationBarTitleDisplayMode(.inline)
+                    .toolbar {
+                    
+                        ToolbarItem(placement: .topBarLeading) {
+                    
+                            Button {
+                                self.dismiss()
+                    
+                            } label: {
+                                Image(systemName: "chevron.left")
+                                    .font(.system(size: 19))
+                                    .fontWeight(.regular)
+                                    .foregroundStyle(Color("SecondaryColor"))
+                            }
+                        }
+                    
+                        ToolbarItem(placement: .principal) {
+                    
+                            Text("Создание резюме")
+                                .font(.system(size: 22))
+                                .fontWeight(.bold)
+                                .foregroundStyle(Color("SecondaryColor"))
+                        }
                     }
                 }
             }

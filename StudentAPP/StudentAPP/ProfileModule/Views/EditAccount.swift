@@ -6,44 +6,54 @@ struct EditAccount: View {
     @Environment(\.dismiss) var dismiss
     
     var body: some View {
-        
-        ZStack {
-            
-            Color("ForegroundColor").ignoresSafeArea()
-            
-            VStack {
+        NavigationStack {
+            ZStack {
                 
-                HStack{
-                    Button {
-                        self.dismiss()
-                    } label: {
-                        Image(systemName: "chevron.left")
-                            .padding(.leading, 15)
-                            .font(.system(size: 25))
+                Color("ForegroundColor").ignoresSafeArea()
+                
+                VStack {
+                    
+                    ScrollView {
+                        ProfileEditCenterImage(image: self.viewModel.student.image)
+                        
+                        EditProfileViewItems()
+                            .environmentObject(self.viewModel)
+                        
+                        Spacer()
                     }
                     
-                    Text("Редактирование профиля")
-                        .frame(maxWidth: .infinity)
-                        .padding(.trailing, 25)
-                }
-                .foregroundColor(Color("SecondaryColor"))
-                .fontWeight(.regular)
-                
-                
-                
-                ScrollView {
-                    ProfileEditCenterImage(image: self.viewModel.student.image)
                     
-                    EditProfileViewItems()
-                        .environmentObject(self.viewModel)
-                    
-                    Spacer()
                 }
+                .navigationBarTitleDisplayMode(.inline)
+                .toolbar {
+                
+                    ToolbarItem(placement: .topBarLeading) {
+                
+                        Button {
+                            self.dismiss()
+                
+                        } label: {
+                            Image(systemName: "chevron.left")
+                                .font(.system(size: 19))
+                                .fontWeight(.regular)
+                                .foregroundStyle(Color("SecondaryColor"))
+                        }
+                    }
+                
+                    ToolbarItem(placement: .principal) {
+                
+                        Text("Редактирование профиля")
+                            .font(.system(size: 22))
+                            .fontWeight(.bold)
+                            .foregroundStyle(Color("SecondaryColor"))
+                    }
+                }
+                .navigationBarBackButtonHidden(true)
+                .toolbar(.hidden, for: .tabBar)
                 
             }
-            .navigationBarBackButtonHidden(true)
-            .toolbar(.hidden, for: .tabBar)
         }
+        
         
     }
     

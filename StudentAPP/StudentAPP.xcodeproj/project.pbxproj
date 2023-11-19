@@ -14,7 +14,6 @@
 		6309714C2AE6FD3100A0714A /* CvFullInfoListView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6309714B2AE6FD3100A0714A /* CvFullInfoListView.swift */; };
 		632DC3642AF78F8C00F018D2 /* ResponsesViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 632DC3632AF78F8C00F018D2 /* ResponsesViewModel.swift */; };
 		632DC3662AF78F9900F018D2 /* ResponsesModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 632DC3652AF78F9900F018D2 /* ResponsesModel.swift */; };
-		633D4BA82AF6463100108D18 /* SearchResultView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 633D4BA72AF6463000108D18 /* SearchResultView.swift */; };
 		634B6CED2AF4D393001A5FDA /* FullInfoView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 634B6CEC2AF4D392001A5FDA /* FullInfoView.swift */; };
 		636F17242AE7CA18006B7D20 /* CVInfoView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 636F17232AE7CA18006B7D20 /* CVInfoView.swift */; };
 		636F17262AE81CA1006B7D20 /* CvUpdateView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 636F17252AE81CA1006B7D20 /* CvUpdateView.swift */; };
@@ -63,7 +62,6 @@
 		6309714B2AE6FD3100A0714A /* CvFullInfoListView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CvFullInfoListView.swift; sourceTree = "<group>"; };
 		632DC3632AF78F8C00F018D2 /* ResponsesViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ResponsesViewModel.swift; sourceTree = "<group>"; };
 		632DC3652AF78F9900F018D2 /* ResponsesModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ResponsesModel.swift; sourceTree = "<group>"; };
-		633D4BA72AF6463000108D18 /* SearchResultView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchResultView.swift; sourceTree = "<group>"; };
 		634B6CEC2AF4D392001A5FDA /* FullInfoView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FullInfoView.swift; sourceTree = "<group>"; };
 		636F17232AE7CA18006B7D20 /* CVInfoView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CVInfoView.swift; sourceTree = "<group>"; };
 		636F17252AE81CA1006B7D20 /* CvUpdateView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CvUpdateView.swift; sourceTree = "<group>"; };
@@ -266,7 +264,6 @@
 			isa = PBXGroup;
 			children = (
 				638E0F4A2AF3C489006D5770 /* JobInfoView.swift */,
-				633D4BA72AF6463000108D18 /* SearchResultView.swift */,
 				638E0F4C2AF3EF53006D5770 /* JobFullInfoView.swift */,
 				634B6CEC2AF4D392001A5FDA /* FullInfoView.swift */,
 			);
@@ -368,7 +365,6 @@
 				6377D3892AE66F590090714E /* EnterViewModel.swift in Sources */,
 				630971482AE6BFEA00A0714A /* ProfileModel.swift in Sources */,
 				637319C42AF673A000CD3BB6 /* SupportMainView.swift in Sources */,
-				633D4BA82AF6463100108D18 /* SearchResultView.swift in Sources */,
 				6309714C2AE6FD3100A0714A /* CvFullInfoListView.swift in Sources */,
 				6377D3982AE673E60090714E /* EnterPositionView.swift in Sources */,
 				6377D3582AE66D870090714E /* StudentAPPApp.swift in Sources */,

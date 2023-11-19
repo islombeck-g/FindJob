@@ -16,50 +16,6 @@ struct CvFullInfoView: View {
                 Color("ForegroundColor").ignoresSafeArea()
                 
                 VStack {
-                    HStack {
-                        Button {
-                            self.dismiss()
-                        } label: {
-                                Image(systemName: "chevron.left")
-                            .font(.system(size: 19))
-                            .fontWeight(.regular)
-                            .foregroundStyle(Color("AccentColor"))
-                        }
-                        .padding(.leading, 20)
-                        
-                        Spacer()
-                        
-                        Text("Резюме")
-                            .foregroundColor(Color("SecondaryColor"))
-                            .fontWeight(.bold)
-                        
-                        Spacer()
-                        
-                        Menu {
-                            NavigationLink{
-                                CvUpdateView(cv: self.$cv)
-                            }label:{
-                                Text("Редактировать резюме")
-                            }
-                            
-                            Divider()
-                            
-                            Button(role: .destructive) {
-                                self.deleteCV_isAllertShow.toggle()
-                            }label:{
-                                Text("Удалить резюме")
-                            }
-                        }label: {
-                            Image(systemName: "ellipsis")
-                                .rotationEffect(.degrees(90))
-                                .frame(width: 20, height: 30)
-                                .padding(4)
-                                .padding(.trailing, 13)
-                                .foregroundStyle(Color("AccentColor"))
-                        }
-                    }
-                    .font(.system(size: 18))
-                    
                     
                     ScrollView {
                         
@@ -101,6 +57,57 @@ struct CvFullInfoView: View {
                         }
                     }
                     .foregroundStyle(Color("SecondaryColor"))
+                }
+                .navigationBarTitleDisplayMode(.inline)
+                .toolbar {
+                
+                    ToolbarItem(placement: .topBarLeading) {
+                
+                        Button {
+                            self.dismiss()
+                
+                        } label: {
+                            Image(systemName: "chevron.left")
+                                .font(.system(size: 19))
+                                .fontWeight(.regular)
+                                .foregroundStyle(Color("SecondaryColor"))
+                        }
+                    }
+                
+                    ToolbarItem(placement: .principal) {
+                
+                        Text("Резюме")
+                            .font(.system(size: 22))
+                            .fontWeight(.bold)
+                            .foregroundStyle(Color("SecondaryColor"))
+                    }
+                
+                    ToolbarItem(placement: .topBarTrailing) {
+                        withAnimation(.spring) {
+                            Menu {
+                                NavigationLink{
+                                    CvUpdateView(cv: self.$cv)
+                                }label:{
+                                    Text("Редактировать резюме")
+                                }
+                                
+                                Divider()
+                                
+                                Button(role: .destructive) {
+                                    self.deleteCV_isAllertShow.toggle()
+                                }label:{
+                                    Text("Удалить резюме")
+                                }
+                            }label: {
+                                Image(systemName: "ellipsis")
+                                    .rotationEffect(.degrees(90))
+                                    .frame(width: 20, height: 30)
+                                    .padding(4)
+                                    .padding(.trailing, 13)
+                                    .foregroundStyle(Color("AccentColor"))
+                            }
+                        }
+                    }
                 }
             }
             .navigationBarBackButtonHidden(true)

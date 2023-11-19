@@ -12,26 +12,6 @@ struct CvUpdateView: View {
                 
                 VStack{
                     
-                    HStack {
-                        
-                        Button {
-                            self.dismiss()
-                        } label: {
-                            Image(systemName: "chevron.left")
-                                .font(.system(size: 19))
-                                .fontWeight(.regular)
-                        }
-                        .padding(.leading, 20)
-                        
-                        Spacer()
-                        
-                        Text("Редактировать резюме")
-                            .padding(.trailing, 35)
-                            .fontWeight(.bold)
-                        
-                        Spacer()
-                    }
-                    .font(.system(size: 18))
                     
                     VStack(alignment: .leading, spacing: 10) {
                         
@@ -46,6 +26,30 @@ struct CvUpdateView: View {
                         
                     }
                     
+                }
+                .navigationBarTitleDisplayMode(.inline)
+                .toolbar {
+                
+                    ToolbarItem(placement: .topBarLeading) {
+                
+                        Button {
+                            self.dismiss()
+                
+                        } label: {
+                            Image(systemName: "chevron.left")
+                                .font(.system(size: 19))
+                                .fontWeight(.regular)
+                                .foregroundStyle(Color("SecondaryColor"))
+                        }
+                    }
+                
+                    ToolbarItem(placement: .principal) {
+                
+                        Text("Редактировать резюме")
+                            .font(.system(size: 22))
+                            .fontWeight(.bold)
+                            .foregroundStyle(Color("SecondaryColor"))
+                    }
                 }
             }
         }
