@@ -1,6 +1,6 @@
 import SwiftUI
 
-struct LoginView: View {
+struct LoginSCREEN: View {
     
     @EnvironmentObject var viewModel:EnterViewModel
     @Environment(\.dismiss) var dismiss
@@ -92,6 +92,6 @@ struct LoginView: View {
 
 
 #Preview {
-    LoginView()
+    LoginSCREEN()
         .environmentObject(EnterViewModel(userStateViewModel: UserStateViewModel()))
 }

@@ -1,6 +1,6 @@
 import SwiftUI
 
-struct SupportMainView: View {
+struct SupportSCREEN: View {
     
     @EnvironmentObject var viewModel:ProfileViewModel
     @Environment(\.dismiss) var dismiss
@@ -107,6 +107,6 @@ struct SupportMainView: View {
 }
 
 #Preview {
-    SupportMainView()
+    SupportSCREEN()
         .environmentObject(ProfileViewModel(userStateViewModel: UserStateViewModel()))
 }

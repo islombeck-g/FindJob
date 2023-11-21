@@ -1,6 +1,6 @@
 import SwiftUI
 
-struct ResponsesMainView: View {
+struct ResponsesSCREEN: View {
     
     @StateObject private var viewModel =  ResponsesViewModel()
     
@@ -50,5 +50,5 @@ struct ResponsesMainView: View {
 }
 
 #Preview {
-    ResponsesMainView()
+    ResponsesSCREEN()
 }

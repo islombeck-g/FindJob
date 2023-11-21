@@ -1,6 +1,6 @@
 import SwiftUI
 
-struct EditAccount: View {
+struct EditAccountSCREEN: View {
    
     @EnvironmentObject var viewModel: ProfileViewModel
     @Environment(\.dismiss) var dismiss
@@ -59,6 +59,6 @@ struct EditAccount: View {
     
 }
 #Preview {
-    EditAccount()
+    EditAccountSCREEN()
         .environmentObject(ProfileViewModel(userStateViewModel: UserStateViewModel()))
 }

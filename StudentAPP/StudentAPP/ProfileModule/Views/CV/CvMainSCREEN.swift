@@ -1,6 +1,6 @@
 import SwiftUI
 
-struct CvMainView: View {
+struct CvMainSCREEN: View {
     
     @EnvironmentObject var viewModel: ProfileViewModel
     @Environment (\.dismiss) var dismiss
@@ -19,7 +19,7 @@ struct CvMainView: View {
                         ForEach(self.viewModel.cvArray.indices, id: \.self) { i in
                             
                             NavigationLink {
-                                CvFullInfoView(cv: self.$viewModel.cvArray[i])
+                                CvFullInfoSCREEN(cv: self.$viewModel.cvArray[i])
                                     .environmentObject(self.viewModel)
                             }label: {
                                 CVInfoView(cv: self.$viewModel.cvArray[i])
@@ -58,7 +58,7 @@ struct CvMainView: View {
                     withAnimation(.spring) {
                         NavigationLink {
                            
-                            CvCreateView()
+                            CvCreateSCREEN()
                                 .environmentObject(self.viewModel)
                             
                         }label: {
@@ -81,6 +81,6 @@ struct CvMainView: View {
 }
 
 #Preview {
-    CvMainView()
+    CvMainSCREEN()
         .environmentObject(ProfileViewModel(userStateViewModel: UserStateViewModel()))
 }

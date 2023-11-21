@@ -1,6 +1,6 @@
 import SwiftUI
 
-struct JobFullInfoView: View {
+struct JobFullInfoSCREEN: View {
     
     @Environment(\.dismiss) var dismiss
     @EnvironmentObject var viewModel: MainModuleViewModel
@@ -94,7 +94,7 @@ struct JobFullInfoView: View {
 }
 
 #Preview {
-    JobFullInfoView(vc: Job(
+    JobFullInfoSCREEN(vc: Job(
         activity: "Юриспрюденция",
         nameOfCompany: "Газпром нефть",
         position: "Юрист",

@@ -1,6 +1,6 @@
 import SwiftUI
 
-struct MainView: View {
+struct MainSCREEN: View {
     
     @StateObject private var viewModel:MainModuleViewModel = MainModuleViewModel()
     
@@ -26,7 +26,7 @@ struct MainView: View {
                             ForEach(self.viewModel.exampleFavouriteListOfJob){ job in
                                 
                                 NavigationLink {
-                                    JobFullInfoView(vc: job, isFavorite: self.viewModel.exampleFavouriteListOfJob.contains(job))
+                                    JobFullInfoSCREEN(vc: job, isFavorite: self.viewModel.exampleFavouriteListOfJob.contains(job))
                                         .environmentObject(self.viewModel)
                                 } label: {
                                     JobInfoView(vc: job)
@@ -47,7 +47,7 @@ struct MainView: View {
                                         ForEach(self.viewModel.exampleListOfJobs){ job in
                                             
                                             NavigationLink {
-                                                JobFullInfoView(vc: job, isFavorite: self.viewModel.exampleFavouriteListOfJob.contains(job))
+                                                JobFullInfoSCREEN(vc: job, isFavorite: self.viewModel.exampleFavouriteListOfJob.contains(job))
                                                     .environmentObject(self.viewModel)
                                             } label: {
                                                 
@@ -70,7 +70,7 @@ struct MainView: View {
                             ForEach(self.viewModel.filteredJobs){ job in
                                 
                                 NavigationLink {
-                                    JobFullInfoView(vc: job, isFavorite: self.viewModel.exampleFavouriteListOfJob.contains(job))
+                                    JobFullInfoSCREEN(vc: job, isFavorite: self.viewModel.exampleFavouriteListOfJob.contains(job))
                                         .environmentObject(self.viewModel)
                                 }label: {
                                     JobInfoView(vc: job)
@@ -124,6 +124,6 @@ struct MainView: View {
 }
 
 #Preview {
-    MainView()
+    MainSCREEN()
 }
 

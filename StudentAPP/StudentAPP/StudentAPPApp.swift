@@ -10,7 +10,7 @@ struct StudentAPPApp: App {
             if self.userStateViewModel.isLoggedIn {
                 TabViewOfAPP(userStateViewModel: userStateViewModel)
             } else {
-                EnterMainView(userStateViewModel: userStateViewModel)
+                EnterSCREEN(userStateViewModel: userStateViewModel)
             }
             
         }

@@ -1,6 +1,6 @@
 import SwiftUI
 
-struct CvCreateView: View {
+struct CvCreateSCREEN: View {
     
     @EnvironmentObject var viewModel:ProfileViewModel
     @Environment (\.dismiss) var dismiss
@@ -112,6 +112,6 @@ struct CvCreateView: View {
 }
 
 #Preview {
-    CvCreateView()
+    CvCreateSCREEN()
         .environmentObject(ProfileViewModel(userStateViewModel: UserStateViewModel()))
 }

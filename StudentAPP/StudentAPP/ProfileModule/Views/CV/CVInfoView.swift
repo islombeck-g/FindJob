@@ -59,7 +59,7 @@ struct CVInfoView: View {
 }
 
 #Preview {
-    CvMainView()
+    CvMainSCREEN()
         .environmentObject(ProfileViewModel(userStateViewModel: UserStateViewModel()))
 }
 

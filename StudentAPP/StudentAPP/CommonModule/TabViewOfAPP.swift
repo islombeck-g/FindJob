@@ -9,17 +9,17 @@ struct TabViewOfAPP: View {
         
         TabView {
             
-            MainView()
+            MainSCREEN()
                 .tabItem {
                     Label("Главная", systemImage: "doc.text.magnifyingglass")
                 }
             
-            ResponsesMainView()
+            ResponsesSCREEN()
                 .tabItem {
                     Label("Отклики", systemImage: "hand.thumbsup")
                 }
             
-            ProfileMainView(userStateViewModel: userStateViewModel)
+            ProfileSCREEN(userStateViewModel: userStateViewModel)
                 .tabItem {
                     Label("Профиль", systemImage: "person")
                 }

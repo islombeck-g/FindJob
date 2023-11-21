@@ -1,6 +1,6 @@
 import SwiftUI
 
-struct EnterMainView: View {
+struct EnterSCREEN: View {
     
     @StateObject var viewModel:EnterViewModel
     
@@ -26,13 +26,12 @@ struct EnterMainView: View {
                             
                     }
                     .foregroundStyle(Color("SecondaryColor"))
-//                    .foregroundStyle(.white)
                     .padding(.horizontal)
                     .multilineTextAlignment(.center)
                     
                     Group {
                         NavigationLink {
-                            LoginView()
+                            LoginSCREEN()
                                 .environmentObject(self.viewModel)
                         } label: {
                             ZStack {
@@ -43,12 +42,11 @@ struct EnterMainView: View {
                                 Text ("Вход")
                                     .foregroundStyle(Color("ForegroundColor"))
                                     .fontWeight(.bold)
-                                     
                             }
                         }
  
-                        NavigationLink{
-                            RegistrationView()
+                        NavigationLink {
+                            RegistrationSCREEN()
                                 .environmentObject(self.viewModel)
                         } label: {
                             ZStack {
@@ -68,5 +66,5 @@ struct EnterMainView: View {
     }
 }
 #Preview {
-    EnterMainView(userStateViewModel: UserStateViewModel())
+    EnterSCREEN(userStateViewModel: UserStateViewModel())
 }

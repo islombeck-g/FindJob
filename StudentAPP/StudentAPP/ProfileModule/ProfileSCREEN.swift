@@ -1,6 +1,6 @@
 import SwiftUI
 
-struct ProfileMainView: View {
+struct ProfileSCREEN: View {
     
     @StateObject private var viewModel:ProfileViewModel
     
@@ -33,7 +33,7 @@ struct ProfileMainView: View {
                         .padding(.vertical, 16)
                         
                         NavigationLink{
-                            CvMainView()
+                            CvMainSCREEN()
                                 .environmentObject(self.viewModel)
                         }label: {
                             Group {
@@ -60,7 +60,7 @@ struct ProfileMainView: View {
                             .frame(height: 30)
                         
                         NavigationLink{
-                            SupportMainView()
+                            SupportSCREEN()
                                 .environmentObject(self.viewModel)
                         }label: {
                             Group {
@@ -153,7 +153,7 @@ struct ProfileMainView: View {
                 ToolbarItem(placement: .topBarTrailing) {
                     Menu {
                         NavigationLink{
-                            EditAccount()
+                            EditAccountSCREEN()
                                 .environmentObject(self.viewModel)
                         }label:{
                             Text("Редактировать профиль")
@@ -181,5 +181,5 @@ struct ProfileMainView: View {
 }
 
 #Preview {
-    ProfileMainView(userStateViewModel: UserStateViewModel())
+    ProfileSCREEN(userStateViewModel: UserStateViewModel())
 }

@@ -57,7 +57,7 @@ struct JobInfoView: View {
 }
 
 #Preview {
-    MainView()
+    MainSCREEN()
 }
 
 #Preview {

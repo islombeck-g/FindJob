@@ -1,6 +1,6 @@
 import SwiftUI
 
-struct CvFullInfoView: View {
+struct CvFullInfoSCREEN: View {
     
     @EnvironmentObject var viewModel: ProfileViewModel
     @Environment (\.dismiss) var dismiss
@@ -86,7 +86,7 @@ struct CvFullInfoView: View {
                         withAnimation(.spring) {
                             Menu {
                                 NavigationLink{
-                                    CvUpdateView(cv: self.$cv)
+                                    CvUpdateSCREEN(cv: self.$cv)
                                 }label:{
                                     Text("Редактировать резюме")
                                 }
@@ -118,7 +118,7 @@ struct CvFullInfoView: View {
 
 
 #Preview {
-    CvFullInfoView(cv: .constant(CvData(
+    CvFullInfoSCREEN(cv: .constant(CvData(
         age: 20,
         position: "IOS - developer",
         firstName: "Руслан",

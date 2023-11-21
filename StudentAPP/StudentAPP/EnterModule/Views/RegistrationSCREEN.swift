@@ -1,6 +1,6 @@
 import SwiftUI
 
-struct RegistrationView: View {
+struct RegistrationSCREEN: View {
     
     @EnvironmentObject var viewModel:EnterViewModel
     @Environment(\.dismiss) var dismiss
@@ -69,6 +69,6 @@ struct RegistrationView: View {
 }
 
 #Preview {
-    RegistrationView()
+    RegistrationSCREEN()
         .environmentObject(EnterViewModel(userStateViewModel: UserStateViewModel()))
 }

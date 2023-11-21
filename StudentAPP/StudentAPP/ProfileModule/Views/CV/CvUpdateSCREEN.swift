@@ -1,6 +1,6 @@
 import SwiftUI
 
-struct CvUpdateView: View {
+struct CvUpdateSCREEN: View {
     
     @Environment (\.dismiss) var dismiss
     @Binding var cv:CvData
@@ -58,7 +58,7 @@ struct CvUpdateView: View {
 }
 
 #Preview {
-    CvUpdateView(cv: .constant(CvData(
+    CvUpdateSCREEN(cv: .constant(CvData(
         age: 20,
         position: "IOS - developer",
         firstName: "Руслан",
