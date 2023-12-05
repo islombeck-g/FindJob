@@ -1,7 +1,7 @@
 import Foundation
 
 //final class ProfileViewModel:SupportViewModel, CvViewModule ,ObservableObject {
-final class ProfileViewModel: SupportViewModel, CvViewModule, ObservableObject {
+final class ProfileViewModel: SupportViewModel, ObservableObject {
     @Published var student:StudentData
     
     @Published var newAboutMe: String = ""
@@ -9,28 +9,6 @@ final class ProfileViewModel: SupportViewModel, CvViewModule, ObservableObject {
     @Published var newInstitute: String = ""
     @Published var newDirection: String = ""
     @Published var newUniversity: String = ""
-    
-    @Published var cvArray:[CvData] = [CvData]()
-    
-    @Published var cv:CvData = CvData(
-        age: 20,
-        position: "IOS - developer",
-        firstName: "Руслан",
-        secondName: "Хамдамов",
-        patronymicName: "Арсланович",
-        birthDate: "25.12.2000",
-        birthCountry: "Чехия",
-        phoneNumber: "+998(97)231-43-21",
-        university: "Казанский (Приволжский) Федеральный университет",
-        institute: "Институт вычислительной математики и информационных технологий",
-        direction: "Фундаментальная математика и информационные технологии",
-        anotherEducation: "-",
-        certificates: "IELTS 10",
-        skills: "Swift, SwiftUI, algorithms, LaTex, cooking",
-        money: "от 100 000 до 300 000 руб",
-        workExperience: "Лаборатория КФУ",
-        employmentType: "Полная занятость",
-        aboutMe: "Очень хороший человек")
     
     private var userStateViewModel:UserStateViewModel
     
@@ -59,13 +37,6 @@ final class ProfileViewModel: SupportViewModel, CvViewModule, ObservableObject {
     
     //good
     
-    func appendNewCV(newCV:CvData){
-        if newCV.position != "" && newCV.employmentType != "" && newCV.aboutMe != "" && newCV.university != "" {
-            self.cvArray.append(newCV)
-        } else {
-            //need error
-        }
-        
-    }
+
     
 }

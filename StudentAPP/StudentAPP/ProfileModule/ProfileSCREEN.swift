@@ -35,6 +35,7 @@ struct ProfileSCREEN: View {
                         NavigationLink{
                             CvMainSCREEN()
                                 .environmentObject(self.viewModel)
+                                .modelContainer(for: CvData.self)
                         }label: {
                             Group {
                                 Text("Мое резюме")

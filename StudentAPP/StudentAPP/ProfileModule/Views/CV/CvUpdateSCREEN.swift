@@ -3,7 +3,7 @@ import SwiftUI
 struct CvUpdateSCREEN: View {
     
     @Environment (\.dismiss) var dismiss
-    @Binding var cv:CvData
+    @Bindable var cv:CvData
     
     var body: some View {
         VStack {
@@ -20,7 +20,7 @@ struct CvUpdateSCREEN: View {
                         
                         ScrollView {
                             
-                            CVTextField(cv: self.$cv)
+                            CVTextField(cv: self.cv)
                             
                         }
                         
@@ -58,7 +58,7 @@ struct CvUpdateSCREEN: View {
 }
 
 #Preview {
-    CvUpdateSCREEN(cv: .constant(CvData(
+    CvUpdateSCREEN(cv: CvData(
         age: 20,
         position: "IOS - developer",
         firstName: "Руслан",
@@ -76,6 +76,6 @@ struct CvUpdateSCREEN: View {
         money: "от 100 000 до 300 000 руб",
         workExperience: "Лаборатория КФУ",
         employmentType: "Полная занятость",
-        aboutMe: "Очень хороший человек")))
+        aboutMe: "Очень хороший человек"))
 //        .environmentObject(ProfileViewModel())
 }

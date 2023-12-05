@@ -5,7 +5,8 @@ struct CvCreateSCREEN: View {
     @EnvironmentObject var viewModel:ProfileViewModel
     @Environment (\.dismiss) var dismiss
     
-    @State private var cv:CvData = CvData(
+    @Environment(\.modelContext) private var modelContest
+    @State private var cv: CvData = CvData(
         age: 0,
         position: "",
         firstName: "",
@@ -40,6 +41,7 @@ struct CvCreateSCREEN: View {
                         CVTextField(cv: self.$cv)
                         
                         Group{
+                            
                             Spacer()
                                 .frame(height: 20)
                             Button {
@@ -61,7 +63,7 @@ struct CvCreateSCREEN: View {
                         Spacer()
                             .frame(height: 20)
                         Button {
-                            self.viewModel.appendNewCV(newCV: self.cv)
+                            modelContest.insert(cv)
                             self.dismiss()
                         }label: {
                             Group {

@@ -1,9 +1,12 @@
 import SwiftUI
+import SwiftData
 
 struct CvMainSCREEN: View {
     
     @EnvironmentObject var viewModel: ProfileViewModel
     @Environment (\.dismiss) var dismiss
+    @Query private var cvs: [CvData]
+    
     var body: some View {
         NavigationStack {
             ZStack {
@@ -16,13 +19,13 @@ struct CvMainSCREEN: View {
                         Spacer()
                             .frame(height: 20)
                         
-                        ForEach(self.viewModel.cvArray.indices, id: \.self) { i in
+                        ForEach(cvs) { cv in
                             
                             NavigationLink {
-                                CvFullInfoSCREEN(cv: self.$viewModel.cvArray[i])
+                                CvFullInfoSCREEN(cv: cv)
                                     .environmentObject(self.viewModel)
                             }label: {
-                                CVInfoView(cv: self.$viewModel.cvArray[i])
+                                CVInfoView(cv: cv)
                             }
                            
                         }

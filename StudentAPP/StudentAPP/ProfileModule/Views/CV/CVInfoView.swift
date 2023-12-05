@@ -2,7 +2,7 @@ import SwiftUI
 
 struct CVInfoView: View {
     
-    @Binding var cv: CvData
+    @Bindable var cv:CvData
     
     var body: some View {
         VStack {

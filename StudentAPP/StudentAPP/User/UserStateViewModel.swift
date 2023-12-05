@@ -4,6 +4,9 @@ class UserStateViewModel:ObservableObject{
     
     @Published var isLoggedIn = false
     
+    private var swiftData = UserSwiftData()
+    
+     
     private var user:StudentData = StudentData(
             firstName: "SomeName",
             secondName: "someSecondName",

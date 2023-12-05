@@ -2,7 +2,7 @@ import SwiftUI
 
 struct CvFullInfoListView: View {
     
-    @Binding var cv: CvData
+    @Bindable var cv: CvData
     
     var body: some View {
         VStack(alignment: .leading, spacing: 10) {
@@ -240,23 +240,5 @@ struct CvFullInfoListView: View {
 }
 
 #Preview {
-    CvFullInfoListView(cv: .constant(CvData(
-        age: 20,
-        position: "IOS - developer",
-        firstName: "Руслан",
-        secondName: "Хамдамов",
-        patronymicName: "Арсланович",
-        birthDate: "25.12.2000",
-        birthCountry: "Чехия",
-        phoneNumber: "+998(97)231-43-21",
-        university: "Казанский (Приволжский) Федеральный университет",
-        institute: "Институт вычислительной математики и информационных технологий",
-        direction: "Фундаментальная математика и информационные технологии",
-        anotherEducation: "-",
-        certificates: "IELTS 10",
-        skills: "Swift, SwiftUI, algorithms, LaTex, cooking",
-        money: "от 100 000 до 300 000 руб",
-        workExperience: "Лаборатория КФУ",
-        employmentType: "Полная занятость",
-        aboutMe: "Очень хороший человек")))
+    CvFullInfoListView(cv: CvData(age: 11, position: "21", firstName: "21", secondName: "21", patronymicName: "21", birthDate: "21", birthCountry: "21", phoneNumber: "21", university: "21", institute: "21", direction: "21", anotherEducation: "21", certificates: "21", skills: "21", money: "21", workExperience: "21", employmentType: "21", aboutMe: "21"))
 }

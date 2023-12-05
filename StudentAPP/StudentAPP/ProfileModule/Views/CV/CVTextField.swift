@@ -2,7 +2,7 @@ import SwiftUI
 
 struct CVTextField: View {
     
-    @Binding var cv:CvData
+    @Binding var cv: CvData
     
     var body: some View {
         VStack(alignment: .leading, spacing: 10) {

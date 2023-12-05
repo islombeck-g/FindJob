@@ -4,7 +4,7 @@ struct CvFullInfoSCREEN: View {
     
     @EnvironmentObject var viewModel: ProfileViewModel
     @Environment (\.dismiss) var dismiss
-    @Binding var cv:CvData
+    @Bindable var cv:CvData
     
     @State private var logOut_isAllertShow:Bool = false
     @State private var deleteCV_isAllertShow:Bool = false
@@ -30,7 +30,7 @@ struct CvFullInfoSCREEN: View {
                         Spacer()
                             .frame(height: 25)
                         
-                        CvFullInfoListView(cv: self.$cv)
+                        CvFullInfoListView(cv: cv)
                         
                         Spacer()
                             .frame(height: 30)
@@ -43,7 +43,9 @@ struct CvFullInfoSCREEN: View {
                         
                         
                         .alert("Удалить аккаунт?", isPresented: self.$deleteCV_isAllertShow) {
-                            Button{}label: {
+                            Button{
+                                
+                            }label: {
                                 Text("Отмена")
                             }
                                 
@@ -86,7 +88,7 @@ struct CvFullInfoSCREEN: View {
                         withAnimation(.spring) {
                             Menu {
                                 NavigationLink{
-                                    CvUpdateSCREEN(cv: self.$cv)
+                                    CvUpdateSCREEN(cv: self.cv)
                                 }label:{
                                     Text("Редактировать резюме")
                                 }
@@ -118,7 +120,7 @@ struct CvFullInfoSCREEN: View {
 
 
 #Preview {
-    CvFullInfoSCREEN(cv: .constant(CvData(
+    CvFullInfoSCREEN(cv: CvData(
         age: 20,
         position: "IOS - developer",
         firstName: "Руслан",
@@ -136,6 +138,6 @@ struct CvFullInfoSCREEN: View {
         money: "от 100 000 до 300 000 руб",
         workExperience: "Лаборатория КФУ",
         employmentType: "Полная занятость",
-        aboutMe: "Очень хороший человек")))
+        aboutMe: "Очень хороший человек"))
     .environmentObject(ProfileViewModel(userStateViewModel: UserStateViewModel()))
 }

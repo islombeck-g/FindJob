@@ -50,6 +50,7 @@
 		638E0F4D2AF3EF53006D5770 /* JobFullInfoSCREEN.swift in Sources */ = {isa = PBXBuildFile; fileRef = 638E0F4C2AF3EF53006D5770 /* JobFullInfoSCREEN.swift */; };
 		6393AA7A2AEA9A120052BF06 /* UserStateViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6393AA792AEA9A120052BF06 /* UserStateViewModel.swift */; };
 		63BCD0622AE85BEA0075DC8C /* CVTextField.swift in Sources */ = {isa = PBXBuildFile; fileRef = 63BCD0612AE85BEA0075DC8C /* CVTextField.swift */; };
+		63F1EBAD2B0CFC7D00CECF29 /* UserSwiftData.swift in Sources */ = {isa = PBXBuildFile; fileRef = 63F1EBAC2B0CFC7D00CECF29 /* UserSwiftData.swift */; };
 		63FB67F02AEAC9F500FCAB84 /* MainModuleViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 63FB67EF2AEAC9F500FCAB84 /* MainModuleViewModel.swift */; };
 		63FB67F22AEACA1100FCAB84 /* MainModuleModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 63FB67F12AEACA1100FCAB84 /* MainModuleModel.swift */; };
 /* End PBXBuildFile section */
@@ -99,6 +100,7 @@
 		638E0F4C2AF3EF53006D5770 /* JobFullInfoSCREEN.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = JobFullInfoSCREEN.swift; sourceTree = "<group>"; };
 		6393AA792AEA9A120052BF06 /* UserStateViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserStateViewModel.swift; sourceTree = "<group>"; };
 		63BCD0612AE85BEA0075DC8C /* CVTextField.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CVTextField.swift; sourceTree = "<group>"; };
+		63F1EBAC2B0CFC7D00CECF29 /* UserSwiftData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserSwiftData.swift; sourceTree = "<group>"; };
 		63FB67EF2AEAC9F500FCAB84 /* MainModuleViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainModuleViewModel.swift; sourceTree = "<group>"; };
 		63FB67F12AEACA1100FCAB84 /* MainModuleModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainModuleModel.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -274,6 +276,7 @@
 			isa = PBXGroup;
 			children = (
 				6393AA792AEA9A120052BF06 /* UserStateViewModel.swift */,
+				63F1EBAC2B0CFC7D00CECF29 /* UserSwiftData.swift */,
 			);
 			path = User;
 			sourceTree = "<group>";
@@ -388,6 +391,7 @@
 				6377D3AD2AE679F00090714E /* CustomTextFieldWithSize.swift in Sources */,
 				6377D3A72AE678F20090714E /* EditAccountSCREEN.swift in Sources */,
 				632DC3642AF78F8C00F018D2 /* ResponsesViewModel.swift in Sources */,
+				63F1EBAD2B0CFC7D00CECF29 /* UserSwiftData.swift in Sources */,
 				636F17242AE7CA18006B7D20 /* CVInfoView.swift in Sources */,
 				6309714A2AE6FB5900A0714A /* CvFullInfoSCREEN.swift in Sources */,
 				6377D38B2AE66F970090714E /* LoginRoundedRectangleView.swift in Sources */,
