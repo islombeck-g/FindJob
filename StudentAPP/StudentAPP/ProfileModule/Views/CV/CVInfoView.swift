@@ -7,7 +7,6 @@ struct CVInfoView: View {
     var body: some View {
         VStack {
             ZStack {
-         
                 RoundedRectangle(cornerRadius: 15)
                     .frame(maxWidth: .infinity, maxHeight: 175)
                     .foregroundColor(Color("infoView"))
@@ -62,24 +61,3 @@ struct CVInfoView: View {
     CvMainSCREEN()
         .environmentObject(ProfileViewModel(userStateViewModel: UserStateViewModel()))
 }
-
-
-//@State private var cv:CvData = CvData(
-//    age: 20,
-//    position: "IOS - developer",
-//    firstName: "Руслан",
-//    secondName: "Хамдамов",
-//    patronymicName: "Арсланович",
-//    birthDate: "25.12.2000",
-//    birthCountry: "Чехия",
-//    phoneNumber: "+998(97)231-43-21",
-//    university: "Казанский (Приволжский) Федеральный университет",
-//    institute: "Институт вычислительной математики и информационных технологий",
-//    direction: "Фундаментальная математика и информационные технологии",
-//    anotherEducation: "-",
-//    certificates: "IELTS 10",
-//    skills: "Swift, SwiftUI, algorithms, LaTex, cooking",
-//    money: "от 100 000 до 300 000 руб",
-//    workExperience: "Лаборатория КФУ",
-//    employmentType: "Полная занятость",
-//    aboutMe: "Очень хороший человек Очень хороший человек Очень хороший человек Очень хороший человек Очень хороший человек")

@@ -12,7 +12,6 @@ final class CvViewModule:ObservableObject {
 
 @Model
 final class CvData {
-    
     var age:Int
     var position:String
     var firstName:String

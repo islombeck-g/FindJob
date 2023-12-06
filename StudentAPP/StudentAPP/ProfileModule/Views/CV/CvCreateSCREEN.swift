@@ -1,10 +1,10 @@
 import SwiftUI
+import SwiftData
 
 struct CvCreateSCREEN: View {
     
     @EnvironmentObject var viewModel:ProfileViewModel
     @Environment (\.dismiss) var dismiss
-    
     @Environment(\.modelContext) private var modelContest
     @State private var cv: CvData = CvData(
         age: 0,
@@ -63,8 +63,10 @@ struct CvCreateSCREEN: View {
                         Spacer()
                             .frame(height: 20)
                         Button {
+                            
                             modelContest.insert(cv)
                             self.dismiss()
+                     
                         }label: {
                             Group {
                                 Text("Cоздать резюме")
@@ -89,7 +91,6 @@ struct CvCreateSCREEN: View {
                     
                             Button {
                                 self.dismiss()
-                    
                             } label: {
                                 Image(systemName: "chevron.left")
                                     .font(.system(size: 19))

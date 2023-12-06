@@ -5,6 +5,7 @@ struct CvFullInfoSCREEN: View {
     @EnvironmentObject var viewModel: ProfileViewModel
     @Environment (\.dismiss) var dismiss
     @Bindable var cv:CvData
+    @Environment(\.modelContext) private var modelContest
     
     @State private var logOut_isAllertShow:Bool = false
     @State private var deleteCV_isAllertShow:Bool = false
@@ -34,13 +35,11 @@ struct CvFullInfoSCREEN: View {
                         
                         Spacer()
                             .frame(height: 30)
-                        
                       
                         Divider()
                         
                         Spacer()
                             .frame(height: 10)
-                        
                         
                         .alert("Удалить аккаунт?", isPresented: self.$deleteCV_isAllertShow) {
                             Button{
@@ -51,6 +50,8 @@ struct CvFullInfoSCREEN: View {
                                 
                             Button{
                                 //удалить резюме
+                                self.modelContest.delete(cv)
+                                self.dismiss()
                             }label: {
                                 Text("Удалить")
                             }
@@ -67,7 +68,6 @@ struct CvFullInfoSCREEN: View {
                 
                         Button {
                             self.dismiss()
-                
                         } label: {
                             Image(systemName: "chevron.left")
                                 .font(.system(size: 19))

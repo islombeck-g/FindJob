@@ -5,7 +5,7 @@ struct CvMainSCREEN: View {
     
     @EnvironmentObject var viewModel: ProfileViewModel
     @Environment (\.dismiss) var dismiss
-    @Query private var cvs: [CvData]
+    @Query var cvs: [CvData]
     
     var body: some View {
         NavigationStack {
@@ -22,16 +22,16 @@ struct CvMainSCREEN: View {
                         ForEach(cvs) { cv in
                             
                             NavigationLink {
+                                
                                 CvFullInfoSCREEN(cv: cv)
                                     .environmentObject(self.viewModel)
-                            }label: {
+                            } label: {
                                 CVInfoView(cv: cv)
                             }
-                           
+                        
                         }
                     }
                 }
-                
             }
             .navigationBarTitleDisplayMode(.inline)
             .toolbar {
@@ -40,7 +40,6 @@ struct CvMainSCREEN: View {
             
                     Button {
                         self.dismiss()
-            
                     } label: {
                         Image(systemName: "chevron.left")
                             .font(.system(size: 19))
@@ -78,8 +77,6 @@ struct CvMainSCREEN: View {
         }
         .navigationBarBackButtonHidden(true)
         .toolbar(.hidden, for: .tabBar)
-        
-        
     }
 }
 

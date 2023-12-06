@@ -12,7 +12,6 @@ struct CvUpdateSCREEN: View {
                 
                 VStack{
                     
-                    
                     VStack(alignment: .leading, spacing: 10) {
                         
                         Spacer()
@@ -20,12 +19,10 @@ struct CvUpdateSCREEN: View {
                         
                         ScrollView {
                             
-                            CVTextField(cv: self.cv)
-                            
+//                            CVTextField(cv: self.cv)
+                            CVTextField_Bindable(cv: self.cv)
                         }
-                        
                     }
-                    
                 }
                 .navigationBarTitleDisplayMode(.inline)
                 .toolbar {
@@ -34,7 +31,6 @@ struct CvUpdateSCREEN: View {
                 
                         Button {
                             self.dismiss()
-                
                         } label: {
                             Image(systemName: "chevron.left")
                                 .font(.system(size: 19))

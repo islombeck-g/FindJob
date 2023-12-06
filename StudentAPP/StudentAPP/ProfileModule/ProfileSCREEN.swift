@@ -20,8 +20,6 @@ struct ProfileSCREEN: View {
                 
                 VStack {
                     
-                    
-                    
                     ScrollView {
                         
                         ProfileImage(
@@ -32,11 +30,12 @@ struct ProfileSCREEN: View {
                             phoneNumber: self.$viewModel.student.phoneNumber)
                         .padding(.vertical, 16)
                         
-                        NavigationLink{
+                        NavigationLink {
+                            
                             CvMainSCREEN()
                                 .environmentObject(self.viewModel)
-                                .modelContainer(for: CvData.self)
-                        }label: {
+                            
+                        } label: {
                             Group {
                                 Text("Мое резюме")
                                     .fontWeight(.bold)
@@ -48,9 +47,7 @@ struct ProfileSCREEN: View {
                                 
                             }
                             .padding(.horizontal, 16)
-                            
                         }
-                        
                         
                         Spacer()
                             .frame(height: 36)
@@ -60,10 +57,10 @@ struct ProfileSCREEN: View {
                         Spacer()
                             .frame(height: 30)
                         
-                        NavigationLink{
+                        NavigationLink {
                             SupportSCREEN()
                                 .environmentObject(self.viewModel)
-                        }label: {
+                        } label: {
                             Group {
                                 Text("Тех. поддержка")
                                     .bold()

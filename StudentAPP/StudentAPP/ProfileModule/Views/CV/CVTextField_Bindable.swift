@@ -1,11 +1,12 @@
 import SwiftUI
 
-struct CVTextField: View {
-    
-    @Binding var cv: CvData
+struct CVTextField_Bindable: View {
+   
+    @Bindable var cv: CvData
     
     var body: some View {
         VStack(alignment: .leading, spacing: 10) {
+            
             Group {
                 Group {
                     HStack {
@@ -89,6 +90,7 @@ struct CVTextField: View {
                 
                 Text("Навыки")
                     .fontWeight(.bold)
+                
                 CustomTextFieldWithSize(isSecureField: false, text: "", result: self.$cv.skills, size: 0)
             }
             Group {
@@ -123,7 +125,7 @@ struct CVTextField: View {
 }
 
 #Preview {
-    CVTextField(cv: .constant(CvData(
+    CVTextField_Bindable(cv: CvData(
         age: 20,
         position: "IOS - developer",
         firstName: "Руслан",
@@ -141,5 +143,5 @@ struct CVTextField: View {
         money: "от 100 000 до 300 000 руб",
         workExperience: "Лаборатория КФУ",
         employmentType: "Полная занятость",
-        aboutMe: "Очень хороший человек")))
+        aboutMe: "Очень хороший человек"))
 }

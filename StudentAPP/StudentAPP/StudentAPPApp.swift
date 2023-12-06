@@ -1,4 +1,5 @@
 import SwiftUI
+import SwiftData
 
 @main
 struct StudentAPPApp: App {
@@ -12,7 +13,7 @@ struct StudentAPPApp: App {
             } else {
                 EnterSCREEN(userStateViewModel: userStateViewModel)
             }
-            
         }
+        .modelContainer(for: CvData.self)
     }
 }
