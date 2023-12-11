@@ -103,6 +103,7 @@ struct SupportSCREEN: View {
                 }
             }
         }
+        .environment(\.locale, .init(identifier:  LanguageManager.shared.selectedLanguage.rawValue))
     }
 }
 

@@ -9,6 +9,8 @@ struct MainSCREEN: View {
 //        UISearchBar.appearance().searchTextField.textColor = .red
     }
     
+    @ObservedObject var languageManager = LanguageManager.shared
+    
     var body: some View {
         NavigationStack {
             ZStack {
@@ -99,7 +101,7 @@ struct MainSCREEN: View {
                     
                     ToolbarItem(placement: .principal) {
                         
-                        Text("Главная")
+                        Text(LocalizedStringKey("11"))
                             .font(.system(size: 22))
                             .fontWeight(.bold)
                             .foregroundStyle(Color("SecondaryColor"))
@@ -120,6 +122,7 @@ struct MainSCREEN: View {
             }
         }
         .searchable(text: self.$viewModel.searchText)
+        .environment(\.locale, .init(identifier:  LanguageManager.shared.selectedLanguage.rawValue))
     }
 }
 

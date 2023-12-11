@@ -42,7 +42,7 @@ struct EditAccountSCREEN: View {
                 
                     ToolbarItem(placement: .principal) {
                 
-                        Text("Редактирование профиля")
+                        Text(LocalizedStringKey("18"))
                             .font(.system(size: 22))
                             .fontWeight(.bold)
                             .foregroundStyle(Color("SecondaryColor"))
@@ -53,6 +53,7 @@ struct EditAccountSCREEN: View {
                 
             }
         }
+        .environment(\.locale, .init(identifier:  LanguageManager.shared.selectedLanguage.rawValue))
         
         
     }

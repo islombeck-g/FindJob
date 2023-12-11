@@ -12,6 +12,7 @@ struct ProfileSCREEN: View {
     @State private var deleteAcount_isAllertShow:Bool = false
     @State private var isFavorite = false
     
+    @ObservedObject var languageManager = LanguageManager.shared
     
     var body: some View {
         NavigationStack{
@@ -37,7 +38,7 @@ struct ProfileSCREEN: View {
                             
                         } label: {
                             Group {
-                                Text("Мое резюме")
+                                Text(LocalizedStringKey("20"))
                                     .fontWeight(.bold)
                                     .frame(maxWidth: .infinity)
                                     .frame(height: 60)
@@ -62,7 +63,7 @@ struct ProfileSCREEN: View {
                                 .environmentObject(self.viewModel)
                         } label: {
                             Group {
-                                Text("Тех. поддержка")
+                                Text(LocalizedStringKey("21"))
                                     .bold()
                                     .frame(maxWidth: .infinity)
                                     .frame(height: 60)
@@ -85,7 +86,7 @@ struct ProfileSCREEN: View {
                             self.logOut_isAllertShow.toggle()
                         }label: {
                             
-                            Text("Выйти")
+                            Text(LocalizedStringKey("22"))
                             
                                 .frame(maxWidth: .infinity)
                                 .frame(height: 60)
@@ -95,33 +96,46 @@ struct ProfileSCREEN: View {
                             
                         }
                         .padding(.horizontal, 16)
-                        .alert("Хотите выйти?", isPresented: self.$logOut_isAllertShow) {
+                        
+                        Group {
+                            Picker(selection: $languageManager.selectedLanguage, label: Text(LocalizedStringKey("Select Language"))) {
+                                ForEach(Language.allCases, id: \.self) { language in
+                                    Text(language.rawValue).tag(language)
+                                }
+                            }
+                            .pickerStyle(SegmentedPickerStyle())
+                            .padding()
+                        }
+                        
+                        
+                        .alert(LocalizedStringKey("23"), isPresented: self.$logOut_isAllertShow) {
                             
-                            Text("Отмена")
+                            Text(LocalizedStringKey("24"))
                             
                             Button{
                                 self.viewModel.logOut()
                             }label: {
-                                Text("Выйти")
+                                Text(LocalizedStringKey("22"))
                             }
                         } message: {
                             Text("")
                         }
                         
-                        .alert("Удалить аккаунт?", isPresented: self.$deleteAcount_isAllertShow) {
+                        .alert(LocalizedStringKey("19"), isPresented: self.$deleteAcount_isAllertShow) {
                             Button{}label: {
-                                Text("Отмена")
+                                Text(LocalizedStringKey("24"))
                             }
                             
                             Button{
                                 
                             }label: {
-                                Text("Удалить")
+                                Text(LocalizedStringKey("25"))
                             }
                         } message: {
-                            Text("Восстановление аккаунта невозможно после удаления.")
+                            Text(LocalizedStringKey("26"))
                         }
                     }
+                    
                 }
             }
             .navigationBarBackButtonHidden(true)
@@ -142,7 +156,7 @@ struct ProfileSCREEN: View {
                 
                 ToolbarItem(placement: .principal) {
                     
-                    Text("Профиль")
+                    Text(LocalizedStringKey("17"))
                         .font(.system(size: 22))
                         .fontWeight(.bold)
                         .foregroundStyle(Color("SecondaryColor"))
@@ -154,7 +168,7 @@ struct ProfileSCREEN: View {
                             EditAccountSCREEN()
                                 .environmentObject(self.viewModel)
                         }label:{
-                            Text("Редактировать профиль")
+                            Text(LocalizedStringKey("18"))
                         }
                         
                         Divider()
@@ -162,7 +176,7 @@ struct ProfileSCREEN: View {
                         Button(role: .destructive) {
                             self.deleteAcount_isAllertShow.toggle()
                         }label:{
-                            Text("Удалить аккаунт")
+                            Text(LocalizedStringKey("19"))
                         }
                     } label: {
                         Image(systemName: "ellipsis")
@@ -175,6 +189,7 @@ struct ProfileSCREEN: View {
                 }
             }
         }
+        .environment(\.locale, .init(identifier:  LanguageManager.shared.selectedLanguage.rawValue))
     }
 }
 

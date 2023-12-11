@@ -5,7 +5,7 @@ struct LoginRoundedRectangleView: View {
     @EnvironmentObject var viewModel: EnterViewModel
     @Binding var loginText:String
     @Binding var passwodText:String
-    
+
     var body: some View {
         ZStack {
             
@@ -14,18 +14,20 @@ struct LoginRoundedRectangleView: View {
                 .foregroundStyle(Color("SecondaryColor"))
             
             VStack(alignment: .center) {
-                Text("Личные данные")
+                Text(LocalizedStringKey("7"))
 //                    .foregroundStyle(.black)
                     .foregroundStyle(Color("ForegroundColor"))
                     .fontWeight(.bold)
                     .font(.system(size: 28))
                 
-                CustomTextFieldView(isSecureField: false, text: "Логин", result: self.$loginText)
+                CustomTextFieldView(isSecureField: false, text: LocalizedStringKey("8"), result: self.$loginText)
+               
+//                CustomTextFieldView(isSecureField: false, text: $loginText_c, result: self.$loginText)
                 
                 Spacer()
                     .frame(height: 10)
                 
-                CustomTextFieldView(isSecureField: true, text: "Пароль", result: self.$passwodText)
+                CustomTextFieldView(isSecureField: true, text: LocalizedStringKey("9"), result: self.$passwodText)
                 
                 Spacer()
                     .frame(height: 20)
@@ -38,7 +40,7 @@ struct LoginRoundedRectangleView: View {
                             .frame(width: 293, height: 50)
                             .foregroundColor(Color("AccentColor"))
                         
-                        Text ("Вход")
+                        Text(LocalizedStringKey("3"))
                             .foregroundColor(.white)
                             .fontWeight(.bold)
                     }
@@ -47,13 +49,14 @@ struct LoginRoundedRectangleView: View {
                 Button{
                     
                 }label: {
-                    Text("Забыли пароль")
+                    Text(LocalizedStringKey("10"))
                         .font(.system(size: 15))
                         .underline()
                         .foregroundStyle(Color("ForegroundColor"))
                 }
             }
         }
+        
     }
 }
 

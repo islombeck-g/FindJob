@@ -9,7 +9,7 @@ struct EditProfileViewItems: View {
             
             Group {
                 HStack {
-                    Text("Фамилия")
+                    Text(LocalizedStringKey("33"))
                         .font(.system(size:15))
                         .fontWeight(.bold)
                     
@@ -20,40 +20,40 @@ struct EditProfileViewItems: View {
             }
             
             Group {
-                Text("Имя")
+                Text(LocalizedStringKey("34"))
                     .fontWeight(.bold)
                 CustomTextFieldWithSize(isSecureField: false, text: "", result: self.$viewModel.student.firstName, size: 0)
                 
             }
             
             Group {
-                Text("Отчество")
+                Text(LocalizedStringKey("35"))
                     .fontWeight(.bold)
                 CustomTextFieldWithSize(isSecureField: false, text: "", result: self.$viewModel.student.patronymicName, size: 0)
             }
             
             Group {
-                Text("Дата рождения")
+                Text(LocalizedStringKey("27"))
                     .fontWeight(.bold)
                 CustomTextFieldWithSize(isSecureField: false, text: "", result: self.$viewModel.student.birthDate, size: 0)
             }
             Group {
-                Text("О себе")
+                Text(LocalizedStringKey("32"))
                     .fontWeight(.bold)
                 CustomTextFieldWithSize(isSecureField: false, text: "", result: self.$viewModel.student.aboutMe, size: 0)
             }
             Group {
-                Text("Университет")
+                Text(LocalizedStringKey("29"))
                     .fontWeight(.bold)
                 CustomTextFieldWithSize(isSecureField: false, text: "", result: self.$viewModel.student.university, size: 0)
             }
             Group {
-                Text("Институт")
+                Text(LocalizedStringKey("30"))
                     .fontWeight(.bold)
                 CustomTextFieldWithSize(isSecureField: false, text: "", result: self.$viewModel.student.institute, size: 0)
             }
             Group {
-                Text("Направление")
+                Text(LocalizedStringKey("31"))
                     .fontWeight(.bold)
                 CustomTextFieldWithSize(isSecureField: false, text: "", result: self.$viewModel.student.direction, size: 0)
             }   

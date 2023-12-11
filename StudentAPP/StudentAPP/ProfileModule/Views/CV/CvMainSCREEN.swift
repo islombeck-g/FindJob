@@ -77,6 +77,7 @@ struct CvMainSCREEN: View {
         }
         .navigationBarBackButtonHidden(true)
         .toolbar(.hidden, for: .tabBar)
+        .environment(\.locale, .init(identifier:  LanguageManager.shared.selectedLanguage.rawValue))
     }
 }
 

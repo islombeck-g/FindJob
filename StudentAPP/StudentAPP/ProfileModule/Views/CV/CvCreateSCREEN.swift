@@ -111,6 +111,7 @@ struct CvCreateSCREEN: View {
             }
         }
         .navigationBarBackButtonHidden(true)
+        .environment(\.locale, .init(identifier:  LanguageManager.shared.selectedLanguage.rawValue))
     }
 }
 

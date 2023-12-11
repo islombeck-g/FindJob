@@ -5,6 +5,8 @@ struct LoginSCREEN: View {
     @EnvironmentObject var viewModel:EnterViewModel
     @Environment(\.dismiss) var dismiss
     
+    @ObservedObject var languageManager = LanguageManager.shared
+    
     var body: some View {
         
         NavigationStack {
@@ -21,7 +23,7 @@ struct LoginSCREEN: View {
                             Spacer()
                                 .frame(height: 37.5)
                             
-                            Text("Вход")
+                            Text(LocalizedStringKey("3"))
                                 .foregroundStyle(Color("SecondaryColor"))
                                 .font(.system(size: 34))
                                 .fontWeight(.semibold)
@@ -44,7 +46,7 @@ struct LoginSCREEN: View {
                         Spacer()
                             .frame(height: 24)
                         
-                        Text("Войти с помощью")
+                        Text(LocalizedStringKey("6"))
                             .foregroundStyle(Color("SecondaryColor"))
                             .frame(maxWidth: .infinity)
                         
@@ -63,7 +65,19 @@ struct LoginSCREEN: View {
                                     .fontWeight(.bold)
                             }
                         }
+                        
                         Spacer()
+                        
+                        Group {
+                            Picker(selection: $languageManager.selectedLanguage, label: Text(LocalizedStringKey("Select Language"))) {
+                                ForEach(Language.allCases, id: \.self) { language in
+                                    Text(language.rawValue).tag(language)
+                                }
+                            }
+                            .pickerStyle(SegmentedPickerStyle())
+                            .padding()
+                        }
+                        
                     }
                 }
                     .scrollIndicators(.hidden)
@@ -75,7 +89,7 @@ struct LoginSCREEN: View {
                         } label: {
                                 
                                 Image(systemName: "chevron.left")
-                                Text("Назад")
+                                Text(LocalizedStringKey("5"))
                         }
                         .font(.system(size: 19))
                         .fontWeight(.regular)
@@ -85,6 +99,7 @@ struct LoginSCREEN: View {
                 }
         }
         .navigationBarBackButtonHidden(true)
+        .environment(\.locale, .init(identifier: LanguageManager.shared.selectedLanguage.rawValue))
         
     }
     

@@ -5,7 +5,7 @@ struct CustomTextFieldView: View {
     @State private var showPassword: Bool = false
     
     var isSecureField: Bool
-    let text: String
+    let text: LocalizedStringKey
     @Binding var result: String
     
     var body: some View {
@@ -50,7 +50,7 @@ struct CustomTextFieldView: View {
         .frame(width: 293, height: 50)
     }
 }
-
-#Preview {
-    CustomTextFieldView(isSecureField: false, text: "someText", result: .constant("text"))
-}
+//
+//#Preview {
+//    CustomTextFieldView(isSecureField: false, text: "someText", result: .constant("text"))
+//}

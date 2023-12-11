@@ -11,49 +11,49 @@ struct ProfileItemsView: View {
         VStack(alignment: .leading, spacing: 10) {
             
             HStack {
-                Text("Дата рождения")
+                Text(LocalizedStringKey("27"))
                     .fontWeight(.bold)
                     .font(.system(size:15))
                 
                 Spacer()
             }
             
-            Text(birthDate)
+            Text(verbatim: birthDate)
                 .font(.system(size:17))
             
             Spacer()
                 .frame(height: 0)
             
             Group {
-                Text("Место учёбы")
+                Text(LocalizedStringKey("28"))
                     .fontWeight(.bold)
                     .font(.system(size:20))
                 
-                Text("Университет")
+                Text(LocalizedStringKey("29"))
                     .fontWeight(.bold)
                     .font(.system(size:15))
                 
-                Text(university)
+                Text(verbatim: university)
                     .font(.system(size: 17))
                     .lineLimit(1)
                 
                 Divider()
                 
-                Text("Институт")
+                Text(LocalizedStringKey("30"))
                     .fontWeight(.bold)
                     .font(.system(size: 15))
                 
-                Text(institute)
+                Text(verbatim: institute)
                     .font(.system(size: 17))
                     .lineLimit(1)
                 
                 Divider()
                 
-                Text("Направление")
+                Text(LocalizedStringKey("31"))
                     .fontWeight(.bold)
                     .font(.system(size: 15))
                 
-                Text(direction)
+                Text(verbatim: direction)
                     .font(.system(size: 17))
                     .lineLimit(1)
             }
@@ -62,15 +62,14 @@ struct ProfileItemsView: View {
                 .frame(height: 0)
             
             Group {
-                Text("О себе")
+                Text(LocalizedStringKey("32"))
                     .fontWeight(.bold)
                     .font(.system(size: 20))
                     
                 
-                Text(aboutMe)
+                Text(verbatim: aboutMe)
                     .font(.system(size: 17))
-            }
-//            .navigationBarBackButtonHidden(true)
+            } 
         }
         .foregroundColor(Color("SecondaryColor"))
         .padding(.horizontal, 16)

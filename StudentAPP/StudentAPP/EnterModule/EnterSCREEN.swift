@@ -8,6 +8,8 @@ struct EnterSCREEN: View {
         _viewModel = StateObject(wrappedValue: EnterViewModel(userStateViewModel: userStateViewModel))
             }
     
+    @ObservedObject var languageManager = LanguageManager.shared
+    
     var body: some View {
         NavigationStack {
             ZStack {
@@ -17,11 +19,11 @@ struct EnterSCREEN: View {
                 
                 VStack {
                     Group {
-                        Text ("Здравствуйте!")
+                        Text(LocalizedStringKey("1"))
                             .font(.system(size: 28))
                             .fontWeight(.bold)
                         
-                        Text ("Биржа талантов - возможность получить любимую работу")
+                        Text (LocalizedStringKey("2"))
                             .font(.system(size: 20))
                             
                     }
@@ -39,7 +41,7 @@ struct EnterSCREEN: View {
                                     .frame(width: 343, height: 46)
                                     .foregroundColor(Color("SecondaryColor"))
                                 
-                                Text ("Вход")
+                                Text (LocalizedStringKey("3"))
                                     .foregroundStyle(Color("ForegroundColor"))
                                     .fontWeight(.bold)
                             }
@@ -54,17 +56,29 @@ struct EnterSCREEN: View {
                                     .stroke(Color("SecondaryColor"), lineWidth: 2)
                                     .frame(width: 343, height: 46)
                                 
-                                Text("Регистрация")
+                                Text(LocalizedStringKey("4"))
                                     .foregroundStyle(Color("SecondaryColor"))
                                     .fontWeight(.bold)
                             }
                         }
                     }
+                    
+                    Group {
+                        Picker(selection: $languageManager.selectedLanguage, label: Text(LocalizedStringKey("Select Language"))) {
+                            ForEach(Language.allCases, id: \.self) { language in
+                                Text(language.rawValue).tag(language)
+                            }
+                        }
+                        .pickerStyle(SegmentedPickerStyle())
+                        .padding()
+                    }
                 }
             }
         }
+        .environment(\.locale, .init(identifier: LanguageManager.shared.selectedLanguage.rawValue))
     }
 }
 #Preview {
     EnterSCREEN(userStateViewModel: UserStateViewModel())
 }
+

@@ -11,21 +11,22 @@ struct TabViewOfAPP: View {
             
             MainSCREEN()
                 .tabItem {
-                    Label("Главная", systemImage: "doc.text.magnifyingglass")
+                    Label(LocalizedStringKey("11"), systemImage: "doc.text.magnifyingglass")
                 }
             
             ResponsesSCREEN()
                 .tabItem {
-                    Label("Отклики", systemImage: "hand.thumbsup")
+                    Label(LocalizedStringKey("14"), systemImage: "hand.thumbsup")
                 }
             
             ProfileSCREEN(userStateViewModel: userStateViewModel)
                 .tabItem {
-                    Label("Профиль", systemImage: "person")
+                    Label(LocalizedStringKey("17"), systemImage: "person")
                 }
         }
         .navigationBarBackButtonHidden(true)
         .transition(.opacity)
+        .environment(\.locale, .init(identifier:  LanguageManager.shared.selectedLanguage.rawValue))
     }
 }
 

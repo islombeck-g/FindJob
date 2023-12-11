@@ -4,6 +4,8 @@ struct ResponsesSCREEN: View {
     
     @StateObject private var viewModel =  ResponsesViewModel()
     
+    @ObservedObject var languageManager = LanguageManager.shared
+    
     var body: some View {
         NavigationStack {
             ZStack {
@@ -15,11 +17,10 @@ struct ResponsesSCREEN: View {
                     
                     Picker("", selection: self.$viewModel.chosenCategory) {
                         
-                        Text("Отклики")
-                            .tag("Отклики")
-                        
-                        Text("Приглашения")
-                            .tag("Приглашения")
+                        ForEach(Categories.allCases, id: \.self) { category in
+                            Text(LocalizedStringKey(category.rawValue))
+                                .tag(category)
+                        }  
                     }
                     .background(Color("darkAccentColor"))
                     .foregroundStyle(Color("SecondaryColor"))
@@ -27,8 +28,20 @@ struct ResponsesSCREEN: View {
                     .pickerStyle(.palette)
                     .padding(.horizontal, 16)
 
+                    
                     Spacer()
                     
+                    Group {
+                        Picker(selection: $languageManager.selectedLanguage, label: Text(LocalizedStringKey("Select Language"))) {
+                            ForEach(Language.allCases, id: \.self) { language in
+                                Text(language.rawValue).tag(language)
+                            }
+                        }
+                        .pickerStyle(SegmentedPickerStyle())
+                        .padding()
+                    }
+                    
+                    Spacer()
                         
                 }
                 
@@ -37,7 +50,7 @@ struct ResponsesSCREEN: View {
             .toolbar {
                 
                 ToolbarItem (placement: .principal) {
-                        Text("Отклики")
+                        Text(LocalizedStringKey("14"))
                         .font(.system(size: 22))
                         .fontWeight(.bold)
                         .foregroundStyle(Color("SecondaryColor"))
@@ -46,6 +59,7 @@ struct ResponsesSCREEN: View {
             }
             
         }
+        .environment(\.locale, .init(identifier:  LanguageManager.shared.selectedLanguage.rawValue))
     }
 }
 
