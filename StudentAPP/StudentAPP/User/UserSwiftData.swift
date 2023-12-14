@@ -14,6 +14,7 @@ final class UserSwiftData {
 enum Language: String, CaseIterable {
     case english = "en"
     case russian = "ru"
+    case uzbek = "uz"
 }
 
 class LanguageManager: ObservableObject {

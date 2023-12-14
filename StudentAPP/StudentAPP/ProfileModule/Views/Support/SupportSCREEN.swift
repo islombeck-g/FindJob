@@ -22,7 +22,7 @@ struct SupportSCREEN: View {
                                 // User message styles
                                 HStack {
                                     Spacer()
-                                    Text(newMessage)
+                                    Text(verbatim: newMessage)
                                         .padding()
                                         .foregroundColor(Color("TextColorInverted"))
                                         .background(Color.blue.opacity(0.8))
@@ -34,7 +34,7 @@ struct SupportSCREEN: View {
                                 
                                 // Bot message styles
                                 HStack {
-                                    Text(message)
+                                    Text(verbatim: message)
                                         .padding()
                                         .foregroundColor(Color("TextColorInverted"))
                                         .background(Color.gray.opacity(0.15))
@@ -49,11 +49,9 @@ struct SupportSCREEN: View {
                     }
                     .rotationEffect(.degrees(180))
                     .background(Color.gray.opacity(0.1))
-                    
-                    
                     // Contains the Message bar
                     HStack {
-                        TextField("Type something", text: $messageText)
+                        TextField("47", text: $messageText)
                             .padding()
                             .background(Color.gray.opacity(0.1))
                             .cornerRadius(10)
@@ -95,7 +93,7 @@ struct SupportSCREEN: View {
                 
                     ToolbarItem(placement: .principal) {
                 
-                        Text("Поддержка")
+                        Text("46")
                             .font(.system(size: 22))
                             .fontWeight(.bold)
                             .foregroundStyle(Color("SecondaryColor"))
@@ -103,7 +101,6 @@ struct SupportSCREEN: View {
                 }
             }
         }
-        .environment(\.locale, .init(identifier:  LanguageManager.shared.selectedLanguage.rawValue))
     }
 }
 

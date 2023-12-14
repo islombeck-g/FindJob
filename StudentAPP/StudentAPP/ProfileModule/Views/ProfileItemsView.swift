@@ -25,11 +25,11 @@ struct ProfileItemsView: View {
                 .frame(height: 0)
             
             Group {
-                Text(LocalizedStringKey("28"))
+                Text("28")
                     .fontWeight(.bold)
                     .font(.system(size:20))
                 
-                Text(LocalizedStringKey("29"))
+                Text("29")
                     .fontWeight(.bold)
                     .font(.system(size:15))
                 
@@ -39,7 +39,7 @@ struct ProfileItemsView: View {
                 
                 Divider()
                 
-                Text(LocalizedStringKey("30"))
+                Text("30")
                     .fontWeight(.bold)
                     .font(.system(size: 15))
                 
@@ -49,7 +49,7 @@ struct ProfileItemsView: View {
                 
                 Divider()
                 
-                Text(LocalizedStringKey("31"))
+                Text("31")
                     .fontWeight(.bold)
                     .font(.system(size: 15))
                 
@@ -62,11 +62,10 @@ struct ProfileItemsView: View {
                 .frame(height: 0)
             
             Group {
-                Text(LocalizedStringKey("32"))
+                Text("32")
                     .fontWeight(.bold)
                     .font(.system(size: 20))
                     
-                
                 Text(verbatim: aboutMe)
                     .font(.system(size: 17))
             } 

@@ -63,7 +63,7 @@ struct ProfileSCREEN: View {
                                 .environmentObject(self.viewModel)
                         } label: {
                             Group {
-                                Text(LocalizedStringKey("21"))
+                                Text("21")
                                     .bold()
                                     .frame(maxWidth: .infinity)
                                     .frame(height: 60)
@@ -86,8 +86,7 @@ struct ProfileSCREEN: View {
                             self.logOut_isAllertShow.toggle()
                         }label: {
                             
-                            Text(LocalizedStringKey("22"))
-                            
+                            Text("22")
                                 .frame(maxWidth: .infinity)
                                 .frame(height: 60)
                                 .foregroundStyle(.red)
@@ -97,42 +96,31 @@ struct ProfileSCREEN: View {
                         }
                         .padding(.horizontal, 16)
                         
-                        Group {
-                            Picker(selection: $languageManager.selectedLanguage, label: Text(LocalizedStringKey("Select Language"))) {
-                                ForEach(Language.allCases, id: \.self) { language in
-                                    Text(language.rawValue).tag(language)
-                                }
-                            }
-                            .pickerStyle(SegmentedPickerStyle())
-                            .padding()
-                        }
-                        
-                        
-                        .alert(LocalizedStringKey("23"), isPresented: self.$logOut_isAllertShow) {
+                        .alert("23", isPresented: self.$logOut_isAllertShow) {
                             
-                            Text(LocalizedStringKey("24"))
+                            Text("24")
                             
                             Button{
                                 self.viewModel.logOut()
                             }label: {
-                                Text(LocalizedStringKey("22"))
+                                Text("22")
                             }
                         } message: {
                             Text("")
                         }
                         
-                        .alert(LocalizedStringKey("19"), isPresented: self.$deleteAcount_isAllertShow) {
+                        .alert("19", isPresented: self.$deleteAcount_isAllertShow) {
                             Button{}label: {
-                                Text(LocalizedStringKey("24"))
+                                Text("24")
                             }
                             
                             Button{
                                 
                             }label: {
-                                Text(LocalizedStringKey("25"))
+                                Text("25")
                             }
                         } message: {
-                            Text(LocalizedStringKey("26"))
+                            Text("26")
                         }
                     }
                     
@@ -144,19 +132,40 @@ struct ProfileSCREEN: View {
                 
                 ToolbarItem(placement: .topBarLeading) {
                     
-                    Button {
-                        //don't understand why it is here
+                    Menu {
+                        
+                        Button{
+                            self.languageManager.selectedLanguage = .english
+                        }label: {
+                            Label("English", image: "en")
+                        }
+                        Button{
+                            self.languageManager.selectedLanguage = .russian
+                        }label: {
+                            Label("Русский", image: "ru")
+                        }
+                        Button{
+                            self.languageManager.selectedLanguage = .uzbek
+                        }label: {
+                            Label("Uzbek", image: "uz")
+                        }
+                        
                     } label: {
-                        Image(systemName: "bell")
-                            .font(.system(size: 19))
-                            .fontWeight(.regular)
-                            .foregroundStyle(Color("SecondaryColor"))
+                        HStack {
+                            Spacer()
+                            Image(systemName: "globe.europe.africa.fill")
+                                .font(.system(size: 19))
+                                .fontWeight(.bold)
+                                .foregroundStyle(Color("SecondaryColor"))
+                            Spacer()
+                                .frame(width: 16)
+                        }
                     }
                 }
                 
                 ToolbarItem(placement: .principal) {
                     
-                    Text(LocalizedStringKey("17"))
+                    Text("17")
                         .font(.system(size: 22))
                         .fontWeight(.bold)
                         .foregroundStyle(Color("SecondaryColor"))
@@ -168,7 +177,7 @@ struct ProfileSCREEN: View {
                             EditAccountSCREEN()
                                 .environmentObject(self.viewModel)
                         }label:{
-                            Text(LocalizedStringKey("18"))
+                            Text("18")
                         }
                         
                         Divider()
@@ -176,7 +185,7 @@ struct ProfileSCREEN: View {
                         Button(role: .destructive) {
                             self.deleteAcount_isAllertShow.toggle()
                         }label:{
-                            Text(LocalizedStringKey("19"))
+                            Text("19")
                         }
                     } label: {
                         Image(systemName: "ellipsis")
@@ -189,7 +198,6 @@ struct ProfileSCREEN: View {
                 }
             }
         }
-        .environment(\.locale, .init(identifier:  LanguageManager.shared.selectedLanguage.rawValue))
     }
 }
 

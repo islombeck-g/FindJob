@@ -50,7 +50,7 @@ struct CvMainSCREEN: View {
             
                 ToolbarItem(placement: .principal) {
             
-                    Text("Резюме")
+                    Text("48")
                         .font(.system(size: 22))
                         .fontWeight(.bold)
                         .foregroundStyle(Color("SecondaryColor"))
@@ -77,7 +77,6 @@ struct CvMainSCREEN: View {
         }
         .navigationBarBackButtonHidden(true)
         .toolbar(.hidden, for: .tabBar)
-        .environment(\.locale, .init(identifier:  LanguageManager.shared.selectedLanguage.rawValue))
     }
 }
 

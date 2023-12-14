@@ -10,7 +10,7 @@ struct CvFullInfoListView: View {
             Group {
                 HStack {
                     if self.cv.secondName != "" {
-                        Text("Фамилия")
+                        Text("33")
                             .font(.system(size:15))
                             .fontWeight(.bold)
                     }
@@ -26,7 +26,7 @@ struct CvFullInfoListView: View {
             Group {
                 if self.cv.firstName != "" {
                     
-                    Text("Имя")
+                    Text("34")
                         .fontWeight(.bold)
                         .font(.system(size:15))
                     Text(self.cv.firstName)
@@ -37,7 +37,7 @@ struct CvFullInfoListView: View {
             
             Group {
                 if self.cv.patronymicName != "" {
-                    Text("Отчество")
+                    Text("35")
                         .fontWeight(.bold)
                         .font(.system(size:15))
                     
@@ -49,7 +49,7 @@ struct CvFullInfoListView: View {
             
             Group {
                 if self.cv.patronymicName != "" {
-                    Text("Дата рождения")
+                    Text("27")
                         .fontWeight(.bold)
                         .font(.system(size:15))
                     
@@ -61,7 +61,7 @@ struct CvFullInfoListView: View {
             
             Group {
                 if self.cv.patronymicName != "" {
-                    Text("Гражданство")
+                    Text("54")
                         .fontWeight(.bold)
                         .font(.system(size:15))
                     
@@ -74,7 +74,7 @@ struct CvFullInfoListView: View {
             
             Group {
                 if self.cv.patronymicName != "" {
-                    Text("Телефон")
+                    Text("55")
                         .fontWeight(.bold)
                         .font(.system(size:15))
                     
@@ -94,12 +94,12 @@ struct CvFullInfoListView: View {
                 self.cv.certificates != "" {
                 Group {
                     
-                    Text("Образование")
+                    Text("56")
                         .fontWeight(.bold)
                         .font(.system(size:20))
                         .fontWeight(.bold)
                     if self.cv.university != "" {
-                        Text("Университет")
+                        Text("29")
                             .fontWeight(.bold)
                             .font(.system(size:15))
                         
@@ -111,7 +111,7 @@ struct CvFullInfoListView: View {
                 
                 Group {
                     if self.cv.institute != "" {
-                        Text("Институт")
+                        Text("30")
                             .fontWeight(.bold)
                             .font(.system(size:15))
                         
@@ -123,7 +123,7 @@ struct CvFullInfoListView: View {
                 
                 Group {
                     if self.cv.direction != "" {
-                        Text("Направление")
+                        Text("31")
                             .fontWeight(.bold)
                             .font(.system(size:15))
                         
@@ -135,7 +135,7 @@ struct CvFullInfoListView: View {
                 
                 Group {
                     if self.cv.anotherEducation != "" {
-                        Text("Дополнительное образование")
+                        Text("57")
                             .fontWeight(.bold)
                             .font(.system(size:15))
                         
@@ -147,7 +147,7 @@ struct CvFullInfoListView: View {
                 
                 Group {
                     if self.cv.certificates != "" {
-                        Text("Сертификаты, рекомендательные письма")
+                        Text("58")
                             .fontWeight(.bold)
                             .font(.system(size:15))
                         
@@ -169,13 +169,13 @@ struct CvFullInfoListView: View {
                 self.cv.employmentType != "" {
                 
                 Group {
-                    Text("Основное")
+                    Text("59")
                         .fontWeight(.bold)
                         .font(.system(size:20))
                         .fontWeight(.bold)
                    
                     if self.cv.skills != "" {
-                        Text("Навыки") 
+                        Text("60")
                             .fontWeight(.bold)
                             .font(.system(size:15))
                         
@@ -187,7 +187,7 @@ struct CvFullInfoListView: View {
                 
                 Group {
                     if self.cv.money != "" {
-                        Text("Желаемый уровень заработной платы")
+                        Text("61")
                             .fontWeight(.bold)
                             .font(.system(size:15))
                         
@@ -199,7 +199,7 @@ struct CvFullInfoListView: View {
                 
                 Group {
                     if self.cv.workExperience != "" {
-                        Text("Тип занятости")
+                        Text("62")
                             .fontWeight(.bold)
                             .font(.system(size:15))
                         
@@ -211,7 +211,7 @@ struct CvFullInfoListView: View {
                 
                 Group {
                     if self.cv.employmentType != "" {
-                        Text("Опыт работы")
+                        Text("63")
                             .fontWeight(.bold)
                             .font(.system(size:15))
                         
@@ -223,7 +223,7 @@ struct CvFullInfoListView: View {
                 
                 Group {
                     if self.cv.aboutMe != "" {
-                        Text("Обо мне")
+                        Text("64")
                             .fontWeight(.bold)
                             .font(.system(size:15))
                         

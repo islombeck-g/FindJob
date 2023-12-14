@@ -27,24 +27,24 @@ struct JobInfoView: View {
                         .frame(height: 10)
                     
                     Group {
-                        Text("Требуемый опыт работы: \(vc.minExperience) лет")
+                        Text("36 \(vc.minExperience)")
                             .lineLimit(1)
-                        Text("Занятость: \(vc.jobType)")
+                        Text("37 \(vc.jobType)")
                             .lineLimit(1)
-                        Text("Компания: \(vc.nameOfCompany)")
+                        Text("38 \(vc.nameOfCompany)")
                     }
                     .font(.system(size: 9))
                     
                     Spacer()
                         .frame(height: 4)
                     
-                    Text(vc.money)
+                    Text(verbatim: vc.money)
                         .lineLimit(1)
                    
                     Spacer()
                         .frame(height: 10)
                     
-                    Text(vc.description)
+                    Text(verbatim: vc.description)
                         .font(.system(size: 12))
                         .lineLimit(2)
                 }
@@ -54,10 +54,6 @@ struct JobInfoView: View {
         }
         .frame(width: 368)
     }
-}
-
-#Preview {
-    MainSCREEN()
 }
 
 #Preview {

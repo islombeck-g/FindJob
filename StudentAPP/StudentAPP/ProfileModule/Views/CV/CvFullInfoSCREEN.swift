@@ -41,11 +41,11 @@ struct CvFullInfoSCREEN: View {
                         Spacer()
                             .frame(height: 10)
                         
-                        .alert("Удалить аккаунт?", isPresented: self.$deleteCV_isAllertShow) {
+                        .alert("51", isPresented: self.$deleteCV_isAllertShow) {
                             Button{
                                 
                             }label: {
-                                Text("Отмена")
+                                Text("24")
                             }
                                 
                             Button{
@@ -53,10 +53,10 @@ struct CvFullInfoSCREEN: View {
                                 self.modelContest.delete(cv)
                                 self.dismiss()
                             }label: {
-                                Text("Удалить")
+                                Text("25")
                             }
                         } message: {
-                            Text("Восстановление аккаунта невозможно после удаления.")
+                            Text("52")
                         }
                     }
                     .foregroundStyle(Color("SecondaryColor"))
@@ -78,7 +78,7 @@ struct CvFullInfoSCREEN: View {
                 
                     ToolbarItem(placement: .principal) {
                 
-                        Text("Резюме")
+                        Text("48")
                             .font(.system(size: 22))
                             .fontWeight(.bold)
                             .foregroundStyle(Color("SecondaryColor"))
@@ -90,7 +90,7 @@ struct CvFullInfoSCREEN: View {
                                 NavigationLink{
                                     CvUpdateSCREEN(cv: self.cv)
                                 }label:{
-                                    Text("Редактировать резюме")
+                                    Text("53")
                                 }
                                 
                                 Divider()
@@ -98,7 +98,7 @@ struct CvFullInfoSCREEN: View {
                                 Button(role: .destructive) {
                                     self.deleteCV_isAllertShow.toggle()
                                 }label:{
-                                    Text("Удалить резюме")
+                                    Text("51")
                                 }
                             }label: {
                                 Image(systemName: "ellipsis")

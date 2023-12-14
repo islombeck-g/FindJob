@@ -17,6 +17,7 @@
 		634B6CED2AF4D393001A5FDA /* FullInfoView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 634B6CEC2AF4D392001A5FDA /* FullInfoView.swift */; };
 		636F17242AE7CA18006B7D20 /* CVInfoView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 636F17232AE7CA18006B7D20 /* CVInfoView.swift */; };
 		636F17262AE81CA1006B7D20 /* CvUpdateSCREEN.swift in Sources */ = {isa = PBXBuildFile; fileRef = 636F17252AE81CA1006B7D20 /* CvUpdateSCREEN.swift */; };
+		6371E1862B2712C600DC69C3 /* Localizable.strings in Resources */ = {isa = PBXBuildFile; fileRef = 6371E1882B2712C600DC69C3 /* Localizable.strings */; };
 		637319C42AF673A000CD3BB6 /* SupportSCREEN.swift in Sources */ = {isa = PBXBuildFile; fileRef = 637319C32AF673A000CD3BB6 /* SupportSCREEN.swift */; };
 		637319C62AF673EF00CD3BB6 /* SupportViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 637319C52AF673EF00CD3BB6 /* SupportViewModel.swift */; };
 		63772C0A2AF6D03D00FB0EEA /* CvViewModule.swift in Sources */ = {isa = PBXBuildFile; fileRef = 63772C092AF6D03D00FB0EEA /* CvViewModule.swift */; };
@@ -67,6 +68,8 @@
 		634B6CEC2AF4D392001A5FDA /* FullInfoView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FullInfoView.swift; sourceTree = "<group>"; };
 		636F17232AE7CA18006B7D20 /* CVInfoView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CVInfoView.swift; sourceTree = "<group>"; };
 		636F17252AE81CA1006B7D20 /* CvUpdateSCREEN.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CvUpdateSCREEN.swift; sourceTree = "<group>"; };
+		6371E1872B2712C600DC69C3 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/Localizable.strings; sourceTree = "<group>"; };
+		6371E1892B27152300DC69C3 /* ru */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = ru; path = ru.lproj/Localizable.strings; sourceTree = "<group>"; };
 		637319C32AF673A000CD3BB6 /* SupportSCREEN.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SupportSCREEN.swift; sourceTree = "<group>"; };
 		637319C52AF673EF00CD3BB6 /* SupportViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SupportViewModel.swift; sourceTree = "<group>"; };
 		63772C092AF6D03D00FB0EEA /* CvViewModule.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CvViewModule.swift; sourceTree = "<group>"; };
@@ -105,6 +108,7 @@
 		63F1EBAC2B0CFC7D00CECF29 /* UserSwiftData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserSwiftData.swift; sourceTree = "<group>"; };
 		63FB67EF2AEAC9F500FCAB84 /* MainModuleViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainModuleViewModel.swift; sourceTree = "<group>"; };
 		63FB67F12AEACA1100FCAB84 /* MainModuleModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainModuleModel.swift; sourceTree = "<group>"; };
+		63FE89E42B2B77CB0069A443 /* uz-UZ */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = "uz-UZ"; path = "uz-UZ.lproj/Localizable.strings"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -171,6 +175,7 @@
 				6377D3802AE66E840090714E /* CommonModule */,
 				6377D37F2AE66E6E0090714E /* EnterModule */,
 				6377D35B2AE66D880090714E /* Assets.xcassets */,
+				6371E1882B2712C600DC69C3 /* Localizable.strings */,
 				6377D35D2AE66D880090714E /* Preview Content */,
 			);
 			path = StudentAPP;
@@ -326,6 +331,8 @@
 			knownRegions = (
 				en,
 				Base,
+				ru,
+				"uz-UZ",
 			);
 			mainGroup = 6377D34B2AE66D870090714E;
 			productRefGroup = 6377D3552AE66D870090714E /* Products */;
@@ -343,6 +350,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				6377D35F2AE66D880090714E /* Preview Assets.xcassets in Resources */,
+				6371E1862B2712C600DC69C3 /* Localizable.strings in Resources */,
 				6377D35C2AE66D880090714E /* Assets.xcassets in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -404,12 +412,26 @@
 		};
 /* End PBXSourcesBuildPhase section */
 
+/* Begin PBXVariantGroup section */
+		6371E1882B2712C600DC69C3 /* Localizable.strings */ = {
+			isa = PBXVariantGroup;
+			children = (
+				6371E1872B2712C600DC69C3 /* en */,
+				6371E1892B27152300DC69C3 /* ru */,
+				63FE89E42B2B77CB0069A443 /* uz-UZ */,
+			);
+			name = Localizable.strings;
+			sourceTree = "<group>";
+		};
+/* End PBXVariantGroup section */
+
 /* Begin XCBuildConfiguration section */
 		6377D3602AE66D880090714E /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
 				ASSETCATALOG_COMPILER_GENERATE_SWIFT_ASSET_SYMBOL_EXTENSIONS = YES;
+				CLANG_ANALYZER_LOCALIZABILITY_NONLOCALIZED = YES;
 				CLANG_ANALYZER_NONNULL = YES;
 				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
 				CLANG_CXX_LANGUAGE_STANDARD = "gnu++20";
@@ -473,6 +495,7 @@
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
 				ASSETCATALOG_COMPILER_GENERATE_SWIFT_ASSET_SYMBOL_EXTENSIONS = YES;
+				CLANG_ANALYZER_LOCALIZABILITY_NONLOCALIZED = YES;
 				CLANG_ANALYZER_NONNULL = YES;
 				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
 				CLANG_CXX_LANGUAGE_STANDARD = "gnu++20";

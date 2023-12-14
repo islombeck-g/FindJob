@@ -18,7 +18,7 @@ struct CVInfoView: View {
                 VStack(alignment: .leading) {
                     HStack{ Spacer() }
                     
-                    Text(cv.position)
+                    Text(verbatim: cv.position)
                         .lineLimit(1)
                         .font(.system(size: 17))
                         .bold()
@@ -27,10 +27,10 @@ struct CVInfoView: View {
                         .frame(height: 10)
                     
                     Group {
-                        Text("Возраст: \(cv.age) лет")
+                        Text("49 \(cv.age)")
                         Text(cv.employmentType)
                             .lineLimit(1)
-                        Text("ВУЗ: \(cv.university)")
+                        Text("50 \(cv.university)")
                             .lineLimit(1)
                     }
                     .font(.system(size: 9))
@@ -38,16 +38,15 @@ struct CVInfoView: View {
                     Spacer()
                         .frame(height: 4)
                     
-                    Text(cv.money)
+                    Text(verbatim: cv.money)
                         .lineLimit(1)
                    
                     Spacer()
                         .frame(height: 10)
                     
-                    Text(cv.aboutMe)
+                    Text(verbatim: cv.aboutMe)
                         .font(.system(size: 12))
                         .lineLimit(2)
-                    
                 }
                 .padding(.all, 10)
                 .foregroundStyle(Color("SecondaryColor"))

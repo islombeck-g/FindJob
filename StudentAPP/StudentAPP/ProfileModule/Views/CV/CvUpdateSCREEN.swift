@@ -19,7 +19,6 @@ struct CvUpdateSCREEN: View {
                         
                         ScrollView {
                             
-//                            CVTextField(cv: self.cv)
                             CVTextField_Bindable(cv: self.cv)
                         }
                     }
@@ -41,7 +40,7 @@ struct CvUpdateSCREEN: View {
                 
                     ToolbarItem(placement: .principal) {
                 
-                        Text("Редактировать резюме")
+                        Text("53")
                             .font(.system(size: 22))
                             .fontWeight(.bold)
                             .foregroundStyle(Color("SecondaryColor"))

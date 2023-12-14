@@ -14,7 +14,6 @@ struct ResponsesSCREEN: View {
                 
                 VStack (alignment: .leading) {
                     
-                    
                     Picker("", selection: self.$viewModel.chosenCategory) {
                         
                         ForEach(Categories.allCases, id: \.self) { category in
@@ -28,38 +27,21 @@ struct ResponsesSCREEN: View {
                     .pickerStyle(.palette)
                     .padding(.horizontal, 16)
 
-                    
                     Spacer()
-                    
-                    Group {
-                        Picker(selection: $languageManager.selectedLanguage, label: Text(LocalizedStringKey("Select Language"))) {
-                            ForEach(Language.allCases, id: \.self) { language in
-                                Text(language.rawValue).tag(language)
-                            }
-                        }
-                        .pickerStyle(SegmentedPickerStyle())
-                        .padding()
-                    }
-                    
-                    Spacer()
-                        
                 }
-                
             }
             .navigationBarTitleDisplayMode(.inline)
             .toolbar {
                 
-                ToolbarItem (placement: .principal) {
-                        Text(LocalizedStringKey("14"))
+                ToolbarItem(placement: .principal) {
+                        Text("14")
                         .font(.system(size: 22))
                         .fontWeight(.bold)
                         .foregroundStyle(Color("SecondaryColor"))
                      
                 }
             }
-            
         }
-        .environment(\.locale, .init(identifier:  LanguageManager.shared.selectedLanguage.rawValue))
     }
 }
 

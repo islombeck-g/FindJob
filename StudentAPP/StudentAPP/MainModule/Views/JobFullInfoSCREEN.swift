@@ -26,7 +26,7 @@ struct JobFullInfoSCREEN: View {
                             self.dismiss()
                         } label: {
                             
-                            Text(LocalizedStringKey("12"))
+                            Text("12")
                                 .foregroundStyle(.white)
                                 .frame(maxWidth: .infinity)
                                 .frame(height: 60)
@@ -55,7 +55,7 @@ struct JobFullInfoSCREEN: View {
                 
                 ToolbarItem(placement: .principal) {
                     
-                    Text(LocalizedStringKey("13"))
+                    Text("13")
                         .font(.system(size: 22))
                         .fontWeight(.bold)
                         .foregroundStyle(Color("SecondaryColor"))
@@ -78,7 +78,6 @@ struct JobFullInfoSCREEN: View {
             .navigationBarBackButtonHidden(true)
         }
         .toolbar(.hidden, for: .tabBar)
-        .environment(\.locale, .init(identifier:  LanguageManager.shared.selectedLanguage.rawValue))
     }
     
     private func toggleFavorite() {

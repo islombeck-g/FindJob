@@ -69,7 +69,7 @@ struct CvCreateSCREEN: View {
                      
                         }label: {
                             Group {
-                                Text("Cоздать резюме")
+                                Text("65")
                                     .bold()
                                     .frame(maxWidth: .infinity)
                                     .frame(height: 60)
@@ -101,7 +101,7 @@ struct CvCreateSCREEN: View {
                     
                         ToolbarItem(placement: .principal) {
                     
-                            Text("Создание резюме")
+                            Text("66")
                                 .font(.system(size: 22))
                                 .fontWeight(.bold)
                                 .foregroundStyle(Color("SecondaryColor"))

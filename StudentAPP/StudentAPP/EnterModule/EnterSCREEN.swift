@@ -19,11 +19,11 @@ struct EnterSCREEN: View {
                 
                 VStack {
                     Group {
-                        Text(LocalizedStringKey("1"))
+                        Text("1")
                             .font(.system(size: 28))
                             .fontWeight(.bold)
                         
-                        Text (LocalizedStringKey("2"))
+                        Text("2")
                             .font(.system(size: 20))
                             
                     }
@@ -62,20 +62,40 @@ struct EnterSCREEN: View {
                             }
                         }
                     }
-                    
                     Group {
-                        Picker(selection: $languageManager.selectedLanguage, label: Text(LocalizedStringKey("Select Language"))) {
-                            ForEach(Language.allCases, id: \.self) { language in
-                                Text(language.rawValue).tag(language)
+                        Menu {
+                            
+                            Button{
+                                self.languageManager.selectedLanguage = .english
+                            }label: {
+                                Label("English", image: "en")
                             }
+                            Button{
+                                self.languageManager.selectedLanguage = .russian
+                            }label: {
+                                Label("Русский", image: "ru")
+                            }
+                            Button{
+                                self.languageManager.selectedLanguage = .uzbek
+                            }label: {
+                                Label("Uzbek", image: "uz")
+                            }
+                            
+                        } label: {
+                            HStack {
+                                Spacer()
+                                Image(systemName: "globe.europe.africa.fill")
+                                    .font(.system(size: 28))
+                                    .fontWeight(.bold)
+                                Spacer()
+                                    .frame(width: 16)
+                            }
+                            
                         }
-                        .pickerStyle(SegmentedPickerStyle())
-                        .padding()
                     }
                 }
             }
         }
-        .environment(\.locale, .init(identifier: LanguageManager.shared.selectedLanguage.rawValue))
     }
 }
 #Preview {

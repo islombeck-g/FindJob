@@ -27,10 +27,10 @@ struct ProfileImage: View {
                 .frame(width: 14)
             
             VStack(alignment: .leading) {
-                Text("\(name) \(secondName) \(patronymicName)")
+                Text(verbatim: "\(name) \(secondName) \(patronymicName)")
                     .lineLimit(1)
                     .fontWeight(.bold)
-                Text("\(phoneNumber)")
+                Text(verbatim: "\(phoneNumber)")
             }
             .foregroundStyle(Color("SecondaryColor"))
             

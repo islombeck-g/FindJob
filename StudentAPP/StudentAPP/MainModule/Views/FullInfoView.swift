@@ -10,39 +10,39 @@ struct FullInfoView: View {
             
             Group {
                 
-                Text(vc.position)
+                Text(verbatim: vc.position)
                     .font(.title)
                     .fontWeight(.bold)
                 Spacer()
                     .frame(height: 30)
                 
-                Text("Компания")
+                Text("39")
                     .font(.system(size: 15))
                     .fontWeight(.bold)
                 
-                Text(vc.nameOfCompany)
+                Text(verbatim: vc.nameOfCompany)
                     .font(.system(size: 17))
                 Spacer()
                     .frame(height: 15)
                 
-                Text("Отрасль")
+                Text("40")
                     .font(.system(size: 15))
                     .fontWeight(.bold)
-                Text(vc.activity)
+                Text(verbatim: vc.activity)
                     .font(.system(size: 17))
                 Spacer()
                     .frame(height: 15)
                 
-                Text("Вакансия")
+                Text(LocalizedStringKey("13"))
                     .font(.system(size: 22))
                     .fontWeight(.bold)
                 Spacer()
                     .frame(height: 10)
                 
-                Text("Тип занятости")
+                Text("41")
                     .font(.system(size: 15))
                     .fontWeight(.bold)
-                Text(vc.jobType)
+                Text(verbatim: vc.jobType)
                     .font(.system(size: 17))
                 Divider()
                 
@@ -50,7 +50,7 @@ struct FullInfoView: View {
             Spacer()
                 .frame(height: 10)
             
-            Text("Требуемый опыт")
+            Text("42")
                 .font(.system(size: 15))
                 .fontWeight(.bold)
             
@@ -59,7 +59,7 @@ struct FullInfoView: View {
                 HStack {
                     Circle()
                         .frame(width: 7)
-                    Text(vc.experience[index])
+                    Text(verbatim: vc.experience[index])
                         .font(.system(size: 17))
                 }.padding(.leading, 10)
             }
@@ -67,31 +67,29 @@ struct FullInfoView: View {
             Spacer()
                 .frame(height: 15)
             
-            Text("Расположение")
+            Text("43")
                 .font(.system(size: 15))
                 .fontWeight(.bold)
-            Text(vc.location)
+            Text(verbatim: vc.location)
                 .font(.system(size: 17))
             Divider()
             Spacer()
                 .frame(height: 15)
             
-            Text("Заработная плата")
+            Text("44")
                 .font(.system(size: 15))
                 .fontWeight(.bold)
-            Text(vc.money)
+            Text(verbatim: vc.money)
                 .font(.system(size: 17))
             Divider()
             Spacer()
                 .frame(height: 15)
             
-            Text("О вакансии")
+            Text("45")
                 .font(.system(size: 15))
                 .fontWeight(.bold)
-            Text(vc.description)
+            Text(verbatim: vc.description)
                 .font(.system(size: 17))
-            
-           
         }
         .foregroundColor(Color("SecondaryColor"))
     }

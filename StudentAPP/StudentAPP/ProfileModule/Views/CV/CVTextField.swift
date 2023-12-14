@@ -9,7 +9,7 @@ struct CVTextField: View {
             Group {
                 Group {
                     HStack {
-                        Text("Фамилия")
+                        Text("33")
                             .font(.system(size:15))
                             .fontWeight(.bold)
                         Spacer()
@@ -17,27 +17,27 @@ struct CVTextField: View {
                     CustomTextFieldWithSize(isSecureField: false, text: "", result: self.$cv.secondName, size: 0)
                 }
                 Group {
-                    Text("Имя")
+                    Text("34")
                         .fontWeight(.bold)
                     CustomTextFieldWithSize(isSecureField: false, text: "", result: self.$cv.firstName, size: 0)
                 }
                 Group {
-                    Text("Отчество")
+                    Text("35")
                         .fontWeight(.bold)
                     CustomTextFieldWithSize(isSecureField: false, text: "", result: self.$cv.patronymicName, size: 0)
                 }
                 Group {
-                    Text("Дата рождения")
+                    Text("27")
                         .fontWeight(.bold)
                     CustomTextFieldWithSize(isSecureField: false, text: "", result: self.$cv.birthDate, size: 0)
                 }
                 Group {
-                    Text("Гражданство")
+                    Text("54")
                         .fontWeight(.bold)
                     CustomTextFieldWithSize(isSecureField: false, text: "", result: self.$cv.birthCountry, size: 0)
                 }
                 Group {
-                    Text("Телефон")
+                    Text("55")
                         .fontWeight(.bold)
                     CustomTextFieldWithSize(isSecureField: false, text: "", result: self.$cv.phoneNumber, size: 0)
                 }
@@ -48,31 +48,31 @@ struct CVTextField: View {
 
             Group {
                 Group {
-                    Text("Образование")
+                    Text("56")
                         .font(.system(size:20))
                         .fontWeight(.bold)
                     
-                    Text("Университет")
+                    Text("29")
                         .fontWeight(.bold)
                     CustomTextFieldWithSize(isSecureField: false, text: "", result: self.$cv.university, size: 0)
                 }
                 Group {
-                    Text("Институт")
+                    Text("30")
                         .fontWeight(.bold)
                     CustomTextFieldWithSize(isSecureField: false, text: "", result: self.$cv.institute, size: 0)
                 }
                 Group {
-                    Text("Направление")
+                    Text("31")
                         .fontWeight(.bold)
                     CustomTextFieldWithSize(isSecureField: false, text: "", result: self.$cv.direction, size: 0)
                 }
                 Group {
-                    Text("Дополнительное образование")
+                    Text("57")
                         .fontWeight(.bold)
                     CustomTextFieldWithSize(isSecureField: false, text: "", result: self.$cv.anotherEducation, size: 0)
                 }
                 Group {
-                    Text("Сертификаты, рекомендательные письма")
+                    Text("58")
                         .fontWeight(.bold)
                     CustomTextFieldWithSize(isSecureField: false, text: "", result: self.$cv.certificates, size: 0)
                 }
@@ -82,37 +82,37 @@ struct CVTextField: View {
                 .frame(height: 0)
             
             Group {
-                Text("Основное")
+                Text("59")
                     .foregroundColor(.black)
                     .font(.system(size:20))
                     .fontWeight(.bold)
                 
-                Text("Навыки")
+                Text("60")
                     .fontWeight(.bold)
                 CustomTextFieldWithSize(isSecureField: false, text: "", result: self.$cv.skills, size: 0)
             }
             Group {
-                Text("Желаемая должность")
+                Text("67")
                     .fontWeight(.bold)
                 CustomTextFieldWithSize(isSecureField: false, text: "", result: self.$cv.position, size: 0)
             }
             Group {
-                Text("Желаемый уровень заработной платы")
+                Text("61")
                     .fontWeight(.bold)
                 CustomTextFieldWithSize(isSecureField: false, text: "", result: self.$cv.money, size: 0)
             }
             Group {
-                Text("Тип занятости")
+                Text("62")
                     .fontWeight(.bold)
                 CustomTextFieldWithSize(isSecureField: false, text: "", result: self.$cv.workExperience, size: 0)
             }
             Group {
-                Text("Опыт работы")
+                Text("63")
                     .fontWeight(.bold)
                 CustomTextFieldWithSize(isSecureField: false, text: "", result: self.$cv.employmentType, size: 0)
             }
             Group {
-                Text("Обо мне")
+                Text("64")
                     .fontWeight(.bold)
                 CustomTextFieldWithSize(isSecureField: false, text: "", result: self.$cv.aboutMe, size: 0)
             }

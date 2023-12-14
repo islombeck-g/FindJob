@@ -21,8 +21,6 @@ struct EditAccountSCREEN: View {
                         
                         Spacer()
                     }
-                    
-                    
                 }
                 .navigationBarTitleDisplayMode(.inline)
                 .toolbar {
@@ -42,7 +40,7 @@ struct EditAccountSCREEN: View {
                 
                     ToolbarItem(placement: .principal) {
                 
-                        Text(LocalizedStringKey("18"))
+                        Text("18")
                             .font(.system(size: 22))
                             .fontWeight(.bold)
                             .foregroundStyle(Color("SecondaryColor"))
@@ -50,14 +48,9 @@ struct EditAccountSCREEN: View {
                 }
                 .navigationBarBackButtonHidden(true)
                 .toolbar(.hidden, for: .tabBar)
-                
             }
         }
-        .environment(\.locale, .init(identifier:  LanguageManager.shared.selectedLanguage.rawValue))
-        
-        
     }
-    
 }
 #Preview {
     EditAccountSCREEN()

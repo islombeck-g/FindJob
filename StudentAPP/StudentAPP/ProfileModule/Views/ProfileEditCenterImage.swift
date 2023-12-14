@@ -8,14 +8,13 @@ struct ProfileEditCenterImage: View {
             if image == "" {
                 Circle()
                     .foregroundStyle(.gray)
-            }else {
+            } else {
                 Image(image)
                     .resizable()
                     .cornerRadius(100)
             }
         }
-            .frame(width: 160, height: 160)
-        
+        .frame(width: 160, height: 160)
     }
 }
 
