@@ -11,12 +11,12 @@ struct LoginSCREEN: View {
         
         NavigationStack {
             
-                ZStack {
+            ZStack {
+                
+                Color("ForegroundColor")
+                    .ignoresSafeArea()
+                ScrollView {
                     
-                    Color("ForegroundColor")
-                        .ignoresSafeArea()
-                    ScrollView {
-                        
                     VStack(alignment: .leading){
                         
                         Group {
@@ -51,7 +51,7 @@ struct LoginSCREEN: View {
                             .frame(maxWidth: .infinity)
                         
                         NavigationLink {
-                            
+                            //vk_enter
                         } label: {
                             ZStack {
                                 RoundedRectangle(cornerRadius: 10)
@@ -65,38 +65,26 @@ struct LoginSCREEN: View {
                                     .fontWeight(.bold)
                             }
                         }
-                        
                         Spacer()
-                        
-                        Group {
-                            Picker(selection: $languageManager.selectedLanguage, label: Text(LocalizedStringKey("Select Language"))) {
-                                ForEach(Language.allCases, id: \.self) { language in
-                                    Text(language.rawValue).tag(language)
-                                }
-                            }
-                            .pickerStyle(SegmentedPickerStyle())
-                            .padding()
-                        }
-                        
                     }
                 }
-                    .scrollIndicators(.hidden)
+                .scrollIndicators(.hidden)
             }
-                .toolbar {
-                    ToolbarItem(placement: .topBarLeading) {
-                        Button {
-                            self.dismiss()
-                        } label: {
-                                
-                                Image(systemName: "chevron.left")
-                                Text(LocalizedStringKey("5"))
-                        }
-                        .font(.system(size: 19))
-                        .fontWeight(.regular)
-                        .foregroundStyle(Color("SecondaryColor"))
+            .toolbar {
+                ToolbarItem(placement: .topBarLeading) {
+                    Button {
+                        self.dismiss()
+                    } label: {
+                        
+                        Image(systemName: "chevron.left")
+                        Text(LocalizedStringKey("5"))
                     }
-                    
+                    .font(.system(size: 19))
+                    .fontWeight(.regular)
+                    .foregroundStyle(Color("SecondaryColor"))
                 }
+                
+            }
         }
         .navigationBarBackButtonHidden(true)
         .environment(\.locale, .init(identifier: LanguageManager.shared.selectedLanguage.rawValue))

@@ -1,0 +1,5 @@
+host_const = "127.0.0.1"
+port_const = "3221"
+user_const = "root"
+password_const = "rootroot"
+name_const = "FindJob"

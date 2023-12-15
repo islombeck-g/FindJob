@@ -15,14 +15,11 @@ struct LoginRoundedRectangleView: View {
             
             VStack(alignment: .center) {
                 Text(LocalizedStringKey("7"))
-//                    .foregroundStyle(.black)
                     .foregroundStyle(Color("ForegroundColor"))
                     .fontWeight(.bold)
                     .font(.system(size: 28))
                 
                 CustomTextFieldView(isSecureField: false, text: LocalizedStringKey("8"), result: self.$loginText)
-               
-//                CustomTextFieldView(isSecureField: false, text: $loginText_c, result: self.$loginText)
                 
                 Spacer()
                     .frame(height: 10)
@@ -33,7 +30,7 @@ struct LoginRoundedRectangleView: View {
                     .frame(height: 20)
                 
                 Button {
-                    self.viewModel.sendData()
+                    self.viewModel.login()
                 } label: {
                     ZStack {
                         RoundedRectangle(cornerRadius: 8)
