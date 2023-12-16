@@ -13,24 +13,33 @@ struct LoadSpinnerView: View {
     @State var rotationDegreeS1 = initialDegree
     @State var rotationDegreeS2 = initialDegree
     @State var rotationDegreeS3 = initialDegree
-
+    
     var body: some View {
-        ZStack{
-            SpinnerCircle(start: spinnerStart, end: spinnerEnd2S3, rotation: rotationDegreeS3, color: .black)
+            ZStack {
+                Color.black.opacity(0.3) // Настройте уровень затемнения здесь
+                    .edgesIgnoringSafeArea(.all)
             
-            SpinnerCircle(start: spinnerStart, end: spinnerEnd2S3, rotation: rotationDegreeS2, color: .black)
-            
-            SpinnerCircle(start: spinnerStart, end: spinnerEndS1, rotation: rotationDegreeS1, color: .black)
-        }
-        .frame(width: 50, height: 50)
-        .onAppear() {
-            self.animationSpinner()
-            
-            Timer.scheduledTimer(withTimeInterval: animationTime, repeats: true) { (minTimer) in
-                self.animationSpinner()
+                Group {
+                    
+                    SpinnerCircle(start: spinnerStart, end: spinnerEnd2S3, rotation: rotationDegreeS3, color: .black)
+                    
+                    SpinnerCircle(start: spinnerStart, end: spinnerEnd2S3, rotation: rotationDegreeS2, color: .black)
+                    
+                    SpinnerCircle(start: spinnerStart, end: spinnerEndS1, rotation: rotationDegreeS1, color: .black)
+                }
+                .frame(width: 50, height: 50)
+                .padding(.top, 520)
                 
             }
-        }
+            .frame(maxWidth: .infinity, maxHeight: .infinity)
+            .onAppear() {
+                self.animationSpinner()
+                
+                Timer.scheduledTimer(withTimeInterval: animationTime, repeats: true) { (minTimer) in
+                    self.animationSpinner()
+                    
+                }
+            }
     }
     func animationSpinner(with duration: Double, completion: @escaping(() -> Void)){
         Timer.scheduledTimer(withTimeInterval: duration, repeats: false) { _ in
@@ -77,9 +86,4 @@ struct SpinnerCircle: View{
 #Preview {
     LoadSpinnerView()
 }
-//struct Spinner_Previews: PreviewProvider {
-//    static var previews: some View {
-//        Spinner()
-//            .preferredColorScheme(.dark)
-//    }
-//}
+

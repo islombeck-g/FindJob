@@ -6,13 +6,13 @@ struct EnterPositionView: View {
     var body: some View {
         ZStack {
             RoundedRectangle(cornerRadius: 25)
-                .foregroundStyle(.white)
+                .foregroundStyle(Color("SecondaryColor"))
             
             VStack {
                 Spacer()
                     .frame(height: 20)
-                Text("Личные данные")
-                    .foregroundStyle(.black)
+                Text("7")
+                    .foregroundStyle(Color("ForegroundColor"))
                     .fontWeight(.bold)
                     .font(.system(size: 28))
                 
@@ -49,7 +49,7 @@ struct EnterPositionView: View {
                         Spacer()
                             .frame(height: 15)
                         
-                        Text("*Обязательное поле")
+                        Text("68")
                             .font(.system(size: 17))
                             .frame(maxWidth: .infinity, alignment: .leading)
                             .padding(.leading, 41)
@@ -64,9 +64,9 @@ struct EnterPositionView: View {
                                         width: 293,
                                         height: 46)
                                     .frame(maxWidth: .infinity)
-                                    .foregroundColor(.black)
+                                    .foregroundColor(Color("AccentColor"))
                                 
-                                Text("Далее")
+                                Text("72")
                                     .foregroundColor(.white)
                                     .fontWeight(.bold)
                             }

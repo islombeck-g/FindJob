@@ -8,36 +8,20 @@ struct RegistrationSCREEN: View {
     var body: some View {
         NavigationStack {
             ZStack {
-                Color.black
+                Color("ForegroundColor")
                     .ignoresSafeArea()
                 
                 VStack {
                     
                     Group {
                         
-                        Button {
-                            self.dismiss()
-                        } label: {
-                            HStack{
-                                
-                                Image(systemName: "chevron.left")
-                                
-                                Text("Назад")
-                                
-                                Spacer()
-                            }
-                            .font(.system(size: 19))
-                            .fontWeight(.regular)
-                        }
-                        .foregroundColor(.white)
-                        
                         Spacer()
                             .frame(height: 37.5)
                         
-                        Text("Регистрация")
-                            .foregroundColor(.white)
-                            .frame(maxWidth: .infinity, alignment: .leading)
+                        Text(LocalizedStringKey("4"))
+                            .foregroundStyle(Color("SecondaryColor"))
                             .font(.system(size: 34))
+                            .frame(maxWidth: .infinity, alignment: .leading)
                             .fontWeight(.semibold)
                             .padding(.horizontal, 20)
                         
@@ -49,7 +33,6 @@ struct RegistrationSCREEN: View {
                         
                         ScrollView (.init()){
                             TabView(selection: $viewModel.selectedTab) {
-                                
                                 ForEach( self.viewModel.StudentViews.indices, id: \.self) { i in
                                     
                                     self.viewModel.StudentViews[i]
@@ -58,10 +41,29 @@ struct RegistrationSCREEN: View {
                                 .frame(maxHeight: .infinity, alignment: .top)
                             }
                             .tabViewStyle(.page)
-                            .animation(.easeInOut, value: 1)
+//                            .animation(.easeInOut, value: 1)
                         }
                     }
                 }
+                
+                if self.viewModel.isLoading {
+                    LoadSpinnerView()
+                }
+            }
+            .toolbar {
+                ToolbarItem(placement: .topBarLeading) {
+                    Button {
+                        self.dismiss()
+                    } label: {
+                        
+                        Image(systemName: "chevron.left")
+                        Text(LocalizedStringKey("5"))
+                    }
+                    .font(.system(size: 19))
+                    .fontWeight(.regular)
+                    .foregroundStyle(Color("SecondaryColor"))
+                }
+                
             }
             .navigationBarBackButtonHidden()
         }

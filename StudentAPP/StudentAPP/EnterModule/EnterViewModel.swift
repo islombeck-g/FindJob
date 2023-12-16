@@ -2,7 +2,7 @@ import Foundation
 import SwiftUI
 
 final class EnterViewModel:ObservableObject {
-   
+    
     private var userStateViewModel:UserStateViewModel
     
     init(userStateViewModel: UserStateViewModel) {
@@ -11,86 +11,35 @@ final class EnterViewModel:ObservableObject {
     
     @Published var loginText: String = ""
     @Published var passwodText: String = ""
- 
-   
-    func register() {
-            guard let url = URL(string: "https://3513-85-249-28-180.ngrok-free.app/register") else {
-                print("Invalid URL")
-                return
-            }
-
-            let parameters = ["username": loginText, "password": passwodText]
-
-            var request = URLRequest(url: url)
-            request.httpMethod = "POST"
-            request.addValue("application/json", forHTTPHeaderField: "Content-Type")
-
-            do {
-                request.httpBody = try JSONSerialization.data(withJSONObject: parameters)
-            } catch {
-                print("Error encoding parameters: \(error.localizedDescription)")
-                return
-            }
-
-            URLSession.shared.dataTask(with: request) { data, response, error in
-                if let error = error {
-                    print("Error: \(error.localizedDescription)")
-                    return
-                }
-
-                // Обработка ответа от сервера, например, проверка успешной регистрации
-                if let httpResponse = response as? HTTPURLResponse {
-                    if httpResponse.statusCode == 200 {
-                        print("Registration successful!")
-                        self.userStateViewModel.logIn(user: self.student)
-                    } else {
-                        print("Registration failed. Status code: \(httpResponse.statusCode)")
-                    }
-                }
-
-            }.resume()
-        }
-
-        func login() {
-            guard let url = URL(string: "https://3513-85-249-28-180.ngrok-free.app/login") else {
-                print("Invalid URL")
-                return
-            }
-
-            let parameters = ["username": loginText, "password": passwodText]
-
-            var request = URLRequest(url: url)
-            request.httpMethod = "POST"
-            request.addValue("application/json", forHTTPHeaderField: "Content-Type")
-
-            do {
-                request.httpBody = try JSONSerialization.data(withJSONObject: parameters)
-            } catch {
-                print("Error encoding parameters: \(error.localizedDescription)")
-                return
-            }
-
-            URLSession.shared.dataTask(with: request) { data, response, error in
-                if let error = error {
-                    print("Error: \(error.localizedDescription)")
-                    return
-                }
-
-                // Обработка ответа от сервера, например, проверка успешного входа
-                if let httpResponse = response as? HTTPURLResponse {
-                    if httpResponse.statusCode == 200 {
-                        print("Login successful!")
-                        self.userStateViewModel.logIn(user: self.student)
-                    } else {
-                        print("Login failed. Status code: \(httpResponse.statusCode)")
-                    }
-                }
-
-            }.resume()
-        }
+    @Published var isLoading:Bool = false
+    private var enterService = EnterService()
+    func tryLogin() {
+        self.isLoading = true
+        
+        self.enterService.login(userName: &loginText, password: &passwodText, success: { student in
+            print("Login successful. Student data: \(student)")
+            self.userStateViewModel.logIn(user: self.student)
+            self.isLoading = false
+        }, failure: { error in
+            print("Login failed with error: \(error)")
+            self.isLoading = false
+        })
+    }
     
-    
-    
+    func tryRegistration() {
+        self.isLoading = true
+        
+        enterService.registerUser(userData: &student, password: &passwodText, success: {
+            // Обработка успешной регистрации
+            self.userStateViewModel.logIn(user: self.student)
+            self.isLoading = false
+        }, failure: { error in
+            // Обработка ошибок регистрации
+            print("Error: \(error)")
+            self.isLoading = false
+        })
+        
+    }
     
     func sendData(){
         print(11)
@@ -108,13 +57,12 @@ final class EnterViewModel:ObservableObject {
     //good
     func nextTabView(){
         guard selectedTab != 3 else {
-            selectedTab = 1
+//            selectedTab = 1
+            tryRegistration()
             return
         }
         self.selectedTab += 1
     }
-    
-
     
     @Published var selectedTab: Int = 0
     
@@ -122,7 +70,6 @@ final class EnterViewModel:ObservableObject {
         AnyView(EnterFullNameView()),
         AnyView(EnterPositionView()),
         AnyView(EnterPasswordView())]
-    
     @Published var cities:[ChoseName] = [
         .init(title: "Казань"),
         .init(title: "Москва"),
@@ -140,15 +87,14 @@ final class EnterViewModel:ObservableObject {
         .init(title: "Казанский Национальный Иследовательский Технический Университет"),
         .init(title: "Казанский государственный медицинский университет"),
         .init(title: "Российский исламский институтка")]
-    
-    @Published var student:StudentData = StudentData(firstName: "", secondName: "", patronymicName: "", gender: .male, city: "", university: "", phoneNumber: "", image: "", email: "", password: "", birthDate: "", aboutMe: "", institute: "", direction: "")
+    @Published var student:StudentData = StudentData(firstName: "", secondName: "", patronymicName: "", gender: .male, city: "", university: "", phoneNumber: "", image: "", email: "",  birthDate: "", aboutMe: "", institute: "", direction: "")
     
     @Published var secondPassword:String = ""
     @Published var emailAgree: Bool = false
     @Published var userAgreement: Bool = false
     @Published var chosenCity: String = "Город*"
     @Published var chosenUniversity: String = "Учебное заведение*"
-  
+    
 }
 
 

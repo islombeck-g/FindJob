@@ -15,6 +15,7 @@ struct LoginSCREEN: View {
                 
                 Color("ForegroundColor")
                     .ignoresSafeArea()
+                
                 ScrollView {
                     
                     VStack(alignment: .leading){
@@ -50,8 +51,8 @@ struct LoginSCREEN: View {
                             .foregroundStyle(Color("SecondaryColor"))
                             .frame(maxWidth: .infinity)
                         
-                        NavigationLink {
-                            //vk_enter
+                        Button {
+                            self.viewModel.isLoading.toggle()
                         } label: {
                             ZStack {
                                 RoundedRectangle(cornerRadius: 10)
@@ -69,6 +70,11 @@ struct LoginSCREEN: View {
                     }
                 }
                 .scrollIndicators(.hidden)
+                
+                if self.viewModel.isLoading {
+                    LoadSpinnerView()
+                }
+                
             }
             .toolbar {
                 ToolbarItem(placement: .topBarLeading) {
@@ -83,7 +89,6 @@ struct LoginSCREEN: View {
                     .fontWeight(.regular)
                     .foregroundStyle(Color("SecondaryColor"))
                 }
-                
             }
         }
         .navigationBarBackButtonHidden(true)

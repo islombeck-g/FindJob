@@ -48,7 +48,7 @@ struct EnterSCREEN: View {
                         }
  
                         NavigationLink {
-                            RegistrationSCREEN2()
+                            RegistrationSCREEN()
                                 .environmentObject(self.viewModel)
                         } label: {
                             ZStack {

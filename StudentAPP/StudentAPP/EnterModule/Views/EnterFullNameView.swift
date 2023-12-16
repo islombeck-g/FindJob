@@ -7,19 +7,19 @@ struct EnterFullNameView: View {
     var body: some View {
         ZStack {
             RoundedRectangle(cornerRadius: 25)
-                .foregroundStyle(.white)
+                .foregroundStyle(Color("SecondaryColor"))
             
             VStack(alignment: .center) {
-                Text("Личные данные")
-                    .foregroundStyle(.black)
+                Text(LocalizedStringKey("7"))
+                    .foregroundStyle(Color("ForegroundColor"))
                     .fontWeight(.bold)
                     .font(.system(size: 28))
                 
-                CustomTextFieldView(isSecureField: false, text: "Имя*", result: self.$viewModel.student.firstName)
+                CustomTextFieldView(isSecureField: false, text: "69", result: self.$viewModel.student.firstName)
                 
-                CustomTextFieldView(isSecureField: false, text: "Фамилия*", result: self.$viewModel.student.secondName)
+                CustomTextFieldView(isSecureField: false, text: "70", result: self.$viewModel.student.secondName)
                 
-                CustomTextFieldView(isSecureField: false, text: "Отчество", result: self.$viewModel.student.patronymicName)
+                CustomTextFieldView(isSecureField: false, text: "71", result: self.$viewModel.student.patronymicName)
                 
                 Group {
                     HStack {
@@ -37,7 +37,7 @@ struct EnterFullNameView: View {
                                 
                                 Text("Муж")
                             }
-                            .foregroundColor(.black)
+                            
                         }
                         
                         Spacer()
@@ -56,7 +56,7 @@ struct EnterFullNameView: View {
                                 
                                 Text("Жен")
                             }
-                            .foregroundColor(.black)
+                            
                         }
                     }
                     .font(.system(size: 17))
@@ -66,9 +66,10 @@ struct EnterFullNameView: View {
                     .padding(.leading, 45)
                     .padding(.trailing, 45)
                 }
+                .foregroundStyle(Color("ForegroundColor"))
                 Spacer()
                     .frame(height: 20)
-                Text("*Обязательное поле")
+                Text("68")
                     .font(.system(size: 17))
                     .frame(maxWidth: .infinity, alignment: .leading)
                     .padding(.leading, 41)
@@ -83,9 +84,9 @@ struct EnterFullNameView: View {
                                 width: 293,
                                 height: 46)
                             .frame(maxWidth: .infinity)
-                            .foregroundColor(.black)
+                            .foregroundColor(Color("AccentColor"))
                         
-                        Text("Далее")
+                        Text("72")
                             .foregroundColor(.white)
                             .fontWeight(.bold)
                     }

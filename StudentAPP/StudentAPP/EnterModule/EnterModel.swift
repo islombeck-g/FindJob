@@ -1,15 +1,15 @@
 import Foundation
 
-enum Gender {
-    case male
-    case female
+enum Gender:String, Decodable, Encodable {
+    case male = "male"
+    case female = "female"
 }
 
 struct ChoseName {
     var title: String
 }
 
-struct StudentData {
+struct StudentData: Decodable, Encodable {
     var firstName:String
     var secondName:String
     var patronymicName:String
@@ -19,9 +19,9 @@ struct StudentData {
     var phoneNumber:String
     var image:String
     var email:String
-    var password:String
     var birthDate:String
     var aboutMe:String
     var institute:String
     var direction:String
+    
 }

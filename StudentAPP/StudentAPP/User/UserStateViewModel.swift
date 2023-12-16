@@ -17,7 +17,7 @@ class UserStateViewModel:ObservableObject{
             phoneNumber: "+7 (888) 888-88-88",
             image: "userImage",
             email: "some@gmail.com",
-            password: "what???",
+//            password: "what???",
             birthDate: "10.02.2000",
             aboutMe: "я очень интреесный человек, учусь, не работаю",
             institute: "Институт вычислительной математики и информационных техноолгий",
