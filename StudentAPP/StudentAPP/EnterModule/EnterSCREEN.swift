@@ -2,11 +2,7 @@ import SwiftUI
 
 struct EnterSCREEN: View {
     
-    @StateObject var viewModel:EnterViewModel
-    
-    init(userStateViewModel: UserStateViewModel) {
-        _viewModel = StateObject(wrappedValue: EnterViewModel(userStateViewModel: userStateViewModel))
-            }
+    @EnvironmentObject var viewModel:EnterViewModel
     
     @ObservedObject var languageManager = LanguageManager.shared
     
@@ -99,6 +95,7 @@ struct EnterSCREEN: View {
     }
 }
 #Preview {
-    EnterSCREEN(userStateViewModel: UserStateViewModel())
+    EnterSCREEN()
+        .environmentObject(EnterViewModel(userStateManager: UserStateManager()))
 }
 

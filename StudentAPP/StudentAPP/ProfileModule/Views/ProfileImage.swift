@@ -40,5 +40,5 @@ struct ProfileImage: View {
 }
 
 #Preview {
-    ProfileSCREEN(userStateViewModel: UserStateViewModel())
+    ProfileSCREEN()
 }

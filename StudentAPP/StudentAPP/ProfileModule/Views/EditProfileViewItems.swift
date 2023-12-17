@@ -65,5 +65,5 @@ struct EditProfileViewItems: View {
 
 #Preview {
     EditProfileViewItems()
-        .environmentObject(ProfileViewModel(userStateViewModel: UserStateViewModel()))
+        .environmentObject(ProfileViewModel(userStateManager: UserStateManager()))
 }

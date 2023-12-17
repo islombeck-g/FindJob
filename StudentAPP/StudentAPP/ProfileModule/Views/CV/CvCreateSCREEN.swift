@@ -117,5 +117,5 @@ struct CvCreateSCREEN: View {
 
 #Preview {
     CvCreateSCREEN()
-        .environmentObject(ProfileViewModel(userStateViewModel: UserStateViewModel()))
+        .environmentObject(ProfileViewModel(userStateManager: UserStateManager()))
 }

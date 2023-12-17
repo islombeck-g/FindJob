@@ -72,5 +72,5 @@ struct RegistrationSCREEN: View {
 
 #Preview {
     RegistrationSCREEN()
-        .environmentObject(EnterViewModel(userStateViewModel: UserStateViewModel()))
+        .environmentObject(EnterViewModel(userStateManager: UserStateManager()))
 }

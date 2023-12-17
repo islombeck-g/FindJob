@@ -59,7 +59,7 @@ struct LoginRoundedRectangleView: View {
 
 #Preview {
     LoginSCREEN()
-        .environmentObject(EnterViewModel(userStateViewModel: UserStateViewModel()))
+        .environmentObject(EnterViewModel(userStateManager: UserStateManager()))
     
 //    LoginRoundedRectangleView(loginText: .constant(""), passwodText: .constant(""))
 //        .environmentObject(EnterViewModel(userStateViewModel: UserStateViewModel()))

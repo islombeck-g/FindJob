@@ -82,5 +82,5 @@ struct CvMainSCREEN: View {
 
 #Preview {
     CvMainSCREEN()
-        .environmentObject(ProfileViewModel(userStateViewModel: UserStateViewModel()))
+        .environmentObject(ProfileViewModel(userStateManager: UserStateManager()))
 }

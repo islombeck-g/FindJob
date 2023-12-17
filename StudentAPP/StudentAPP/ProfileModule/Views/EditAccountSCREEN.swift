@@ -54,5 +54,5 @@ struct EditAccountSCREEN: View {
 }
 #Preview {
     EditAccountSCREEN()
-        .environmentObject(ProfileViewModel(userStateViewModel: UserStateViewModel()))
+        .environmentObject(ProfileViewModel(userStateManager: UserStateManager()))
 }

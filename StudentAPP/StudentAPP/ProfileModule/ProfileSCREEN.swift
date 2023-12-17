@@ -2,11 +2,7 @@ import SwiftUI
 
 struct ProfileSCREEN: View {
     
-    @StateObject private var viewModel:ProfileViewModel
-    
-    init(userStateViewModel: UserStateViewModel) {
-        _viewModel = StateObject(wrappedValue: ProfileViewModel(userStateViewModel: userStateViewModel))
-    }
+    @EnvironmentObject private var viewModel:ProfileViewModel
     
     @State private var logOut_isAllertShow:Bool = false
     @State private var deleteAcount_isAllertShow:Bool = false
@@ -16,7 +12,7 @@ struct ProfileSCREEN: View {
     
     var body: some View {
         NavigationStack{
-            ZStack{
+            ZStack {
                 Color("ForegroundColor").ignoresSafeArea()
                 
                 VStack {
@@ -197,10 +193,14 @@ struct ProfileSCREEN: View {
                     .foregroundStyle(Color("SecondaryColor"))
                 }
             }
+            .onAppear {
+                self.viewModel.getData()
+            }
         }
     }
 }
 
 #Preview {
-    ProfileSCREEN(userStateViewModel: UserStateViewModel())
+    ProfileSCREEN()
+        .environmentObject(ProfileViewModel(userStateManager: UserStateManager()))
 }

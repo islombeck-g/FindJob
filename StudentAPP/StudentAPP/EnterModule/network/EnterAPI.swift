@@ -1,7 +1,7 @@
 import Foundation
 
 class EnterAPI {
-    let url = "https://cfe2-85-249-28-180.ngrok-free.app"
+    
     
     func logIn(username: inout String, password: inout String, completion: @escaping (Result<StudentData, EnterServiceError>) -> Void) {
         

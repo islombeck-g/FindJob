@@ -106,5 +106,5 @@ struct SupportSCREEN: View {
 
 #Preview {
     SupportSCREEN()
-        .environmentObject(ProfileViewModel(userStateViewModel: UserStateViewModel()))
+        .environmentObject(ProfileViewModel(userStateManager: UserStateManager()))
 }

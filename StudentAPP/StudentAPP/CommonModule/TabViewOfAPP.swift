@@ -2,8 +2,7 @@ import SwiftUI
 
 struct TabViewOfAPP: View {
     
-    @StateObject var userStateViewModel:UserStateViewModel
-    
+    @EnvironmentObject var userStateManager: UserStateManager
     
     var body: some View {
         
@@ -19,7 +18,8 @@ struct TabViewOfAPP: View {
                     Label(LocalizedStringKey("14"), systemImage: "hand.thumbsup")
                 }
             
-            ProfileSCREEN(userStateViewModel: userStateViewModel)
+            ProfileSCREEN()
+                .environmentObject(ProfileViewModel(userStateManager: userStateManager))
                 .tabItem {
                     Label(LocalizedStringKey("17"), systemImage: "person")
                 }
@@ -31,5 +31,6 @@ struct TabViewOfAPP: View {
 }
 
 #Preview {
-    TabViewOfAPP(userStateViewModel: UserStateViewModel())
+    TabViewOfAPP()
+        .environmentObject(UserStateManager())
 }

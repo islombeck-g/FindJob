@@ -140,5 +140,5 @@ struct CvFullInfoSCREEN: View {
         workExperience: "Лаборатория КФУ",
         employmentType: "Полная занятость",
         aboutMe: "Очень хороший человек"))
-    .environmentObject(ProfileViewModel(userStateViewModel: UserStateViewModel()))
+    .environmentObject(ProfileViewModel(userStateManager: UserStateManager()))
 }

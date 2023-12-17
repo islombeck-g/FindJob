@@ -3,10 +3,9 @@ import SwiftUI
 
 final class EnterViewModel:ObservableObject {
     
-    private var userStateViewModel:UserStateViewModel
-    
-    init(userStateViewModel: UserStateViewModel) {
-        self.userStateViewModel = userStateViewModel
+    private var userStateManager: UserStateManager
+    init(userStateManager: UserStateManager) {
+        self.userStateManager = userStateManager
     }
     
     @Published var loginText: String = ""
@@ -15,14 +14,22 @@ final class EnterViewModel:ObservableObject {
     private var enterService = EnterService()
     func tryLogin() {
         self.isLoading = true
+//        self.userStateManager.logInTest()
+//        MARK: it is works, just open
         
         self.enterService.login(userName: &loginText, password: &passwodText, success: { student in
-            print("Login successful. Student data: \(student)")
-            self.userStateViewModel.logIn(user: self.student)
-            self.isLoading = false
+            
+//            print("Login successful. Student data: \(student)")
+            DispatchQueue.main.async {
+                self.userStateManager.logIn(user: student)
+                self.isLoading = false
+            }
+            
         }, failure: { error in
             print("Login failed with error: \(error)")
-            self.isLoading = false
+            DispatchQueue.main.async {
+                self.isLoading = false
+            }
         })
     }
     
@@ -31,22 +38,18 @@ final class EnterViewModel:ObservableObject {
         
         enterService.registerUser(userData: &student, password: &passwodText, success: {
             // Обработка успешной регистрации
-            self.userStateViewModel.logIn(user: self.student)
-            self.isLoading = false
+            DispatchQueue.main.async {
+                self.userStateManager.logIn(user: self.student)
+                self.isLoading = false
+            }
         }, failure: { error in
             // Обработка ошибок регистрации
             print("Error: \(error)")
-            self.isLoading = false
+            DispatchQueue.main.async {
+                self.isLoading = false
+            }
         })
         
-    }
-    
-    func sendData(){
-        print(11)
-        if checkData() {
-            print(21)
-            self.userStateViewModel.logIn(user: self.student)
-        }
     }
     
     private func checkData() -> Bool {
@@ -56,7 +59,7 @@ final class EnterViewModel:ObservableObject {
     
     //good
     func nextTabView(){
-        guard selectedTab != 3 else {
+        guard selectedTab != 2 else {
 //            selectedTab = 1
             tryRegistration()
             return

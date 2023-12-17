@@ -67,6 +67,21 @@ struct LoginSCREEN: View {
                             }
                         }
                         Spacer()
+                        Button {
+                            self.viewModel.loginText = "123@gmail.com"
+                            self.viewModel.passwodText = "123"
+                        } label: {
+                            ZStack {
+                                RoundedRectangle(cornerRadius: 10)
+                                    .frame(
+                                        width: 343,
+                                        height: 48)
+                                    .frame(maxWidth: .infinity)
+                                    .foregroundColor(Color("SecondaryColor"))
+                                
+                                Text("forTest")
+                            }
+                        }
                     }
                 }
                 .scrollIndicators(.hidden)
@@ -101,5 +116,5 @@ struct LoginSCREEN: View {
 
 #Preview {
     LoginSCREEN()
-        .environmentObject(EnterViewModel(userStateViewModel: UserStateViewModel()))
+        .environmentObject(EnterViewModel(userStateManager: UserStateManager()))
 }

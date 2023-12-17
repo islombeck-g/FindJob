@@ -93,5 +93,5 @@ struct EnterPositionView: View {
 
 #Preview {
     EnterPositionView()
-        .environmentObject(EnterViewModel(userStateViewModel: UserStateViewModel()))
+        .environmentObject(EnterViewModel(userStateManager: UserStateManager()))
 }
