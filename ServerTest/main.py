@@ -10,9 +10,63 @@ app = Flask(__name__)
 db = pymysql.connect(host=host_const, user=user_const, password=password_const, database=name_const)
 cursor = db.cursor()
 
+
+# Эндпоинт для обновления параметров пользователя
+@app.route('/update_user', methods=['POST'])
+def updateUser_func():
+    try:
+        data = request.get_json()
+
+        # Получение данных из запроса
+        login = data.get('login')
+        new_data = {
+            'firstName': data.get('firstName'),
+            'secondName': data.get('secondName'),
+            'patronymicName': data.get('patronymicName'),
+            'gender': data.get('gender'),
+            'city': data.get('city'),
+            'university': data.get('university'),
+            'phoneNumber': data.get('phoneNumber'),
+            'image': data.get('image'),
+            'email': data.get('email'),
+            'birthDate': data.get('birthDate'),
+            'aboutMe': data.get('aboutMe'),
+            'institute': data.get('institute'),
+            'direction': data.get('direction'),
+        }
+
+        # Формируем SQL запрос для обновления данных пользователя
+        update_query = "UPDATE users SET "
+        update_values = []
+        for key, value in new_data.items():
+            if value is not None:
+                update_query += f"{key}=%s, "
+                update_values.append(value)
+
+        update_query = update_query.rstrip(', ')
+        update_query += " WHERE login=%s"
+        update_values.append(login)
+
+        # Выполняем обновление данных в базе данных
+        cursor.execute(update_query, update_values)
+        db.commit()
+
+        return jsonify({'message': 'User data updated successfully'})
+
+    except Exception as e:
+        import traceback
+        traceback.print_exc()
+        return jsonify({'error': f'Server error: {str(e)}'}), 500
+
+
+
+
+
+
+
 # Эндпоинт для регистрации нового пользователя
 @app.route('/registration', methods=['POST'])
-def register():
+def register_func():
     try:
 
         data = request.get_json()
@@ -56,7 +110,7 @@ def register():
         return jsonify({'error': f'Server error: {str(e)}'}), 500
 # Эндпоинт для авторизации пользователя
 @app.route('/login', methods=['POST'])
-def login():
+def login_func():
     try:
         data = request.get_json()
 
