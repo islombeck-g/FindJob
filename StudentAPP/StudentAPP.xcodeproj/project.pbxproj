@@ -13,6 +13,12 @@
 		6309714A2AE6FB5900A0714A /* CvFullInfoSCREEN.swift in Sources */ = {isa = PBXBuildFile; fileRef = 630971492AE6FB5900A0714A /* CvFullInfoSCREEN.swift */; };
 		6309714C2AE6FD3100A0714A /* CvFullInfoListView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6309714B2AE6FD3100A0714A /* CvFullInfoListView.swift */; };
 		63144DAC2B2DE2790088BBE5 /* LoadSpinnerView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 63144DAB2B2DE2790088BBE5 /* LoadSpinnerView.swift */; };
+		6321682C2B2EEFD700454B9B /* ProfileService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6321682B2B2EEFD700454B9B /* ProfileService.swift */; };
+		6321682E2B2EEFE100454B9B /* ProvileAPI.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6321682D2B2EEFE100454B9B /* ProvileAPI.swift */; };
+		632168312B2F1D4D00454B9B /* ResponseService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 632168302B2F1D4D00454B9B /* ResponseService.swift */; };
+		632168332B2F1D5700454B9B /* ResponceAPI.swift in Sources */ = {isa = PBXBuildFile; fileRef = 632168322B2F1D5700454B9B /* ResponceAPI.swift */; };
+		632168362B2F1E1B00454B9B /* MainScreenService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 632168352B2F1E1B00454B9B /* MainScreenService.swift */; };
+		632168382B2F1E2500454B9B /* MainScreenAPI.swift in Sources */ = {isa = PBXBuildFile; fileRef = 632168372B2F1E2500454B9B /* MainScreenAPI.swift */; };
 		632DC3642AF78F8C00F018D2 /* ResponsesViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 632DC3632AF78F8C00F018D2 /* ResponsesViewModel.swift */; };
 		632DC3662AF78F9900F018D2 /* ResponsesModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 632DC3652AF78F9900F018D2 /* ResponsesModel.swift */; };
 		634B6CED2AF4D393001A5FDA /* FullInfoView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 634B6CEC2AF4D392001A5FDA /* FullInfoView.swift */; };
@@ -68,6 +74,12 @@
 		630971492AE6FB5900A0714A /* CvFullInfoSCREEN.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CvFullInfoSCREEN.swift; sourceTree = "<group>"; };
 		6309714B2AE6FD3100A0714A /* CvFullInfoListView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CvFullInfoListView.swift; sourceTree = "<group>"; };
 		63144DAB2B2DE2790088BBE5 /* LoadSpinnerView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoadSpinnerView.swift; sourceTree = "<group>"; };
+		6321682B2B2EEFD700454B9B /* ProfileService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileService.swift; sourceTree = "<group>"; };
+		6321682D2B2EEFE100454B9B /* ProvileAPI.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProvileAPI.swift; sourceTree = "<group>"; };
+		632168302B2F1D4D00454B9B /* ResponseService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ResponseService.swift; sourceTree = "<group>"; };
+		632168322B2F1D5700454B9B /* ResponceAPI.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ResponceAPI.swift; sourceTree = "<group>"; };
+		632168352B2F1E1B00454B9B /* MainScreenService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainScreenService.swift; sourceTree = "<group>"; };
+		632168372B2F1E2500454B9B /* MainScreenAPI.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainScreenAPI.swift; sourceTree = "<group>"; };
 		632DC3632AF78F8C00F018D2 /* ResponsesViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ResponsesViewModel.swift; sourceTree = "<group>"; };
 		632DC3652AF78F9900F018D2 /* ResponsesModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ResponsesModel.swift; sourceTree = "<group>"; };
 		634B6CEC2AF4D392001A5FDA /* FullInfoView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FullInfoView.swift; sourceTree = "<group>"; };
@@ -144,6 +156,33 @@
 				639A87452B20C1E2004DA8F7 /* CVTextField_Bindable.swift */,
 			);
 			path = CV;
+			sourceTree = "<group>";
+		};
+		6321682A2B2EEFBF00454B9B /* network */ = {
+			isa = PBXGroup;
+			children = (
+				6321682B2B2EEFD700454B9B /* ProfileService.swift */,
+				6321682D2B2EEFE100454B9B /* ProvileAPI.swift */,
+			);
+			path = network;
+			sourceTree = "<group>";
+		};
+		6321682F2B2F1D2600454B9B /* network */ = {
+			isa = PBXGroup;
+			children = (
+				632168302B2F1D4D00454B9B /* ResponseService.swift */,
+				632168322B2F1D5700454B9B /* ResponceAPI.swift */,
+			);
+			path = network;
+			sourceTree = "<group>";
+		};
+		632168342B2F1E0600454B9B /* network */ = {
+			isa = PBXGroup;
+			children = (
+				632168352B2F1E1B00454B9B /* MainScreenService.swift */,
+				632168372B2F1E2500454B9B /* MainScreenAPI.swift */,
+			);
+			path = network;
 			sourceTree = "<group>";
 		};
 		6372F3922B2CE1F4009B762B /* network */ = {
@@ -250,6 +289,7 @@
 				6377D39D2AE6769C0090714E /* MainSCREEN.swift */,
 				63FB67EF2AEAC9F500FCAB84 /* MainModuleViewModel.swift */,
 				63FB67F12AEACA1100FCAB84 /* MainModuleModel.swift */,
+				632168342B2F1E0600454B9B /* network */,
 				638E0F492AF3C394006D5770 /* Views */,
 			);
 			path = MainModule;
@@ -261,6 +301,7 @@
 				6377D39F2AE676AF0090714E /* ResponsesSCREEN.swift */,
 				632DC3632AF78F8C00F018D2 /* ResponsesViewModel.swift */,
 				632DC3652AF78F9900F018D2 /* ResponsesModel.swift */,
+				6321682F2B2F1D2600454B9B /* network */,
 			);
 			path = ResponsesModule;
 			sourceTree = "<group>";
@@ -271,6 +312,7 @@
 				6377D3A12AE676BA0090714E /* ProfileSCREEN.swift */,
 				6377D3A32AE677D30090714E /* ProfileViewModel.swift */,
 				630971472AE6BFEA00A0714A /* ProfileModel.swift */,
+				6321682A2B2EEFBF00454B9B /* network */,
 				6377D3A52AE678BC0090714E /* Views */,
 			);
 			path = ProfileModule;
@@ -385,15 +427,18 @@
 				6377D3AF2AE67A740090714E /* ProfileItemsView.swift in Sources */,
 				63772C0A2AF6D03D00FB0EEA /* CvViewModule.swift in Sources */,
 				632DC3662AF78F9900F018D2 /* ResponsesModel.swift in Sources */,
+				6321682E2B2EEFE100454B9B /* ProvileAPI.swift in Sources */,
 				6377D38F2AE670150090714E /* EnterModel.swift in Sources */,
 				6377D3B12AE67B460090714E /* ProfileEditCenterImage.swift in Sources */,
 				6393AA7A2AEA9A120052BF06 /* UserStateViewModel.swift in Sources */,
 				6377D39E2AE6769C0090714E /* MainSCREEN.swift in Sources */,
 				6372F3942B2CE20C009B762B /* EnterService.swift in Sources */,
 				63FB67F02AEAC9F500FCAB84 /* MainModuleViewModel.swift in Sources */,
+				6321682C2B2EEFD700454B9B /* ProfileService.swift in Sources */,
 				639A87462B20C1E2004DA8F7 /* CVTextField_Bindable.swift in Sources */,
 				630971452AE6BFA300A0714A /* CvMainSCREEN.swift in Sources */,
 				6377D3A02AE676AF0090714E /* ResponsesSCREEN.swift in Sources */,
+				632168332B2F1D5700454B9B /* ResponceAPI.swift in Sources */,
 				6377D35A2AE66D870090714E /* ContentView.swift in Sources */,
 				634B6CED2AF4D393001A5FDA /* FullInfoView.swift in Sources */,
 				637319C62AF673EF00CD3BB6 /* SupportViewModel.swift in Sources */,
@@ -408,6 +453,8 @@
 				6377D38D2AE66FB20090714E /* CustomTextFieldView.swift in Sources */,
 				63BCD0622AE85BEA0075DC8C /* CVTextField.swift in Sources */,
 				6377D39C2AE6766F0090714E /* TabViewOfAPP.swift in Sources */,
+				632168312B2F1D4D00454B9B /* ResponseService.swift in Sources */,
+				632168362B2F1E1B00454B9B /* MainScreenService.swift in Sources */,
 				6377D3A42AE677D30090714E /* ProfileViewModel.swift in Sources */,
 				630971432AE6BF4200A0714A /* CvCreateSCREEN.swift in Sources */,
 				6377D3A22AE676BA0090714E /* ProfileSCREEN.swift in Sources */,
@@ -420,6 +467,7 @@
 				63144DAC2B2DE2790088BBE5 /* LoadSpinnerView.swift in Sources */,
 				6377D3AB2AE679BC0090714E /* EditProfileViewItems.swift in Sources */,
 				6377D3822AE66EB70090714E /* EnterSCREEN.swift in Sources */,
+				632168382B2F1E2500454B9B /* MainScreenAPI.swift in Sources */,
 				6377D3872AE66F040090714E /* RegistrationSCREEN.swift in Sources */,
 				6377D39A2AE673F80090714E /* EnterPasswordView.swift in Sources */,
 				6377D3962AE673CA0090714E /* EnterFullNameView.swift in Sources */,

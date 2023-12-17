@@ -193,9 +193,6 @@ struct ProfileSCREEN: View {
                     .foregroundStyle(Color("SecondaryColor"))
                 }
             }
-            .onAppear {
-                self.viewModel.getData()
-            }
         }
     }
 }
