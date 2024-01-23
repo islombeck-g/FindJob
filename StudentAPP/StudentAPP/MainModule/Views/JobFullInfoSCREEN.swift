@@ -95,7 +95,7 @@ struct JobFullInfoSCREEN: View {
 
 #Preview {
     JobFullInfoSCREEN(vc: Job(
-        activity: "Юриспрюденция",
+        id: "2", activity: "Юриспрюденция",
         nameOfCompany: "Газпром нефть",
         position: "Юрист",
         jobType: "Полный день",

@@ -13,25 +13,29 @@ final class EnterViewModel:ObservableObject {
     @Published var isLoading:Bool = false
     private var enterService = EnterService()
     func tryLogin() {
-        self.isLoading = true
-//        self.userStateManager.logInTest()
-//        MARK: it is works, just open
-        
-        self.enterService.login(userName: &loginText, password: &passwodText, success: { student in
-            
-//            print("Login successful. Student data: \(student)")
-            DispatchQueue.main.async {
-                self.userStateManager.logIn(user: student)
-                self.isLoading = false
-            }
-            
-        }, failure: { error in
-            print("Login failed with error: \(error)")
-            DispatchQueue.main.async {
-                self.isLoading = false
-            }
-        })
+        self.userStateManager.logIn(user: userTest)
     }
+//    MARK: commented code is work, not touch, for release uncommit
+//    func tryLogin() {
+//        self.isLoading = true
+////        self.userStateManager.logInTest()
+////        MARK: it is works, just open
+//        
+//        self.enterService.login(userName: &loginText, password: &passwodText, success: { student in
+//            
+////            print("Login successful. Student data: \(student)")
+//            DispatchQueue.main.async {
+//                self.userStateManager.logIn(user: student)
+//                self.isLoading = false
+//            }
+//            
+//        }, failure: { error in
+//            print("Login failed with error: \(error)")
+//            DispatchQueue.main.async {
+//                self.isLoading = false
+//            }
+//        })
+//    }
     
     func tryRegistration() {
         self.isLoading = true
@@ -49,7 +53,6 @@ final class EnterViewModel:ObservableObject {
                 self.isLoading = false
             }
         })
-        
     }
     
     private func checkData() -> Bool {
@@ -60,7 +63,6 @@ final class EnterViewModel:ObservableObject {
     //good
     func nextTabView(){
         guard selectedTab != 2 else {
-//            selectedTab = 1
             tryRegistration()
             return
         }
@@ -97,6 +99,24 @@ final class EnterViewModel:ObservableObject {
     @Published var userAgreement: Bool = false
     @Published var chosenCity: String = "Город*"
     @Published var chosenUniversity: String = "Учебное заведение*"
+    
+    
+//    MARK: for debug, on release remove this part of code
+    private var userTest:StudentData = StudentData(
+            firstName: "testUser",
+            secondName: "testUser",
+            patronymicName: "testUser",
+            gender: .male,
+            city: "testUser",
+            university: "Московский Государственный Университет",
+            phoneNumber: "+7 (888) 888-88-88",
+            image: "userImage",
+            email: "some@gmail.com",
+            birthDate: "10.02.2000",
+            aboutMe: "я очень интреесный человек, учусь, не работаю",
+            institute: "Институт вычислительной математики и информационных техноолгий",
+            direction: "Фундаментальная информатики и информационные технологии")
+    
     
 }
 

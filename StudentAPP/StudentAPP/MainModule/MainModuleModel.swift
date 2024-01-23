@@ -1,7 +1,8 @@
 import Foundation
 
 struct Job:Codable, Hashable, Identifiable {
-    var id: UUID = UUID()
+    var uuid = UUID()
+    var id: String
     var activity:String // деятельность компании
     var nameOfCompany:String
     var position:String // должность

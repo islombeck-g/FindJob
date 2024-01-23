@@ -97,6 +97,7 @@ struct FullInfoView: View {
 
 #Preview {
     FullInfoView(vc: Job(
+        id: "1",
         activity: "Юриспрюденция",
         nameOfCompany: "Газпром нефть",
         position: "Юрист",

@@ -19,7 +19,7 @@ final class MainModuleViewModel: ObservableObject {
     
     init(){
         self.exampleListOfJobs = [
-            Job(activity: "Программировани",
+            Job(id: "4", activity: "Программировани",
                 nameOfCompany: "ГУГЛ",
                 position: "Программист 1С",
                 jobType: "Полный день",
@@ -28,7 +28,8 @@ final class MainModuleViewModel: ObservableObject {
                 money: "от 40 000 до 120 000",
                 description: "Ищем трудолюбивых и энергичных юристов в крутой коллектив",
                 minExperience: 2),
-            Job(activity: "Юр испрюденция",
+            Job(id: "5",
+                activity: "Юр испрюденция",
                 nameOfCompany: "Газпром нефть",
                 position: "Юрист стажер",
                 jobType: "Полный день",
@@ -37,7 +38,8 @@ final class MainModuleViewModel: ObservableObject {
                 money: "от 40 000 до 120 000",
                 description: "Ищем трудолюбивых и энергичных юристов в крутой коллектив",
                 minExperience: 2),
-            Job(activity: "Юриспрюденция",
+            Job(id: "6",
+                activity: "Юриспрюденция",
                 nameOfCompany: "Яндекс",
                 position: "Юрист тимлид",
                 jobType: "Полный день",
@@ -46,7 +48,8 @@ final class MainModuleViewModel: ObservableObject {
                 money: "от 40 000 до 120 000",
                 description: "Ищем трудолюбивых и энергичных юристов в крутой коллектив",
                 minExperience: 2),
-            Job(activity: "Программировани",
+            Job(id: "7",
+                activity: "Программировани",
                 nameOfCompany: "Яндекс",
                 position: "Java developer",
                 jobType: "Полный день",

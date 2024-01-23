@@ -1,6 +1,7 @@
 from flask import Flask, jsonify, request
 import pymysql
-# import json
+# from pydantic import json
+import json
 from werkzeug.security import check_password_hash, generate_password_hash
 from config import host_const, user_const, password_const, name_const
 
@@ -9,6 +10,78 @@ app = Flask(__name__)
 # Подключение к базе данных MySQL
 db = pymysql.connect(host=host_const, user=user_const, password=password_const, database=name_const)
 cursor = db.cursor()
+
+
+
+# Функция для добавления дефолтных значений в таблицу Jobs
+def insert_default_jobs():
+    try:
+        # Дефолтные значения
+        default_jobs = [
+            {
+                'activity': 'Default Activity 1',
+                'nameOfCompany': 'Default Company 1',
+                'position': 'Default Position 1',
+                'jobType': 'Full Time',
+                'experience': ['Skill1', 'Skill2'],
+                'location': 'Default Location 1',
+                'money': '1000 USD',
+                'description': 'Default Description 1',
+                'minExperience': 1,
+            },
+            {
+                'activity': 'Default Activity 2',
+                'nameOfCompany': 'Default Company 2',
+                'position': 'Default Position 2',
+                'jobType': 'Part Time',
+                'experience': ['Skill3', 'Skill4'],
+                'location': 'Default Location 2',
+                'money': '800 USD',
+                'description': 'Default Description 2',
+                'minExperience': 2,
+            },
+            # Добавьте другие дефолтные значения, если необходимо
+        ]
+
+        # Формируем SQL запрос для вставки данных
+        insert_query = "INSERT INTO jobs (activity, nameOfCompany, position, jobType, experience, location, money, description, minExperience) VALUES (%s, %s, %s, %s, %s, %s, %s, %s, %s)"
+
+        # Выполняем вставку для каждого дефолтного значения
+        for job_data in default_jobs:
+            values = (
+                job_data['activity'],
+                job_data['nameOfCompany'],
+                job_data['position'],
+                job_data['jobType'],
+                json.dumps(job_data['experience']),  # Преобразуем список в JSON
+                job_data['location'],
+                job_data['money'],
+                job_data['description'],
+                job_data['minExperience'],
+            )
+            cursor.execute(insert_query, values)
+
+        # Фиксируем изменения
+        db.commit()
+
+        print('Default jobs added successfully')
+
+    except Exception as e:
+        import traceback
+        traceback.print_exc()
+        print(f'Error adding default jobs: {str(e)}')
+
+    finally:
+        # Закрываем соединение с базой данных
+        db.close()
+
+
+
+
+
+
+
+
 
 
 # Эндпоинт для обновления параметров пользователя
@@ -58,12 +131,6 @@ def updateUser_func():
         traceback.print_exc()
         return jsonify({'error': f'Server error: {str(e)}'}), 500
 
-
-
-
-
-
-
 # Эндпоинт для регистрации нового пользователя
 @app.route('/registration', methods=['POST'])
 def register_func():
@@ -108,6 +175,7 @@ def register_func():
         import traceback
         traceback.print_exc()
         return jsonify({'error': f'Server error: {str(e)}'}), 500
+
 # Эндпоинт для авторизации пользователя
 @app.route('/login', methods=['POST'])
 def login_func():
@@ -158,5 +226,7 @@ def login_func():
         traceback.print_exc()
         return jsonify({'error': f'Server error: {str(e)}'}), 500
 
+
 if __name__ == '__main__':
+    insert_default_jobs()
     app.run(host='0.0.0.0', port=4568)

@@ -59,7 +59,7 @@ struct JobInfoView: View {
 #Preview {
     JobInfoView(vc:
         Job(
-            activity: "Юриспрюденция",
+            id: "3", activity: "Юриспрюденция",
             nameOfCompany: "Газпром нефть",
             position: "Юрист",
             jobType: "Полный день",
