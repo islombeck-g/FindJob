@@ -1,10 +1,3 @@
-//
-//  UserStateManager.swift
-//  StudentAPP_version_0.1
-//
-//  Created by Islombek Gofurov on 09/03/24.
-//
-
 import Foundation
 
 final class UserStateManager: ObservableObject {

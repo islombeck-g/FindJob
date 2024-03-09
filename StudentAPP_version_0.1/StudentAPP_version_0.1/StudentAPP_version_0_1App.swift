@@ -11,11 +11,14 @@ import SwiftUI
 struct StudentAPP_version_0_1App: App {
 
     @StateObject var router = AppRouter.shared
-    
+    @StateObject private var authPresenter: AuthPresenter = AuthPresenter()
+    @StateObject private var vacancyPresenter: VacancyBoardPresenter = VacancyBoardPresenter()
     var body: some Scene {
         WindowGroup {
             RootView()
                 .environmentObject(router)
+                .environmentObject(authPresenter)
+                .environmentObject(vacancyPresenter)
         }
         
     }

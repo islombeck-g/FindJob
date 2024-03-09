@@ -5,37 +5,43 @@ enum AppRoute: Hashable {
     case auth
     case logIn
     case registration
+    case mainTabView
     case vacancyBoard
+    case vacationDetail(job: Job, isFavourite: Bool)
 }
-class AppRouter: ObservableObject{
+class AppRouter: ObservableObject {
     
-    static var shared = AppRouter()
+    static let shared = AppRouter()
     
     @Published var path: NavigationPath = NavigationPath()
-    
-    private var authPresenter = AuthPresenter()
-    
     
     @ViewBuilder
     func view(for route: AppRoute) -> some View {
         switch route {
         case .auth:
-            AuthView().environmentObject(authPresenter)
+            AuthView()
+            
         case .logIn:
-            LogInView().environmentObject(authPresenter)
+            LogInView()
+            
         case .registration:
-            RegistrationView().environmentObject(authPresenter)
+            RegistrationView()
+            
         case .vacancyBoard:
             VacancyBoardView()
+            
+        case .mainTabView:
+            MainTabView()
+            
+        case .vacationDetail(job: let job, isFavourite: let isFavourite):
+            VacancyDetailView(vc: job, isFavorite: isFavourite)
         }
     }
     func navigateTo(_ appRoute: AppRoute) {
-
-        print("Navigating to: \(appRoute)")
         path.append(appRoute)
     }
     func navigateBack() {
-        guard !path.isEmpty else {return}
+        guard !path.isEmpty else { return }
         path.removeLast()
     }
     func popToRoot() {
@@ -50,15 +56,15 @@ class AppRouter: ObservableObject{
 //class AppRouter: ObservableObject{
 //
 //    static var shared = AppRouter()
-//    
+//
 //    @Published var currentRoutes: [AppRoute] = [.auth]
-//   
+//
 //    func goBack() {
 //        if currentRoutes.count > 1 {
 //            currentRoutes.removeLast()
 //        }
 //    }
-//    
+//
 //    func navigate(to route: AppRoute) {
 //        currentRoutes.append(route)
 //    }

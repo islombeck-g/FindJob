@@ -1,10 +1,3 @@
-//
-//  AuthView.swift
-//  StudentAPP_version_0.1
-//
-//  Created by Islombek Gofurov on 08/03/24.
-//
-
 import SwiftUI
 
 struct AuthView: View {
@@ -71,6 +64,7 @@ struct AuthView: View {
 
 #Preview {
     AuthView()
+//        .environmentObject(AuthPresenter(router: AppRouter.shared))
         .environmentObject(AuthPresenter())
         .environmentObject(AppRouter.shared)
 }

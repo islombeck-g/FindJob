@@ -1,10 +1,3 @@
-//
-//  AuthInteractor.swift
-//  StudentAPP_version_0.1
-//
-//  Created by Islombek Gofurov on 08/03/24.
-//  Взаимодействие с API
-
 import Foundation
 
 class AuthInteractor {

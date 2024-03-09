@@ -1,10 +1,3 @@
-//
-//  LoginRoundedRectangleForm.swift
-//  StudentAPP_version_0.1
-//
-//  Created by Islombek Gofurov on 09/03/24.
-//
-
 import SwiftUI
 
 struct LoginRoundedRectangleForm: View {
@@ -54,5 +47,6 @@ struct LoginRoundedRectangleForm: View {
 
 #Preview {
     LoginRoundedRectangleForm()
+//        .environmentObject(AuthPresenter(router: AppRouter.shared))
         .environmentObject(AuthPresenter())
 }
