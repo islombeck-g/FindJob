@@ -7,13 +7,11 @@ struct VacancyOverView: View {
     var body: some View {
         VStack {
             ZStack {
-         
+                
                 RoundedRectangle(cornerRadius: 15)
-                    .frame(maxWidth: .infinity, maxHeight: 175)
-                    .foregroundColor(Color("infoView"))
-                    RoundedRectangle(cornerRadius: 15)
                     .stroke(Color("SecondaryColor"), lineWidth: 2)
                     .frame(maxWidth: .infinity, maxHeight: 175)
+                    .foregroundColor(Color("infoView"))
                 
                 VStack(alignment: .leading) {
                     HStack{ Spacer() }
@@ -40,7 +38,7 @@ struct VacancyOverView: View {
                     
                     Text(verbatim: vc.money)
                         .lineLimit(1)
-                   
+                    
                     Spacer()
                         .frame(height: 10)
                     

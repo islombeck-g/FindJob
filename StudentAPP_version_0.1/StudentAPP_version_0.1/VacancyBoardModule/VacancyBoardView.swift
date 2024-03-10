@@ -17,11 +17,6 @@ struct VacancyBoardView: View {
             
             VStack {
                 HStack {
-                    if isShowingSearchBar {
-                        TextField("Поиск...", text: self.$presenter.searchText)
-                            .textFieldStyle(RoundedBorderTextFieldStyle())
-                    } else {
-                        
                         Button {
                             //sort items
                         } label: {
@@ -46,12 +41,13 @@ struct VacancyBoardView: View {
                                 .foregroundStyle(Color("SecondaryColor"))
                         }
                         .frame(maxWidth: .infinity, alignment: .trailing)
-                        
-                    }
                 }
                 .padding(.horizontal, 16)
                 
                 ScrollView {
+                    SearchBar(text: self.$presenter.searchText)
+                        .padding(.horizontal)
+                        .padding(.top, 5)
                     
                     if self.presenter.isFavouriteList == true {
                         
@@ -102,9 +98,9 @@ struct VacancyBoardView: View {
                             } label: {
                                 VacancyOverView(vc: job)
                             }
-                            .padding(.horizontal, 16)
+//                            .padding(.horizontal, 16)
                         }
-                        .listStyle(.inset)
+//                        .listStyle(.inset)
                     }
                 }
             }

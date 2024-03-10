@@ -24,3 +24,8 @@ enum EnterServiceError: Error {
     case invalidURL
     case encodingError
 }
+
+enum Gender:String, Decodable, Encodable {
+    case male = "male"
+    case female = "female"
+}

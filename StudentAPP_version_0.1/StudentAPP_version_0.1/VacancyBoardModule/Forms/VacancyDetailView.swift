@@ -43,7 +43,6 @@ struct VacancyDetailView: View {
                 ToolbarItem(placement: .topBarLeading) {
                     
                     Button {
-//                        self.dismiss()
                         self.router.navigateBack()
                     } label: {
                         Image(systemName: "chevron.left")

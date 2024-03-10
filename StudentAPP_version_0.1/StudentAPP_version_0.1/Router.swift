@@ -8,6 +8,7 @@ enum AppRoute: Hashable {
     case mainTabView
     case vacancyBoard
     case vacationDetail(job: Job, isFavourite: Bool)
+    case cv
 }
 class AppRouter: ObservableObject {
     
@@ -35,13 +36,14 @@ class AppRouter: ObservableObject {
             
         case .vacationDetail(job: let job, isFavourite: let isFavourite):
             VacancyDetailView(vc: job, isFavorite: isFavourite)
+        case .cv:
+            CvView()
         }
     }
     func navigateTo(_ appRoute: AppRoute) {
         path.append(appRoute)
     }
     func navigateBack() {
-        guard !path.isEmpty else { return }
         path.removeLast()
     }
     func popToRoot() {

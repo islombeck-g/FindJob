@@ -35,6 +35,14 @@
 		63A911C22B9C5443008C272E /* LoginRoundedRectangleForm.swift in Sources */ = {isa = PBXBuildFile; fileRef = 63A911C12B9C5443008C272E /* LoginRoundedRectangleForm.swift */; };
 		63A911C42B9C5494008C272E /* CustomTextFieldForm.swift in Sources */ = {isa = PBXBuildFile; fileRef = 63A911C32B9C5494008C272E /* CustomTextFieldForm.swift */; };
 		63B26C5F2B9CC9B4008C4D29 /* someView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 63B26C5E2B9CC9B4008C4D29 /* someView.swift */; };
+		63E8A6132B9D8FDB00428ECF /* SearchBar.swift in Sources */ = {isa = PBXBuildFile; fileRef = 63E8A6122B9D8FDB00428ECF /* SearchBar.swift */; };
+		63E8A6152B9D9E5800428ECF /* TestDataForDebug.swift in Sources */ = {isa = PBXBuildFile; fileRef = 63E8A6142B9D9E5800428ECF /* TestDataForDebug.swift */; };
+		63E8A6192B9DA19500428ECF /* CircleImageForm.swift in Sources */ = {isa = PBXBuildFile; fileRef = 63E8A6182B9DA19500428ECF /* CircleImageForm.swift */; };
+		63E8A61B2B9DA50800428ECF /* ProfileItemsForm.swift in Sources */ = {isa = PBXBuildFile; fileRef = 63E8A61A2B9DA50800428ECF /* ProfileItemsForm.swift */; };
+		63E8A61D2B9DAAC400428ECF /* CvView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 63E8A61C2B9DAAC400428ECF /* CvView.swift */; };
+		63E8A61F2B9DAAD800428ECF /* CvPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 63E8A61E2B9DAAD800428ECF /* CvPresenter.swift */; };
+		63E8A6212B9DAAE500428ECF /* CvEntity.swift in Sources */ = {isa = PBXBuildFile; fileRef = 63E8A6202B9DAAE500428ECF /* CvEntity.swift */; };
+		63E8A6232B9DAAF400428ECF /* CvInteractor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 63E8A6222B9DAAF400428ECF /* CvInteractor.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -68,6 +76,14 @@
 		63A911C32B9C5494008C272E /* CustomTextFieldForm.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomTextFieldForm.swift; sourceTree = "<group>"; };
 		63A911C52B9C5B63008C272E /* StudentAPP-version-0-1-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist; path = "StudentAPP-version-0-1-Info.plist"; sourceTree = SOURCE_ROOT; };
 		63B26C5E2B9CC9B4008C4D29 /* someView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = someView.swift; sourceTree = "<group>"; };
+		63E8A6122B9D8FDB00428ECF /* SearchBar.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchBar.swift; sourceTree = "<group>"; };
+		63E8A6142B9D9E5800428ECF /* TestDataForDebug.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TestDataForDebug.swift; sourceTree = "<group>"; };
+		63E8A6182B9DA19500428ECF /* CircleImageForm.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CircleImageForm.swift; sourceTree = "<group>"; };
+		63E8A61A2B9DA50800428ECF /* ProfileItemsForm.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileItemsForm.swift; sourceTree = "<group>"; };
+		63E8A61C2B9DAAC400428ECF /* CvView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CvView.swift; sourceTree = "<group>"; };
+		63E8A61E2B9DAAD800428ECF /* CvPresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CvPresenter.swift; sourceTree = "<group>"; };
+		63E8A6202B9DAAE500428ECF /* CvEntity.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CvEntity.swift; sourceTree = "<group>"; };
+		63E8A6222B9DAAF400428ECF /* CvInteractor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CvInteractor.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -88,6 +104,7 @@
 				6331496D2B9C819000484CB4 /* ProfilePresenter.swift */,
 				6331496F2B9C819A00484CB4 /* ProfileEntity.swift */,
 				633149712B9C81A600484CB4 /* ProfileInteractor.swift */,
+				63E8A6162B9DA08400428ECF /* Forms */,
 			);
 			path = ProfileModule;
 			sourceTree = "<group>";
@@ -135,6 +152,7 @@
 				63A911B52B9B416F008C272E /* RootView.swift */,
 				63B26C5E2B9CC9B4008C4D29 /* someView.swift */,
 				63A911BE2B9C4FC8008C272E /* CommonModule */,
+				63E8A6172B9DA0B400428ECF /* CvModule */,
 				633149692B9C815A00484CB4 /* ProfileModule */,
 				6331496A2B9C816B00484CB4 /* ResponsesModule */,
 				63A911BD2B9C4EE7008C272E /* VacancyBoardModule */,
@@ -193,8 +211,30 @@
 			children = (
 				63A911BF2B9C4FD8008C272E /* UserStateManager.swift */,
 				633149672B9C7FF100484CB4 /* MainTabView.swift */,
+				63E8A6122B9D8FDB00428ECF /* SearchBar.swift */,
+				63E8A6142B9D9E5800428ECF /* TestDataForDebug.swift */,
 			);
 			path = CommonModule;
+			sourceTree = "<group>";
+		};
+		63E8A6162B9DA08400428ECF /* Forms */ = {
+			isa = PBXGroup;
+			children = (
+				63E8A6182B9DA19500428ECF /* CircleImageForm.swift */,
+				63E8A61A2B9DA50800428ECF /* ProfileItemsForm.swift */,
+			);
+			path = Forms;
+			sourceTree = "<group>";
+		};
+		63E8A6172B9DA0B400428ECF /* CvModule */ = {
+			isa = PBXGroup;
+			children = (
+				63E8A61C2B9DAAC400428ECF /* CvView.swift */,
+				63E8A61E2B9DAAD800428ECF /* CvPresenter.swift */,
+				63E8A6202B9DAAE500428ECF /* CvEntity.swift */,
+				63E8A6222B9DAAF400428ECF /* CvInteractor.swift */,
+			);
+			path = CvModule;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -269,28 +309,36 @@
 			files = (
 				633149742B9C81F000484CB4 /* ResponsesView.swift in Sources */,
 				6331497A2B9C82BC00484CB4 /* VacancyBoardInteracrot.swift in Sources */,
+				63E8A61B2B9DA50800428ECF /* ProfileItemsForm.swift in Sources */,
 				633149782B9C82B000484CB4 /* VacancyBoardEntity.swift in Sources */,
 				63A911B62B9B416F008C272E /* RootView.swift in Sources */,
+				63E8A6192B9DA19500428ECF /* CircleImageForm.swift in Sources */,
 				6309FA142B9C87BD00DB4E63 /* VacancyOverView.swift in Sources */,
 				63A911AD2B9B3D55008C272E /* Router.swift in Sources */,
 				63A911B42B9B3E60008C272E /* AuthPresenter.swift in Sources */,
 				63A911AF2B9B3E04008C272E /* AuthView.swift in Sources */,
 				6309FA122B9C878C00DB4E63 /* VacancyDetailView.swift in Sources */,
+				63E8A6232B9DAAF400428ECF /* CvInteractor.swift in Sources */,
+				63E8A6152B9D9E5800428ECF /* TestDataForDebug.swift in Sources */,
 				63A911B22B9B3E2F008C272E /* AuthInteractor.swift in Sources */,
 				63A911C02B9C4FD8008C272E /* UserStateManager.swift in Sources */,
 				63A911B82B9B48FD008C272E /* LogInView.swift in Sources */,
+				63E8A61D2B9DAAC400428ECF /* CvView.swift in Sources */,
 				6331496C2B9C817700484CB4 /* ProfileView.swift in Sources */,
 				63A911C42B9C5494008C272E /* CustomTextFieldForm.swift in Sources */,
+				63E8A6132B9D8FDB00428ECF /* SearchBar.swift in Sources */,
 				63A9119C2B9B3897008C272E /* StudentAPP_version_0_1App.swift in Sources */,
 				6331496E2B9C819000484CB4 /* ProfilePresenter.swift in Sources */,
 				63A911AB2B9B39BC008C272E /* AuthEntity.swift in Sources */,
 				63A911C22B9C5443008C272E /* LoginRoundedRectangleForm.swift in Sources */,
+				63E8A6212B9DAAE500428ECF /* CvEntity.swift in Sources */,
 				633149682B9C7FF100484CB4 /* MainTabView.swift in Sources */,
 				63A911BA2B9B4907008C272E /* RegistrationView.swift in Sources */,
 				633149702B9C819A00484CB4 /* ProfileEntity.swift in Sources */,
 				633149722B9C81A600484CB4 /* ProfileInteractor.swift in Sources */,
 				6309FA162B9C88BD00DB4E63 /* VacancyScrollInfoForm.swift in Sources */,
 				63A911BC2B9C46E6008C272E /* VacancyBoardView.swift in Sources */,
+				63E8A61F2B9DAAD800428ECF /* CvPresenter.swift in Sources */,
 				63B26C5F2B9CC9B4008C4D29 /* someView.swift in Sources */,
 				633149762B9C829C00484CB4 /* VacancyBoardPresenter.swift in Sources */,
 			);
