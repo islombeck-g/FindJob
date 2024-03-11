@@ -13,9 +13,9 @@ struct StudentAPP_version_0_1App: App {
     @StateObject var router = AppRouter.shared
     @StateObject var cvPresenter = CvPresenter()
     @StateObject private var authPresenter: AuthPresenter = AuthPresenter()
+    @StateObject private var supportPresenter: SupportPresenter = SupportPresenter()
     @StateObject private var vacancyPresenter: VacancyBoardPresenter = VacancyBoardPresenter()
-    
-    
+      
     var body: some Scene {
         WindowGroup {
             RootView()
@@ -23,7 +23,10 @@ struct StudentAPP_version_0_1App: App {
                 .environmentObject(cvPresenter)
                 .environmentObject(authPresenter)
                 .environmentObject(vacancyPresenter)
+                .environmentObject(supportPresenter)
+                
         }
+        .modelContainer(for: CvData.self)
         
     }
 }

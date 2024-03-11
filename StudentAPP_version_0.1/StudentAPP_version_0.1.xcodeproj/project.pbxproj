@@ -10,6 +10,18 @@
 		6309FA122B9C878C00DB4E63 /* VacancyDetailView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6309FA112B9C878C00DB4E63 /* VacancyDetailView.swift */; };
 		6309FA142B9C87BD00DB4E63 /* VacancyOverView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6309FA132B9C87BD00DB4E63 /* VacancyOverView.swift */; };
 		6309FA162B9C88BD00DB4E63 /* VacancyScrollInfoForm.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6309FA152B9C88BD00DB4E63 /* VacancyScrollInfoForm.swift */; };
+		6322FDAE2B9DCB5E00B47DB3 /* CvDetailView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6322FDAD2B9DCB5E00B47DB3 /* CvDetailView.swift */; };
+		6322FDB02B9DCB7600B47DB3 /* CvOverForm.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6322FDAF2B9DCB7600B47DB3 /* CvOverForm.swift */; };
+		6322FDB22B9DCB9000B47DB3 /* CvScrollInfoForm.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6322FDB12B9DCB9000B47DB3 /* CvScrollInfoForm.swift */; };
+		6322FDB42B9DD16400B47DB3 /* CvUpdateView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6322FDB32B9DD16400B47DB3 /* CvUpdateView.swift */; };
+		6322FDB62B9DD1A300B47DB3 /* CvListOfTextFields_Bindable.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6322FDB52B9DD1A200B47DB3 /* CvListOfTextFields_Bindable.swift */; };
+		6322FDB82B9DD50E00B47DB3 /* CustomTextField.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6322FDB72B9DD50E00B47DB3 /* CustomTextField.swift */; };
+		6322FDBA2B9DD89A00B47DB3 /* CvListOfTextFields_Binding.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6322FDB92B9DD89A00B47DB3 /* CvListOfTextFields_Binding.swift */; };
+		6322FDBC2B9DDCCA00B47DB3 /* CvCreateView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6322FDBB2B9DDCCA00B47DB3 /* CvCreateView.swift */; };
+		6322FDBF2B9EA73D00B47DB3 /* SupportView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6322FDBE2B9EA73D00B47DB3 /* SupportView.swift */; };
+		6322FDC12B9EA74A00B47DB3 /* SupportPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6322FDC02B9EA74A00B47DB3 /* SupportPresenter.swift */; };
+		6322FDC32B9EA75400B47DB3 /* SupportInteractor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6322FDC22B9EA75400B47DB3 /* SupportInteractor.swift */; };
+		6322FDC52B9EA76500B47DB3 /* SupportEntity.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6322FDC42B9EA76500B47DB3 /* SupportEntity.swift */; };
 		633149682B9C7FF100484CB4 /* MainTabView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 633149672B9C7FF100484CB4 /* MainTabView.swift */; };
 		6331496C2B9C817700484CB4 /* ProfileView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6331496B2B9C817700484CB4 /* ProfileView.swift */; };
 		6331496E2B9C819000484CB4 /* ProfilePresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6331496D2B9C819000484CB4 /* ProfilePresenter.swift */; };
@@ -49,6 +61,18 @@
 		6309FA112B9C878C00DB4E63 /* VacancyDetailView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VacancyDetailView.swift; sourceTree = "<group>"; };
 		6309FA132B9C87BD00DB4E63 /* VacancyOverView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VacancyOverView.swift; sourceTree = "<group>"; };
 		6309FA152B9C88BD00DB4E63 /* VacancyScrollInfoForm.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VacancyScrollInfoForm.swift; sourceTree = "<group>"; };
+		6322FDAD2B9DCB5E00B47DB3 /* CvDetailView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CvDetailView.swift; sourceTree = "<group>"; };
+		6322FDAF2B9DCB7600B47DB3 /* CvOverForm.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CvOverForm.swift; sourceTree = "<group>"; };
+		6322FDB12B9DCB9000B47DB3 /* CvScrollInfoForm.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CvScrollInfoForm.swift; sourceTree = "<group>"; };
+		6322FDB32B9DD16400B47DB3 /* CvUpdateView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CvUpdateView.swift; sourceTree = "<group>"; };
+		6322FDB52B9DD1A200B47DB3 /* CvListOfTextFields_Bindable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CvListOfTextFields_Bindable.swift; sourceTree = "<group>"; };
+		6322FDB72B9DD50E00B47DB3 /* CustomTextField.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomTextField.swift; sourceTree = "<group>"; };
+		6322FDB92B9DD89A00B47DB3 /* CvListOfTextFields_Binding.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CvListOfTextFields_Binding.swift; sourceTree = "<group>"; };
+		6322FDBB2B9DDCCA00B47DB3 /* CvCreateView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CvCreateView.swift; sourceTree = "<group>"; };
+		6322FDBE2B9EA73D00B47DB3 /* SupportView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SupportView.swift; sourceTree = "<group>"; };
+		6322FDC02B9EA74A00B47DB3 /* SupportPresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SupportPresenter.swift; sourceTree = "<group>"; };
+		6322FDC22B9EA75400B47DB3 /* SupportInteractor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SupportInteractor.swift; sourceTree = "<group>"; };
+		6322FDC42B9EA76500B47DB3 /* SupportEntity.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SupportEntity.swift; sourceTree = "<group>"; };
 		633149672B9C7FF100484CB4 /* MainTabView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainTabView.swift; sourceTree = "<group>"; };
 		6331496B2B9C817700484CB4 /* ProfileView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileView.swift; sourceTree = "<group>"; };
 		6331496D2B9C819000484CB4 /* ProfilePresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfilePresenter.swift; sourceTree = "<group>"; };
@@ -97,6 +121,31 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		6322FDAC2B9DCB3F00B47DB3 /* Forms */ = {
+			isa = PBXGroup;
+			children = (
+				6322FDAD2B9DCB5E00B47DB3 /* CvDetailView.swift */,
+				6322FDB32B9DD16400B47DB3 /* CvUpdateView.swift */,
+				6322FDBB2B9DDCCA00B47DB3 /* CvCreateView.swift */,
+				6322FDAF2B9DCB7600B47DB3 /* CvOverForm.swift */,
+				6322FDB12B9DCB9000B47DB3 /* CvScrollInfoForm.swift */,
+				6322FDB52B9DD1A200B47DB3 /* CvListOfTextFields_Bindable.swift */,
+				6322FDB92B9DD89A00B47DB3 /* CvListOfTextFields_Binding.swift */,
+			);
+			path = Forms;
+			sourceTree = "<group>";
+		};
+		6322FDBD2B9EA72B00B47DB3 /* SupportModule */ = {
+			isa = PBXGroup;
+			children = (
+				6322FDBE2B9EA73D00B47DB3 /* SupportView.swift */,
+				6322FDC02B9EA74A00B47DB3 /* SupportPresenter.swift */,
+				6322FDC22B9EA75400B47DB3 /* SupportInteractor.swift */,
+				6322FDC42B9EA76500B47DB3 /* SupportEntity.swift */,
+			);
+			path = SupportModule;
+			sourceTree = "<group>";
+		};
 		633149692B9C815A00484CB4 /* ProfileModule */ = {
 			isa = PBXGroup;
 			children = (
@@ -150,6 +199,7 @@
 				63A9119B2B9B3897008C272E /* StudentAPP_version_0_1App.swift */,
 				63A911AC2B9B3D55008C272E /* Router.swift */,
 				63A911B52B9B416F008C272E /* RootView.swift */,
+				6322FDBD2B9EA72B00B47DB3 /* SupportModule */,
 				63B26C5E2B9CC9B4008C4D29 /* someView.swift */,
 				63A911BE2B9C4FC8008C272E /* CommonModule */,
 				63E8A6172B9DA0B400428ECF /* CvModule */,
@@ -209,10 +259,12 @@
 		63A911BE2B9C4FC8008C272E /* CommonModule */ = {
 			isa = PBXGroup;
 			children = (
-				63A911BF2B9C4FD8008C272E /* UserStateManager.swift */,
 				633149672B9C7FF100484CB4 /* MainTabView.swift */,
+				63A911BF2B9C4FD8008C272E /* UserStateManager.swift */,
+				63E8A6182B9DA19500428ECF /* CircleImageForm.swift */,
 				63E8A6122B9D8FDB00428ECF /* SearchBar.swift */,
 				63E8A6142B9D9E5800428ECF /* TestDataForDebug.swift */,
+				6322FDB72B9DD50E00B47DB3 /* CustomTextField.swift */,
 			);
 			path = CommonModule;
 			sourceTree = "<group>";
@@ -220,7 +272,6 @@
 		63E8A6162B9DA08400428ECF /* Forms */ = {
 			isa = PBXGroup;
 			children = (
-				63E8A6182B9DA19500428ECF /* CircleImageForm.swift */,
 				63E8A61A2B9DA50800428ECF /* ProfileItemsForm.swift */,
 			);
 			path = Forms;
@@ -233,6 +284,7 @@
 				63E8A61E2B9DAAD800428ECF /* CvPresenter.swift */,
 				63E8A6202B9DAAE500428ECF /* CvEntity.swift */,
 				63E8A6222B9DAAF400428ECF /* CvInteractor.swift */,
+				6322FDAC2B9DCB3F00B47DB3 /* Forms */,
 			);
 			path = CvModule;
 			sourceTree = "<group>";
@@ -310,14 +362,20 @@
 				633149742B9C81F000484CB4 /* ResponsesView.swift in Sources */,
 				6331497A2B9C82BC00484CB4 /* VacancyBoardInteracrot.swift in Sources */,
 				63E8A61B2B9DA50800428ECF /* ProfileItemsForm.swift in Sources */,
+				6322FDBF2B9EA73D00B47DB3 /* SupportView.swift in Sources */,
 				633149782B9C82B000484CB4 /* VacancyBoardEntity.swift in Sources */,
+				6322FDC32B9EA75400B47DB3 /* SupportInteractor.swift in Sources */,
+				6322FDB82B9DD50E00B47DB3 /* CustomTextField.swift in Sources */,
 				63A911B62B9B416F008C272E /* RootView.swift in Sources */,
 				63E8A6192B9DA19500428ECF /* CircleImageForm.swift in Sources */,
 				6309FA142B9C87BD00DB4E63 /* VacancyOverView.swift in Sources */,
 				63A911AD2B9B3D55008C272E /* Router.swift in Sources */,
+				6322FDBC2B9DDCCA00B47DB3 /* CvCreateView.swift in Sources */,
 				63A911B42B9B3E60008C272E /* AuthPresenter.swift in Sources */,
 				63A911AF2B9B3E04008C272E /* AuthView.swift in Sources */,
+				6322FDC52B9EA76500B47DB3 /* SupportEntity.swift in Sources */,
 				6309FA122B9C878C00DB4E63 /* VacancyDetailView.swift in Sources */,
+				6322FDC12B9EA74A00B47DB3 /* SupportPresenter.swift in Sources */,
 				63E8A6232B9DAAF400428ECF /* CvInteractor.swift in Sources */,
 				63E8A6152B9D9E5800428ECF /* TestDataForDebug.swift in Sources */,
 				63A911B22B9B3E2F008C272E /* AuthInteractor.swift in Sources */,
@@ -333,13 +391,19 @@
 				63A911C22B9C5443008C272E /* LoginRoundedRectangleForm.swift in Sources */,
 				63E8A6212B9DAAE500428ECF /* CvEntity.swift in Sources */,
 				633149682B9C7FF100484CB4 /* MainTabView.swift in Sources */,
+				6322FDBA2B9DD89A00B47DB3 /* CvListOfTextFields_Binding.swift in Sources */,
+				6322FDB62B9DD1A300B47DB3 /* CvListOfTextFields_Bindable.swift in Sources */,
 				63A911BA2B9B4907008C272E /* RegistrationView.swift in Sources */,
+				6322FDAE2B9DCB5E00B47DB3 /* CvDetailView.swift in Sources */,
+				6322FDB22B9DCB9000B47DB3 /* CvScrollInfoForm.swift in Sources */,
+				6322FDB02B9DCB7600B47DB3 /* CvOverForm.swift in Sources */,
 				633149702B9C819A00484CB4 /* ProfileEntity.swift in Sources */,
 				633149722B9C81A600484CB4 /* ProfileInteractor.swift in Sources */,
 				6309FA162B9C88BD00DB4E63 /* VacancyScrollInfoForm.swift in Sources */,
 				63A911BC2B9C46E6008C272E /* VacancyBoardView.swift in Sources */,
 				63E8A61F2B9DAAD800428ECF /* CvPresenter.swift in Sources */,
 				63B26C5F2B9CC9B4008C4D29 /* someView.swift in Sources */,
+				6322FDB42B9DD16400B47DB3 /* CvUpdateView.swift in Sources */,
 				633149762B9C829C00484CB4 /* VacancyBoardPresenter.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

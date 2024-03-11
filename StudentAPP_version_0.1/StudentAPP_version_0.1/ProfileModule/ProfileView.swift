@@ -87,9 +87,6 @@ struct ProfileView: View {
                         
                         Button {
                             router.navigateTo(.cv)
-                            //                            CvMainSCREEN()
-                            //                                .environmentObject(self.viewModel)
-                            
                         } label: {
                             Group {
                                 Text(LocalizedStringKey("Мое резюме"))
@@ -113,8 +110,10 @@ struct ProfileView: View {
                             .frame(height: 30)
                         
                         Button {
-                            //                            SupportSCREEN()
-                            //                                .environmentObject(self.viewModel)
+                            withAnimation {
+                                self.router.navigateTo(.support)
+                            }
+                           
                         } label: {
                             Group {
                                 Text("Тех. поддержка")

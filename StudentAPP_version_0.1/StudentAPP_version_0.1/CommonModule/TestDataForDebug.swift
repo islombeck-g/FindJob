@@ -76,3 +76,26 @@ var testUserFullData: UserFullData = UserFullData(
     user: userTestData)
 
 var userTestData = User(email: "testUserData@gmail.com", id: "sdaf", role: "student", password: "sdflakbdsfuads", isActivated: true)
+
+var cvTestData = CvData(
+    age: 20,
+    position: "IOS - developer",
+    firstName: "Руслан",
+    secondName: "Хамдамов",
+    patronymicName: "Арсланович",
+    birthDate: "25.12.2000",
+    birthCountry: "Чехия",
+    phoneNumber: "+998(97)231-43-21",
+    university: "Казанский (Приволжский) Федеральный университет",
+    institute: "Институт вычислительной математики и информационных технологий",
+    direction: "Фундаментальная математика и информационные технологии",
+    anotherEducation: "-",
+    certificates: "IELTS 10",
+    skills: "Swift, SwiftUI, algorithms, LaTex, cooking",
+    money: "от 100 000 до 300 000 руб",
+    workExperience: "Лаборатория КФУ",
+    employmentType: "Полная занятость",
+    aboutMe: "Очень хороший человек")
+
+let customCvData: CvData = CvData(
+    age: 20, position: "IOS - developer", firstName: "Руслан", secondName: "Хамдамов", patronymicName: "Арсланович", birthDate: "25.12.2000", birthCountry: "Чехия", phoneNumber: "+998(97)231-43-21", university: "Казанский (Приволжский) Федеральный университет", institute: "Институт вычислительной математики и информационных технологий", direction: "Фундаментальная математика и информационные технологии", anotherEducation: "-", certificates: "IELTS 10", skills: "Swift, SwiftUI, algorithms, LaTex, cooking", money: "от 100 000 до 300 000 руб", workExperience: "Лаборатория КФУ", employmentType: "Полная занятость", aboutMe: "Очень хороший человек")

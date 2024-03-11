@@ -9,6 +9,10 @@ enum AppRoute: Hashable {
     case vacancyBoard
     case vacationDetail(job: Job, isFavourite: Bool)
     case cv
+    case cvCreate
+    case cvDetail(cv: CvData)
+    case cvUpdate(cv: CvData)
+    case support
 }
 class AppRouter: ObservableObject {
     
@@ -19,6 +23,7 @@ class AppRouter: ObservableObject {
     @ViewBuilder
     func view(for route: AppRoute) -> some View {
         switch route {
+        
         case .auth:
             AuthView()
             
@@ -36,8 +41,21 @@ class AppRouter: ObservableObject {
             
         case .vacationDetail(job: let job, isFavourite: let isFavourite):
             VacancyDetailView(vc: job, isFavorite: isFavourite)
+            
         case .cv:
             CvView()
+            
+        case .cvCreate:
+            CvCreateView()
+            
+        case .cvDetail(cv: let cv):
+            CvDetailView(cv: cv)
+            
+        case .cvUpdate(cv: let cv):
+            CvUpdateView(cv: cv)
+            
+        case .support:
+            SupportView()
         }
     }
     func navigateTo(_ appRoute: AppRoute) {

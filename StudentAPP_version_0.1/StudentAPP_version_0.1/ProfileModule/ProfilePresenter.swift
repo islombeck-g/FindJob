@@ -5,7 +5,7 @@ final class ProfilePresenter: ObservableObject {
     @Published var userFullData: UserFullData
     
     init() {
-        self.userFullData = testUserFullData
+        self.userFullData = ProfileInteractor.shared.userData
     }
     
     
