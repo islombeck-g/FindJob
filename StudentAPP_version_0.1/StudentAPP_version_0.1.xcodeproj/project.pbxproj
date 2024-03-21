@@ -46,7 +46,12 @@
 		63A911C02B9C4FD8008C272E /* UserStateManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 63A911BF2B9C4FD8008C272E /* UserStateManager.swift */; };
 		63A911C22B9C5443008C272E /* LoginRoundedRectangleForm.swift in Sources */ = {isa = PBXBuildFile; fileRef = 63A911C12B9C5443008C272E /* LoginRoundedRectangleForm.swift */; };
 		63A911C42B9C5494008C272E /* CustomTextFieldForm.swift in Sources */ = {isa = PBXBuildFile; fileRef = 63A911C32B9C5494008C272E /* CustomTextFieldForm.swift */; };
-		63B26C5F2B9CC9B4008C4D29 /* someView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 63B26C5E2B9CC9B4008C4D29 /* someView.swift */; };
+		63D17FBE2BAAE94D00F151B0 /* example.swift in Sources */ = {isa = PBXBuildFile; fileRef = 63D17FBD2BAAE94D00F151B0 /* example.swift */; };
+		63D17FC02BAC262F00F151B0 /* Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 63D17FBF2BAC262F00F151B0 /* Extensions.swift */; };
+		63D17FC22BAC41FD00F151B0 /* DropDownMenuView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 63D17FC12BAC41FD00F151B0 /* DropDownMenuView.swift */; };
+		63D17FC42BAC440300F151B0 /* CreateAccountView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 63D17FC32BAC440300F151B0 /* CreateAccountView.swift */; };
+		63D17FC62BAC458C00F151B0 /* PartOneOfRegistrationForm.swift in Sources */ = {isa = PBXBuildFile; fileRef = 63D17FC52BAC458C00F151B0 /* PartOneOfRegistrationForm.swift */; };
+		63D17FC82BAC45A300F151B0 /* PartTwoOfRegistrationForm.swift in Sources */ = {isa = PBXBuildFile; fileRef = 63D17FC72BAC45A300F151B0 /* PartTwoOfRegistrationForm.swift */; };
 		63E8A6132B9D8FDB00428ECF /* SearchBar.swift in Sources */ = {isa = PBXBuildFile; fileRef = 63E8A6122B9D8FDB00428ECF /* SearchBar.swift */; };
 		63E8A6152B9D9E5800428ECF /* TestDataForDebug.swift in Sources */ = {isa = PBXBuildFile; fileRef = 63E8A6142B9D9E5800428ECF /* TestDataForDebug.swift */; };
 		63E8A6192B9DA19500428ECF /* CircleImageForm.swift in Sources */ = {isa = PBXBuildFile; fileRef = 63E8A6182B9DA19500428ECF /* CircleImageForm.swift */; };
@@ -99,7 +104,12 @@
 		63A911C12B9C5443008C272E /* LoginRoundedRectangleForm.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginRoundedRectangleForm.swift; sourceTree = "<group>"; };
 		63A911C32B9C5494008C272E /* CustomTextFieldForm.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomTextFieldForm.swift; sourceTree = "<group>"; };
 		63A911C52B9C5B63008C272E /* StudentAPP-version-0-1-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist; path = "StudentAPP-version-0-1-Info.plist"; sourceTree = SOURCE_ROOT; };
-		63B26C5E2B9CC9B4008C4D29 /* someView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = someView.swift; sourceTree = "<group>"; };
+		63D17FBD2BAAE94D00F151B0 /* example.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = example.swift; sourceTree = "<group>"; };
+		63D17FBF2BAC262F00F151B0 /* Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Extensions.swift; sourceTree = "<group>"; };
+		63D17FC12BAC41FD00F151B0 /* DropDownMenuView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DropDownMenuView.swift; sourceTree = "<group>"; };
+		63D17FC32BAC440300F151B0 /* CreateAccountView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CreateAccountView.swift; sourceTree = "<group>"; };
+		63D17FC52BAC458C00F151B0 /* PartOneOfRegistrationForm.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PartOneOfRegistrationForm.swift; sourceTree = "<group>"; };
+		63D17FC72BAC45A300F151B0 /* PartTwoOfRegistrationForm.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PartTwoOfRegistrationForm.swift; sourceTree = "<group>"; };
 		63E8A6122B9D8FDB00428ECF /* SearchBar.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchBar.swift; sourceTree = "<group>"; };
 		63E8A6142B9D9E5800428ECF /* TestDataForDebug.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TestDataForDebug.swift; sourceTree = "<group>"; };
 		63E8A6182B9DA19500428ECF /* CircleImageForm.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CircleImageForm.swift; sourceTree = "<group>"; };
@@ -197,10 +207,10 @@
 			children = (
 				63A911C52B9C5B63008C272E /* StudentAPP-version-0-1-Info.plist */,
 				63A9119B2B9B3897008C272E /* StudentAPP_version_0_1App.swift */,
+				63D17FBD2BAAE94D00F151B0 /* example.swift */,
 				63A911AC2B9B3D55008C272E /* Router.swift */,
 				63A911B52B9B416F008C272E /* RootView.swift */,
 				6322FDBD2B9EA72B00B47DB3 /* SupportModule */,
-				63B26C5E2B9CC9B4008C4D29 /* someView.swift */,
 				63A911BE2B9C4FC8008C272E /* CommonModule */,
 				63E8A6172B9DA0B400428ECF /* CvModule */,
 				633149692B9C815A00484CB4 /* ProfileModule */,
@@ -240,6 +250,9 @@
 				63A911B92B9B4907008C272E /* RegistrationView.swift */,
 				63A911C12B9C5443008C272E /* LoginRoundedRectangleForm.swift */,
 				63A911C32B9C5494008C272E /* CustomTextFieldForm.swift */,
+				63D17FC32BAC440300F151B0 /* CreateAccountView.swift */,
+				63D17FC52BAC458C00F151B0 /* PartOneOfRegistrationForm.swift */,
+				63D17FC72BAC45A300F151B0 /* PartTwoOfRegistrationForm.swift */,
 			);
 			path = Forms;
 			sourceTree = "<group>";
@@ -260,6 +273,8 @@
 			isa = PBXGroup;
 			children = (
 				633149672B9C7FF100484CB4 /* MainTabView.swift */,
+				63D17FBF2BAC262F00F151B0 /* Extensions.swift */,
+				63D17FC12BAC41FD00F151B0 /* DropDownMenuView.swift */,
 				63A911BF2B9C4FD8008C272E /* UserStateManager.swift */,
 				63E8A6182B9DA19500428ECF /* CircleImageForm.swift */,
 				63E8A6122B9D8FDB00428ECF /* SearchBar.swift */,
@@ -364,6 +379,7 @@
 				63E8A61B2B9DA50800428ECF /* ProfileItemsForm.swift in Sources */,
 				6322FDBF2B9EA73D00B47DB3 /* SupportView.swift in Sources */,
 				633149782B9C82B000484CB4 /* VacancyBoardEntity.swift in Sources */,
+				63D17FC82BAC45A300F151B0 /* PartTwoOfRegistrationForm.swift in Sources */,
 				6322FDC32B9EA75400B47DB3 /* SupportInteractor.swift in Sources */,
 				6322FDB82B9DD50E00B47DB3 /* CustomTextField.swift in Sources */,
 				63A911B62B9B416F008C272E /* RootView.swift in Sources */,
@@ -383,17 +399,20 @@
 				63A911B82B9B48FD008C272E /* LogInView.swift in Sources */,
 				63E8A61D2B9DAAC400428ECF /* CvView.swift in Sources */,
 				6331496C2B9C817700484CB4 /* ProfileView.swift in Sources */,
+				63D17FC42BAC440300F151B0 /* CreateAccountView.swift in Sources */,
 				63A911C42B9C5494008C272E /* CustomTextFieldForm.swift in Sources */,
 				63E8A6132B9D8FDB00428ECF /* SearchBar.swift in Sources */,
 				63A9119C2B9B3897008C272E /* StudentAPP_version_0_1App.swift in Sources */,
 				6331496E2B9C819000484CB4 /* ProfilePresenter.swift in Sources */,
 				63A911AB2B9B39BC008C272E /* AuthEntity.swift in Sources */,
 				63A911C22B9C5443008C272E /* LoginRoundedRectangleForm.swift in Sources */,
+				63D17FC22BAC41FD00F151B0 /* DropDownMenuView.swift in Sources */,
 				63E8A6212B9DAAE500428ECF /* CvEntity.swift in Sources */,
 				633149682B9C7FF100484CB4 /* MainTabView.swift in Sources */,
 				6322FDBA2B9DD89A00B47DB3 /* CvListOfTextFields_Binding.swift in Sources */,
 				6322FDB62B9DD1A300B47DB3 /* CvListOfTextFields_Bindable.swift in Sources */,
 				63A911BA2B9B4907008C272E /* RegistrationView.swift in Sources */,
+				63D17FC62BAC458C00F151B0 /* PartOneOfRegistrationForm.swift in Sources */,
 				6322FDAE2B9DCB5E00B47DB3 /* CvDetailView.swift in Sources */,
 				6322FDB22B9DCB9000B47DB3 /* CvScrollInfoForm.swift in Sources */,
 				6322FDB02B9DCB7600B47DB3 /* CvOverForm.swift in Sources */,
@@ -402,8 +421,9 @@
 				6309FA162B9C88BD00DB4E63 /* VacancyScrollInfoForm.swift in Sources */,
 				63A911BC2B9C46E6008C272E /* VacancyBoardView.swift in Sources */,
 				63E8A61F2B9DAAD800428ECF /* CvPresenter.swift in Sources */,
-				63B26C5F2B9CC9B4008C4D29 /* someView.swift in Sources */,
+				63D17FC02BAC262F00F151B0 /* Extensions.swift in Sources */,
 				6322FDB42B9DD16400B47DB3 /* CvUpdateView.swift in Sources */,
+				63D17FBE2BAAE94D00F151B0 /* example.swift in Sources */,
 				633149762B9C829C00484CB4 /* VacancyBoardPresenter.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

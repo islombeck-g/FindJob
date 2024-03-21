@@ -8,7 +8,6 @@ struct LoginRoundedRectangleForm: View {
         ZStack {
             
             RoundedRectangle(cornerRadius: 25)
-                .frame(height: 287)
                 .foregroundStyle(Color("SecondaryColor"))
             
             VStack(alignment: .center) {
@@ -19,10 +18,21 @@ struct LoginRoundedRectangleForm: View {
                 
                 CustomTextFieldForm(isSecureField: false, text: "Почта", result: self.$presener.email)
                 
+                if self.presener.emailError != nil {
+                    Text(self.presener.emailError!.errorDescription!)
+                        .errorText()
+                }
+                
+                
                 Spacer()
                     .frame(height: 10)
                 
                 CustomTextFieldForm(isSecureField: true, text: "Пароль", result: self.$presener.password)
+                
+                if self.presener.passwordError != nil {
+                    Text(self.presener.passwordError!.errorDescription!)
+                        .errorText()
+                }
                 
                 Spacer()
                     .frame(height: 20)
@@ -32,7 +42,7 @@ struct LoginRoundedRectangleForm: View {
                 } label: {
                     ZStack {
                         RoundedRectangle(cornerRadius: 8)
-                            .frame(width: 293, height: 50)
+                            .frame(height: 50)
                             .foregroundColor(Color("AccentColor"))
                         
                         Text(LocalizedStringKey("Регистрация"))
@@ -41,7 +51,10 @@ struct LoginRoundedRectangleForm: View {
                     }
                 }
             }
+            .padding(.horizontal, 25)
+            .padding(.vertical, 20)
         }
+        
     }
 }
 

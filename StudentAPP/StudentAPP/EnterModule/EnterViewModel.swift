@@ -11,49 +11,56 @@ final class EnterViewModel:ObservableObject {
     @Published var loginText: String = ""
     @Published var passwodText: String = ""
     @Published var isLoading:Bool = false
+    
+    @Published var errorMessage = ""
+    @Published var success = false
     private var enterService = EnterService()
-    func tryLogin() {
+    
+    
+    func tryRegistration() {
         self.userStateManager.logIn(user: userTest)
     }
-//    MARK: commented code is work, not touch, for release uncommit
-//    func tryLogin() {
+//    func tryRegistration() {
+////       new registration
 //        self.isLoading = true
-////        self.userStateManager.logInTest()
-////        MARK: it is works, just open
 //        
-//        self.enterService.login(userName: &loginText, password: &passwodText, success: { student in
-//            
-////            print("Login successful. Student data: \(student)")
+//        guard checkData() else {
+//            self.isLoading = false
+//            self.errorMessage = "Uncorrect Input Data"
+//            return
+//        }
+//        
+//        enterService.userRegistration(email: &loginText, password: &passwodText) { result in
 //            DispatchQueue.main.async {
-//                self.userStateManager.logIn(user: student)
+//                switch result {
+//                case .success(let response):
+//                    self.success = true
+//                    break
+//                case .failure(let error):
+//                    self.errorMessage = error.localizedDescription
+//                    break
+//                }
+//            }
+//        }
+//    }
+    
+//    func tryRegistration() {
+//        self.isLoading = true
+//        
+//        enterService.registerUser(userData: &student, password: &passwodText, success: {
+//            // Обработка успешной регистрации
+//            DispatchQueue.main.async {
+//                self.userStateManager.logIn(user: self.student)
 //                self.isLoading = false
 //            }
-//            
 //        }, failure: { error in
-//            print("Login failed with error: \(error)")
+//            // Обработка ошибок регистрации
+//            print("Error: \(error)")
 //            DispatchQueue.main.async {
 //                self.isLoading = false
 //            }
 //        })
 //    }
-    
-    func tryRegistration() {
-        self.isLoading = true
-        
-        enterService.registerUser(userData: &student, password: &passwodText, success: {
-            // Обработка успешной регистрации
-            DispatchQueue.main.async {
-                self.userStateManager.logIn(user: self.student)
-                self.isLoading = false
-            }
-        }, failure: { error in
-            // Обработка ошибок регистрации
-            print("Error: \(error)")
-            DispatchQueue.main.async {
-                self.isLoading = false
-            }
-        })
-    }
     
     private func checkData() -> Bool {
         
@@ -116,8 +123,6 @@ final class EnterViewModel:ObservableObject {
             aboutMe: "я очень интреесный человек, учусь, не работаю",
             institute: "Институт вычислительной математики и информационных техноолгий",
             direction: "Фундаментальная информатики и информационные технологии")
-    
-    
 }
 
 

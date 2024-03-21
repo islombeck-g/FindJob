@@ -14,10 +14,16 @@ enum AppRoute: Hashable {
     case cvUpdate(cv: CvData)
     case support
 }
-class AppRouter: ObservableObject {
+protocol NavigationRouter {
+    func navigateTo(route: AppRoute)
+    func navigateBack()
+    func popToRoot()
+}
+
+class AppRouter: ObservableObject, NavigationRouter {
     
     static let shared = AppRouter()
-    
+
     @Published var path: NavigationPath = NavigationPath()
     
     @ViewBuilder
@@ -58,8 +64,8 @@ class AppRouter: ObservableObject {
             SupportView()
         }
     }
-    func navigateTo(_ appRoute: AppRoute) {
-        path.append(appRoute)
+    func navigateTo(route: AppRoute) {
+        path.append(route)
     }
     func navigateBack() {
         path.removeLast()

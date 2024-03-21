@@ -46,7 +46,7 @@ struct CustomTextFieldForm: View {
             }
         }
         .foregroundStyle(Color("black"))
-        .frame(width: 293, height: 50)
+        .frame(height: 50)
     }
 }
 

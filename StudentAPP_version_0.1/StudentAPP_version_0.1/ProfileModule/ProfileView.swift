@@ -9,7 +9,6 @@ struct ProfileView: View {
     @State private var deleteAcount_isAllertShow:Bool = false
     @State private var isFavorite = false
     
-    
     var body: some View {
         VStack {
             ZStack {
@@ -86,7 +85,7 @@ struct ProfileView: View {
                         .padding(.vertical, 16)
                         
                         Button {
-                            router.navigateTo(.cv)
+                            router.navigateTo(route: .cv)
                         } label: {
                             Group {
                                 Text(LocalizedStringKey("Мое резюме"))
@@ -104,14 +103,14 @@ struct ProfileView: View {
                         Spacer()
                             .frame(height: 36)
                         
-                        ProfileItemsForm(aboutMe: self.$presenetr.userFullData.aboutMe, birthDate: self.$presenetr.userFullData.birthDate, institute: self.$presenetr.userFullData.institute, direction: self.$presenetr.userFullData.direction, university: $presenetr.userFullData.university)
+                        ProfileItemsForm(birthDate: self.$presenetr.userFullData.birthDate, university: $presenetr.userFullData.university)
                         
                         Spacer()
                             .frame(height: 30)
                         
                         Button {
                             withAnimation {
-                                self.router.navigateTo(.support)
+                                self.router.navigateTo(route: .support)
                             }
                            
                         } label: {

@@ -61,18 +61,17 @@ var listOfJob:Set<Job> = [
 ]
 
 var testUserFullData: UserFullData = UserFullData(
-    firstName: "Руслан",
-    secondName: "Чебоксаров",
-    patronymicName: "",
-    gender: .male,
-    city: "Москва",
-    university: "Московский Государственный Университет",
-    phoneNumber: "+7 (888) 888-88-88",
     image: "userImage",
-    birthDate: "10.02.2000",
-    aboutMe: "я очень интреесный человек, учусь, не работаю",
-    institute: "Институт вычислительной математики и информационных техноолгий",
-    direction: "Фундаментальная информатики и информационные технологии", 
+    firstName: "Руслан",
+    birthDate: "10.02.2000", secondName: "Чебоксаров",
+    university: "",
+    //    gender: .male,
+    //    city: "Москва",
+    phoneNumber: "Московский Государственный Университет",
+    patronymicName: "+7 (888) 888-88-88",
+//    aboutMe: "я очень интреесный человек, учусь, не работаю",
+//    institute: "Институт вычислительной математики и информационных техноолгий",
+//    direction: "Фундаментальная информатики и информационные технологии", 
     user: userTestData)
 
 var userTestData = User(email: "testUserData@gmail.com", id: "sdaf", role: "student", password: "sdflakbdsfuads", isActivated: true)

@@ -60,7 +60,7 @@ class EnterAPI {
                 print("JSON Response: \(jsonDictionary)")
                 
                 guard let userData = jsonDictionary["userData"] as? [String: Any],
-                    let firstName = userData["firstName"] as? String,
+                      let firstName = userData["firstName"] as? String,
                       let secondName = userData["secondName"] as? String,
                       let patronymicName = userData["patronymicName"] as? String,
                       let gender = userData["gender"] as? String,
@@ -160,8 +160,61 @@ class EnterAPI {
             DispatchQueue.main.async {
                 print("Registration success")
                 completion(nil)
-            }   
+            }
         }
         .resume()
+    }
+    
+    func userRegistration(email: String, password: String, completion: @escaping (Result<RegistrationResponse, Error>) -> Void) {
+        guard let url = URL(string: "\(url)registration") else {
+            completion(.failure(EnterServiceError.invalidURL))
+            return
+        }
+        let registrationData = ["email": email, "password": password]
+        
+        var request = URLRequest(url: url)
+        request.httpMethod = "POST"
+        request.httpBody = try? JSONSerialization.data(withJSONObject: registrationData)// тут не дописал
+        request.addValue("application/json", forHTTPHeaderField: "Content-Type")
+        
+        URLSession.shared.dataTask(with: request) { data, response, error in
+            if let error = error {
+                completion(.failure(error))
+            }
+            
+            guard let httpResponse = response as? HTTPURLResponse, (200...299).contains(httpResponse.statusCode) else {
+                completion(.failure(NSError(domain: "com.example.app", code: 0, userInfo: [NSLocalizedDescriptionKey: "Server responded with an error"])))
+                return
+            }
+            guard let data = data else {
+                completion(.failure(NSError(domain: "com.example.app", code: 0, userInfo: [NSLocalizedDescriptionKey: "No data received"])))
+                return
+            }
+            
+            do {
+                let registrationResponse = try JSONDecoder().decode(RegistrationResponse.self, from: data)
+                completion(.success(registrationResponse))
+            } catch {
+                completion(.failure(error))
+            }
+            
+        }.resume()
+        
+        
+    }
+}
+
+
+struct RegistrationResponse: Codable {
+    let accessToken: String
+    let refreshToken: String
+    let user: User
+    
+    struct User: Codable {
+        let email: String
+        let id: String
+        let role: String
+        let password: String
+        let isActivated: Bool
     }
 }

@@ -30,7 +30,7 @@ struct LoginRoundedRectangleView: View {
                     .frame(height: 20)
                 
                 Button {
-                    self.viewModel.tryLogin()
+                    self.viewModel.tryRegistration()
                 } label: {
                     ZStack {
                         RoundedRectangle(cornerRadius: 8)

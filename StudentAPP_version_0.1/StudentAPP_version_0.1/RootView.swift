@@ -10,6 +10,8 @@ struct RootView: View {
                 .navigationDestination(for: AppRoute.self) { route in
                     router.view(for: route)
                 }
+                .navigationBarTitleDisplayMode(.large)
+                .interactiveDismissDisabled(false)
         }
     }
 }

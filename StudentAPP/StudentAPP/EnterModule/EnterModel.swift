@@ -23,5 +23,4 @@ struct StudentData: Decodable, Encodable {
     var aboutMe:String
     var institute:String
     var direction:String
-    
 }

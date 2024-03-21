@@ -2,7 +2,6 @@ import SwiftUI
 
 struct LogInView: View {
     
-    @EnvironmentObject var router: AppRouter
     @EnvironmentObject var presenter: AuthPresenter
     
     var body: some View {
@@ -19,11 +18,9 @@ struct LogInView: View {
                         Spacer()
                             .frame(height: 37.5)
                         
-                        Text(LocalizedStringKey("Регистрация"))
+                        Text(LocalizedStringKey("Вход"))
+                            .mainSemiBold()
                             .foregroundStyle(Color("SecondaryColor"))
-                            .font(.system(size: 34))
-                            .fontWeight(.semibold)
-                            .padding(.horizontal, 20)
                         
                         Spacer()
                             .frame(height: 24)
@@ -58,6 +55,22 @@ struct LogInView: View {
                                 .fontWeight(.bold)
                         }
                     }
+                    Button {
+                        self.presenter.email = "some@gmail.com"
+                        self.presenter.password = "passwordIsHere"
+                    } label: {
+                        ZStack {
+                            RoundedRectangle(cornerRadius: 10)
+                                .frame(
+                                    width: 343,
+                                    height: 48)
+                                .frame(maxWidth: .infinity)
+                                .foregroundColor(Color("SecondaryColor"))
+                            
+                            Text("Test Data")
+                                .fontWeight(.bold)
+                        }
+                    }
                     Spacer()
                 }
             }
@@ -72,7 +85,7 @@ struct LogInView: View {
         .toolbar {
             ToolbarItem(placement: .topBarLeading) {
                 Button {
-                    self.router.navigateBack()
+                    self.presenter.navigateBack()
                 } label: {
                     
                     Image(systemName: "chevron.left")
@@ -83,6 +96,7 @@ struct LogInView: View {
                 .foregroundStyle(Color("SecondaryColor"))
             }
         }
+        .navigationBarTitleDisplayMode(.inline)
     }
 }
 

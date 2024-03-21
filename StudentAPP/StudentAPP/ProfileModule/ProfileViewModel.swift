@@ -37,7 +37,9 @@ final class ProfileViewModel: SupportViewModel, ObservableObject {
     }
     
     private var service = ProfileService()
+    
     @Published var isLoading: Bool = false
+    
     func updateDataProfile() {
         self.isLoading = true
         self.service.updateUserData(userData: &newStudent) {

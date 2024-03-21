@@ -38,4 +38,20 @@ class EnterService {
             }
         }
     }
+    
+    func userRegistration(email: inout String, password: inout String, completion: @escaping (Result<RegistrationResponse, Error>)-> Void) {
+        enterAPI.userRegistration(email: email, password: password) { result in
+            DispatchQueue.main.async {
+                switch result {
+                case .success(let response): 
+                    completion(.success(response))
+                    break
+                
+                case .failure(let error):
+                    completion(.failure(error))
+                    break
+                }
+            }
+        }
+    }
 }

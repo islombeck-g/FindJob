@@ -1,6 +1,7 @@
 import SwiftUI
 
 struct DropDownView: View {
+    
     var menuActions: [ChoseName]
     @Binding var title: String
     @State private var expand: Bool = false
@@ -18,7 +19,6 @@ struct DropDownView: View {
                     expand: self.$expand,
                     title: self.$title)
             }
-            Spacer()
         }
     }
 }
@@ -55,10 +55,7 @@ struct DropDownViewMenu: View {
             
             ScrollView{
                 ForEach(menuActions, id: \.title) { action in
-                    DropDownButton(
-                        text: action.title,
-                        expand: self.$expand,
-                        selectedTitle: $title)
+                    DropDownButton(text: action.title, expand: self.$expand, selectedTitle: $title)
                     Divider()
                 }
             }
@@ -71,6 +68,7 @@ struct DropDownViewMenu: View {
 }
 
 struct DropDownHeader: View {
+    
     var title: String
     var action: () -> ()
     var expand: Bool

@@ -56,7 +56,7 @@ struct VacancyBoardView: View {
                         
                         ForEach(Array(self.presenter.favouriteListOfJob)){ job in
                             Button {
-                                self.router.navigateTo(.vacationDetail(job: job, isFavourite: self.presenter.favouriteListOfJob.contains(job)))
+                                self.router.navigateTo(route: .vacationDetail(job: job, isFavourite: self.presenter.favouriteListOfJob.contains(job)))
                             } label: {
                                 VacancyOverView(vc: job)
                             }
@@ -74,7 +74,7 @@ struct VacancyBoardView: View {
                                     ForEach(Array(self.presenter.listOfJobs)){ job in
                                         
                                         Button {
-                                            self.router.navigateTo(.vacationDetail(job: job, isFavourite: self.presenter.favouriteListOfJob.contains(job)))
+                                            self.router.navigateTo(route: .vacationDetail(job: job, isFavourite: self.presenter.favouriteListOfJob.contains(job)))
                                         } label: {
                                             VacancyOverView(vc: job)
                                         }
@@ -94,7 +94,7 @@ struct VacancyBoardView: View {
                         ForEach(Array(self.presenter.filteredJobs)){ job in
                             
                             Button {
-                                self.router.navigateTo(.vacationDetail(job: job, isFavourite: self.presenter.favouriteListOfJob.contains(job)))
+                                self.router.navigateTo(route: .vacationDetail(job: job, isFavourite: self.presenter.favouriteListOfJob.contains(job)))
                             } label: {
                                 VacancyOverView(vc: job)
                             }

@@ -63,9 +63,9 @@ struct RegistrationView: View {
             }
             .scrollIndicators(.hidden)
             
-            if self.presenter.isLoading {
-                ProgressView()
-            }
+//            if self.presenter.isLoading {
+//                ProgressView()
+//            }
                 
         }
         .navigationBarBackButtonHidden(true)

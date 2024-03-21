@@ -32,7 +32,7 @@ struct CvView: View {
                             .foregroundStyle(Color("SecondaryColor"))
                         
                         Button {
-                            router.navigateTo(.cvCreate)
+                            router.navigateTo(route: .cvCreate)
                         }label: {
                             Image(systemName: "square.badge.plus")
                                 .foregroundStyle(Color("AccentColor"))
@@ -54,7 +54,7 @@ struct CvView: View {
                         ForEach(cvs) { cv in
                             
                             Button {
-                                self.router.navigateTo(.cvDetail(cv: cv))
+                                self.router.navigateTo(route: .cvDetail(cv: cv))
                                 //                                CvFullInfoSCREEN(cv: cv)
                             } label: {
                                 CvOverForm(cv: cv)

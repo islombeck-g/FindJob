@@ -3,7 +3,6 @@ import SwiftUI
 struct AuthView: View {
     
     @EnvironmentObject var presenter: AuthPresenter
-    @EnvironmentObject var router: AppRouter
     
     var body: some View {
         NavigationStack {
@@ -26,7 +25,7 @@ struct AuthView: View {
                     
                     Group {
                         Button {
-                            self.router.navigateTo(.logIn)
+                            self.presenter.navigateTo(route: .logIn)
                         } label: {
                             ZStack {
                                 RoundedRectangle(cornerRadius: 8)
@@ -40,7 +39,7 @@ struct AuthView: View {
                         }
 
                         Button {
-                            self.router.navigateTo(.registration)
+                            self.presenter.navigateTo(route: .registration)
                         } label: {
                             ZStack {
                                 RoundedRectangle(cornerRadius: 8)
@@ -64,7 +63,5 @@ struct AuthView: View {
 
 #Preview {
     AuthView()
-//        .environmentObject(AuthPresenter(router: AppRouter.shared))
         .environmentObject(AuthPresenter())
-        .environmentObject(AppRouter.shared)
 }

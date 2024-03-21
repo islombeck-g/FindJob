@@ -14,6 +14,7 @@ struct StudentAPPApp: App {
                     .environment(\.locale, .init(identifier: self.languageManager.selectedLanguage.rawValue))
                     
             } else {
+//                EnterView()
                 EnterSCREEN()
                     .environmentObject(EnterViewModel(userStateManager: userStateManager))
                     .environment(\.locale, .init(identifier: self.languageManager.selectedLanguage.rawValue))
@@ -24,4 +25,5 @@ struct StudentAPPApp: App {
 }
 
 
-let url = "https://140e-85-249-28-180.ngrok-free.app"
+let url = "https://6a16-81-222-188-63.ngrok-free.app"
+

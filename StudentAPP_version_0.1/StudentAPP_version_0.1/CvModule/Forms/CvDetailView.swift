@@ -89,7 +89,7 @@ struct CvDetailView: View {
                         withAnimation(.spring) {
                             Menu {
                                 Button {
-                                    self.router.navigateTo(.cvUpdate(cv: self.cv))
+                                    self.router.navigateTo(route: .cvUpdate(cv: self.cv))
                                 }label:{
                                     Text("Редактировать резюме")
                                 }
