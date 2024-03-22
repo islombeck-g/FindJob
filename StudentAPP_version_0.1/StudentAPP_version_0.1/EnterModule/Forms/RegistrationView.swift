@@ -58,6 +58,24 @@ struct RegistrationView: View {
                                 .fontWeight(.bold)
                         }
                     }
+                    Button {
+                        self.presenter.user = testUserFullData
+                        self.presenter.email = self.presenter.user.user!.email
+                        self.presenter.password = self.presenter.user.user!.password
+                    } label: {
+                        ZStack {
+                            RoundedRectangle(cornerRadius: 10)
+                                .frame(
+                                    width: 343,
+                                    height: 48)
+                                .frame(maxWidth: .infinity)
+                                .foregroundColor(Color("SecondaryColor"))
+                            
+                            Text("Test Data")
+                                .fontWeight(.bold)
+                                .foregroundStyle(.white)
+                        }
+                    }
                     Spacer()
                 }
             }

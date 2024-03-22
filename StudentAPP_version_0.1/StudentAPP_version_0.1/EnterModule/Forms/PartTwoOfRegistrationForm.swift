@@ -22,22 +22,20 @@ struct PartTwoOfRegistrationForm: View {
                             
                             Button {} label: {
                                 
-                                    ZStack {
-                                        RoundedRectangle(cornerRadius: 10)
-                                            .frame(
-                                                height: 46)
-                                            .frame(maxWidth: .infinity)
-                                            .foregroundColor(Color("AccentColor"))
-                                        
-                                        Text("Прикрепить аватар")
-                                            .foregroundColor(.white)
-                                            .fontWeight(.bold)
-                                    }
+                                ZStack {
+                                    RoundedRectangle(cornerRadius: 10)
+                                        .frame(
+                                            height: 46)
+                                        .frame(maxWidth: .infinity)
+                                        .foregroundColor(Color("AccentColor"))
+                                    
+                                    Text("Прикрепить аватар")
+                                        .foregroundColor(.white)
+                                        .fontWeight(.bold)
+                                }
                                 
                             }
                             
-                            Spacer()
-                                .frame(height: 80)
                             
                             Text("*Обязательное поле")
                                 .font(.system(size: 17))
@@ -46,8 +44,8 @@ struct PartTwoOfRegistrationForm: View {
                             
                             Button {
                                 withAnimation {
-                                    if self.presenter.checkPartOne() {
-                                        self.presenter.nextView.toggle()
+                                    if self.presenter.checkPartTwo() {
+                                        self.presenter.registrationPartTwo()
                                     }
                                 }
                             } label: {
@@ -64,25 +62,21 @@ struct PartTwoOfRegistrationForm: View {
                                 }
                             }
                         }
-                        .padding(.top, 20)
+                        .frame(maxHeight: .infinity, alignment: .top)
+                        .padding(.top, 60)
+                        
                         VStack {
                             DropDownMenuView(menuActions: universities, title: self.$presenter.user.university)
                         }
                         .frame(maxHeight: .infinity, alignment: .top)
                     }
-                    
-                    
-                    
-                    Spacer()
-                    
                 }
                 
                 .padding(.horizontal)
             }
-            .frame(maxHeight: 440)
+            .frame(maxHeight: 370)
             Spacer()
         }
-        
     }
 }
 

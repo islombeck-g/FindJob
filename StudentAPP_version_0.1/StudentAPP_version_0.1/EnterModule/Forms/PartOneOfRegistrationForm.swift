@@ -32,7 +32,7 @@ struct PartOneOfRegistrationForm: View {
                     Button {
                         withAnimation {
                             if self.presenter.checkPartOne() {
-                                self.presenter.nextView.toggle()
+                                self.presenter.nextView = 1
                             }
                         }
                     } label: {

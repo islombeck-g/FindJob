@@ -8,7 +8,6 @@ struct CreateAccountView: View {
         AnyView(PartOneOfRegistrationForm()),
         AnyView(PartTwoOfRegistrationForm())]
     
-    @State private var selectedTab: Int = 0
     var body: some View {
         ZStack {
             Color("ForegroundColor")
@@ -23,21 +22,23 @@ struct CreateAccountView: View {
                         .foregroundStyle(Color("SecondaryColor"))
                 }
                 
-                TabView(selection: self.$selectedTab) {
+                TabView(selection: self.$presenter.nextView) {
                     ForEach( self.views.indices, id: \.self) { i in
                         self.views[i]
                     }
                     .padding(.horizontal)
-                    
                 }
-                .tabViewStyle(.page)
+                .onAppear {
+                    UIScrollView.appearance().isScrollEnabled = false
+                }
+                .tabViewStyle(PageTabViewStyle(indexDisplayMode: .never))
             }
         }
     }
 }
 
+
 #Preview {
     CreateAccountView()
         .environmentObject(AuthPresenter())
 }
-

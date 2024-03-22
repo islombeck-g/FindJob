@@ -41,6 +41,9 @@ enum LoginError: Error, LocalizedError {
     case secondNameEmpty
     case patronymicNameEmpty
     case birthDateEmpty
+    case notChosenUniversity
+    case phoneNumberEmpty
+    case phoneNumberUncorrectFormat
     
     var errorDescription: String? {
         
@@ -72,6 +75,15 @@ enum LoginError: Error, LocalizedError {
        
         case .birthDateEmpty:
             return "День рождения не может быть пустым"
+       
+        case .notChosenUniversity:
+            return "Нужно выбрать вуз"
+        
+        case .phoneNumberEmpty:
+            return "Нужно ввести номер телефона"
+        
+        case .phoneNumberUncorrectFormat:
+            return "Номер не правильно введён"
         }
     }
 }

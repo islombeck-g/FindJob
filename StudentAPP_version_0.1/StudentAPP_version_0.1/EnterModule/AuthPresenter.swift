@@ -16,10 +16,13 @@ class AuthPresenter: ObservableObject, NavigationRouter {
     @Published var secondNameError: LoginError?
     @Published var patronymicNameError: LoginError?
     @Published var birthDateError: LoginError?
+    @Published var phoneNumberError: LoginError?
+    @Published var universityError: LoginError?
     
-    @Published var nextView: Bool = false
     
-    @Published var user: UserFullData = UserFullData(image: "", firstName: "", birthDate: "", secondName: "", university: "Выберите университет", phoneNumber: "", patronymicName: "")
+    @Published var nextView: Int = 0
+    
+    @Published var user: UserFullData = UserFullData(image: "", firstName: "", birthDate: "", secondName: "", university: "Выберите университет*", phoneNumber: "", patronymicName: "")
     
     private var authIteractor: AuthInteractor
     private var userStateManager: UserStateManager
@@ -31,6 +34,8 @@ class AuthPresenter: ObservableObject, NavigationRouter {
         self.userStateManager = UserStateManager.shared
     }
     
+    
+    
     func authenticate(){
         
     }
@@ -38,27 +43,53 @@ class AuthPresenter: ObservableObject, NavigationRouter {
     func registration() {
         
         guard self.isValid() else { return }
-//        self.isLoading = true
-        self.updatePublishedResponse(RegistrationResponse(accessToken: "", refreshToken: " ", user: User(email: "some@gmail.com", id: "sdf", role:"sdf", password:" dsfsdf", isActivated: false)))
-        self.router.navigateTo(route: .mainTabView)
+        //        self.isLoading = true
+        //        self.updatePublishedResponse(RegistrationResponse(accessToken: "", refreshToken: " ", user: User(email: "some@gmail.com", id: "sdf", role:"sdf", password:" dsfsdf", isActivated: false)))
+        //        self.router.navigateTo(route: .mainTabView)
         
-//        authIteractor.userRegistration(email: self.email, password: self.password) { result in
-//            
-//            switch result {
-//            case .success(let response):
-//                DispatchQueue.main.async {
-//                    self.updatePublishedResponse(response)
-//                    //                    self.router.navigateTo(.vacancyBoard)
-//                    print(response)
-//                }
-//            case .failure(let error):
-//                DispatchQueue.main.async {
-//                    self.error = error
-//                    self.isLoading = false
-//                    print(error)
-//                }
-//            }
-//        }
+        authIteractor.userRegistration(email: self.email, password: self.password) { result in
+            
+            switch result {
+            
+            case .success(let response):
+                DispatchQueue.main.async {
+                    self.updatePublishedResponse(response)
+                    self.navigateTo(route: .createAccount)
+                    print(response)
+                }
+            
+            case .failure(let error):
+                DispatchQueue.main.async {
+                    self.error = error
+                    self.isLoading = false
+                    print(error)
+                }
+            }
+        }
+    }
+    
+    func registrationPartTwo() {
+        
+        isLoading = true
+        
+        self.authIteractor.userRegistrationPartTwo(userData: self.user) { result in
+            
+            switch result {
+            
+            case .success(let res):
+                DispatchQueue.main.async {
+                    print(res)
+                    self.navigateTo(route: .mainTabView)
+                }
+            
+            case .failure(let error):
+                DispatchQueue.main.async {
+                    print("----------")
+                    print(error)
+                    print("----------")
+                }
+            }
+        }
     }
     
     func navigateTo(route: AppRoute) {
@@ -69,16 +100,19 @@ class AuthPresenter: ObservableObject, NavigationRouter {
     func navigateBack() {
         self.router.navigateBack()
         self.clearErrors()
+        self.nextView = 0
     }
     
     func popToRoot() {}
-
+    
     
     
     func checkPartOne() -> Bool {
         
         self.clearErrors()
-        
+        //        MARK: forDebug
+//        return true
+        //        MARK: endDebug
         if self.user.firstName == "" {
             self.firstNameError = .firstNameEmpty
         }
@@ -93,6 +127,22 @@ class AuthPresenter: ObservableObject, NavigationRouter {
         }
         
         return firstNameError == nil && secondNameError == nil && patronymicNameError == nil && birthDateError == nil
+    }
+    
+    func checkPartTwo() -> Bool {
+        
+        self.clearErrors()
+        //        MARK: forDebug
+//        return true
+        //        MARK: endDebug
+        
+        if self.user.university == "Выберите университет*" {
+            self.universityError = .notChosenUniversity
+        }
+        if self.user.phoneNumber.isEmpty {
+            self.phoneNumberError = .phoneNumberEmpty
+        }
+        return universityError == nil && phoneNumberError == nil
     }
     
     private func isValid() -> Bool {
@@ -122,6 +172,8 @@ class AuthPresenter: ObservableObject, NavigationRouter {
         self.secondNameError = nil
         self.patronymicNameError = nil
         self.birthDateError = nil
+        self.universityError = nil
+        
     }
     
     private func updatePublishedResponse(_ response: RegistrationResponse) {

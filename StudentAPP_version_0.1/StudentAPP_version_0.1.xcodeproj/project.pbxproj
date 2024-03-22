@@ -278,8 +278,8 @@
 				63A911BF2B9C4FD8008C272E /* UserStateManager.swift */,
 				63E8A6182B9DA19500428ECF /* CircleImageForm.swift */,
 				63E8A6122B9D8FDB00428ECF /* SearchBar.swift */,
-				63E8A6142B9D9E5800428ECF /* TestDataForDebug.swift */,
 				6322FDB72B9DD50E00B47DB3 /* CustomTextField.swift */,
+				63E8A6142B9D9E5800428ECF /* TestDataForDebug.swift */,
 			);
 			path = CommonModule;
 			sourceTree = "<group>";

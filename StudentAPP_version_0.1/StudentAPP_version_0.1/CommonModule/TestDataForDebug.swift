@@ -64,17 +64,17 @@ var testUserFullData: UserFullData = UserFullData(
     image: "userImage",
     firstName: "Руслан",
     birthDate: "10.02.2000", secondName: "Чебоксаров",
-    university: "",
+    university: "Московский Государственный Университет",
     //    gender: .male,
     //    city: "Москва",
-    phoneNumber: "Московский Государственный Университет",
-    patronymicName: "+7 (888) 888-88-88",
+    phoneNumber: "+7 (888) 888-88-88",
+    patronymicName: "somePatronimicname",
 //    aboutMe: "я очень интреесный человек, учусь, не работаю",
 //    institute: "Институт вычислительной математики и информационных техноолгий",
 //    direction: "Фундаментальная информатики и информационные технологии", 
     user: userTestData)
 
-var userTestData = User(email: "testUserData@gmail.com", id: "sdaf", role: "student", password: "sdflakbdsfuads", isActivated: true)
+var userTestData = User(email: "test@gmail.com", id: "sdaf", role: "student", password: "123456789", isActivated: true)
 
 var cvTestData = CvData(
     age: 20,

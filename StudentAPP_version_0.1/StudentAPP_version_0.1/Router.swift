@@ -13,6 +13,7 @@ enum AppRoute: Hashable {
     case cvDetail(cv: CvData)
     case cvUpdate(cv: CvData)
     case support
+    case createAccount
 }
 protocol NavigationRouter {
     func navigateTo(route: AppRoute)
@@ -62,6 +63,9 @@ class AppRouter: ObservableObject, NavigationRouter {
             
         case .support:
             SupportView()
+        
+        case .createAccount:
+            CreateAccountView()
         }
     }
     func navigateTo(route: AppRoute) {
