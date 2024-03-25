@@ -44,8 +44,8 @@ class AuthPresenter: ObservableObject, NavigationRouter {
         
         guard self.isValid() else { return }
         //        self.isLoading = true
-        //        self.updatePublishedResponse(RegistrationResponse(accessToken: "", refreshToken: " ", user: User(email: "some@gmail.com", id: "sdf", role:"sdf", password:" dsfsdf", isActivated: false)))
-        //        self.router.navigateTo(route: .mainTabView)
+                self.updatePublishedResponse(RegistrationResponse(accessToken: "", refreshToken: " ", user: User(email: "some@gmail.com", id: "sdf", role:"sdf", password:" dsfsdf", isActivated: false)))
+        self.router.navigateTo(route: .createAccount)
         
         authIteractor.userRegistration(email: self.email, password: self.password) { result in
             
@@ -92,6 +92,7 @@ class AuthPresenter: ObservableObject, NavigationRouter {
         }
     }
     
+//    MARK: navigation
     func navigateTo(route: AppRoute) {
         self.clearErrors()
         self.router.navigateTo(route: route)

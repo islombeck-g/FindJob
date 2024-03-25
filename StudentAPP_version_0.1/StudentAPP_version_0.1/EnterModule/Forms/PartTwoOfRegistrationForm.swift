@@ -3,6 +3,7 @@ import SwiftUI
 struct PartTwoOfRegistrationForm: View {
     
     @EnvironmentObject private var presenter: AuthPresenter
+    private let formatter = PhoneFormatter()
     
     var body: some View {
         VStack {
@@ -19,7 +20,9 @@ struct PartTwoOfRegistrationForm: View {
                         VStack {
                             
                             CustomTextField(isSecureField: false, text: "Номер телефона*", result: self.$presenter.user.phoneNumber)
-                            
+                                .onChange(of: presenter.user.phoneNumber) { oldValue, newValue in
+                                    presenter.user.phoneNumber = formatter.format(number: newValue)
+                                }
                             Button {} label: {
                                 
                                 ZStack {
