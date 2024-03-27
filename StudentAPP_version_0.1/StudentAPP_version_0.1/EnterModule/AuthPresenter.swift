@@ -1,7 +1,7 @@
 import Foundation
+import Combine
 
 class AuthPresenter: ObservableObject, NavigationRouter {
-    
     
     @Published var response: RegistrationResponse?
     @Published var error: Error?
@@ -10,6 +10,7 @@ class AuthPresenter: ObservableObject, NavigationRouter {
     @Published var emailError: LoginError?
     @Published var password: String = ""
     @Published var passwordError: LoginError?
+    @Published var interactorError: LoginError?
     @Published var isLoading: Bool = false
     
     @Published var firstNameError: LoginError?
@@ -19,77 +20,61 @@ class AuthPresenter: ObservableObject, NavigationRouter {
     @Published var phoneNumberError: LoginError?
     @Published var universityError: LoginError?
     
-    
     @Published var nextView: Int = 0
     
     @Published var user: UserFullData = UserFullData(image: "", firstName: "", birthDate: "", secondName: "", university: "Выберите университет*", phoneNumber: "", patronymicName: "")
     
     private var authIteractor: AuthInteractor
     private var userStateManager: UserStateManager
-    
     private var router: AppRouter = AppRouter.shared
+    
+    private var cancellables: Set<AnyCancellable> = []
     
     init() {
         self.authIteractor = AuthInteractor.shared
         self.userStateManager = UserStateManager.shared
     }
     
-    
-    
-    func authenticate(){
+//    MARK: - work with Interactor
+    func authenticate() {
         
     }
     
     func registration() {
+        self.isLoading = true
         
-        guard self.isValid() else { return }
-        //        self.isLoading = true
-                self.updatePublishedResponse(RegistrationResponse(accessToken: "", refreshToken: " ", user: User(email: "some@gmail.com", id: "sdf", role:"sdf", password:" dsfsdf", isActivated: false)))
-        self.router.navigateTo(route: .createAccount)
-        
-        authIteractor.userRegistration(email: self.email, password: self.password) { result in
-            
-            switch result {
-            
-            case .success(let response):
-                DispatchQueue.main.async {
-                    self.updatePublishedResponse(response)
-                    self.navigateTo(route: .createAccount)
-                    print(response)
+        authIteractor.userRegistration(email: email, password: password)
+            .receive(on: DispatchQueue.main)
+            .sink { [weak self] completion in
+                self?.isLoading = false
+                
+                switch completion {
+                case .finished:
+                    self?.navigateTo(route: .createAccount)
+                case .failure(let error):
+                    self?.interactorError = error as? LoginError
                 }
-            
-            case .failure(let error):
-                DispatchQueue.main.async {
-                    self.error = error
-                    self.isLoading = false
-                    print(error)
-                }
+            } receiveValue: { [weak self] response in
+                self?.updatePublishedResponse(response)
             }
-        }
+            .store(in: &cancellables)
     }
     
     func registrationPartTwo() {
+        self.isLoading = true
         
-        isLoading = true
-        
-        self.authIteractor.userRegistrationPartTwo(userData: self.user) { result in
-            
-            switch result {
-            
-            case .success(let res):
-                DispatchQueue.main.async {
-                    print(res)
-                    self.navigateTo(route: .mainTabView)
+        authIteractor.userRegistrationPartTwo(userData: self.user)
+            .receive(on: DispatchQueue.main)
+            .sink { [weak self] completion in
+                switch completion {
+                case .finished:
+                    break
+                case .failure(let error):
+                    self?.interactorError = error as? LoginError
                 }
-            
-            case .failure(let error):
-                DispatchQueue.main.async {
-                    print("----------")
-                    print(error)
-                    print("----------")
-                }
-            }
-        }
+            } receiveValue: { response in
+                print(response)
+            }.store(in: &cancellables)
     }
     
 //    MARK: navigation
@@ -183,3 +168,33 @@ class AuthPresenter: ObservableObject, NavigationRouter {
     }
 }
 
+
+
+//MARK: - old code
+//    func registration() {
+//
+//        guard self.isValid() else { return }
+//        //        self.isLoading = true
+//                self.updatePublishedResponse(RegistrationResponse(accessToken: "", refreshToken: " ", user: User(email: "some@gmail.com", id: "sdf", role:"sdf", password:" dsfsdf", isActivated: false)))
+//        self.router.navigateTo(route: .createAccount)
+//
+//        authIteractor.userRegistration(email: self.email, password: self.password) { result in
+//
+//            switch result {
+//
+//            case .success(let response):
+//                DispatchQueue.main.async {
+//                    self.updatePublishedResponse(response)
+//                    self.navigateTo(route: .createAccount)
+//                    print(response)
+//                }
+//
+//            case .failure(let error):
+//                DispatchQueue.main.async {
+//                    self.error = error
+//                    self.isLoading = false
+//                    print(error)
+//                }
+//            }
+//        }
+//    }
